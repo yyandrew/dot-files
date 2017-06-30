@@ -194,3 +194,8 @@ map ,s :call RunNearestSpec()<CR>
 map ,l :call RunLastSpec()<CR>
 map ,a :call RunAllSpecs()<CR>
 
+
+"""""""""""""""""""""""""""
+" clang
+"""""""""""""""""""""""""""
+map <F10> :w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>
