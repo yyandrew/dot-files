@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/andrew/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -61,7 +61,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/andrew/.rvm/bin:/Users/andrew/.rbenv/shims:/Users/andrew/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.rvm/bin:$HOME/.rbenv/shims:$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -99,6 +99,7 @@ export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 alias git-pl='git pull origin'
 alias git-ps='git push origin'
 alias git-s='git status'
+alias git-ss='git stash save'
 alias git-cp='git cherry-pick'
 alias git-c='git checkout'
 alias git-cb='git checkout -b'
@@ -131,3 +132,10 @@ export TERM="xterm-256color"
 
 export PATH="$HOME/.bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+
+# load ssh aliases
+emulate sh
+if [[ -a "$HOME/.zsh_ssh_aliases" ]]; then
+  source "$HOME/.zsh_ssh_aliases"
+fi
+emulate zsh
