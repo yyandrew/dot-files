@@ -108,6 +108,8 @@ alias git-rs='git reset --soft'
 alias git-rh='git reset --hard'
 alias git-b='git branch'
 alias git-m='git merge'
+alias git-fa='git fetch -a'
+alias git-ca='git commit --amend'
 
 # capistrano
 alias cap-bd='cap backup deploy'
@@ -125,6 +127,8 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
+# system commands
+alias grep-a='grep -A 10'
 # Use powerline
 # if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
   # source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
