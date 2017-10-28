@@ -60,8 +60,6 @@ ZSH_THEME="amuse"
 plugins=(git)
 
 # User configuration
-
-export PATH="$HOME/.rvm/bin:$HOME/.rbenv/shims:$HOME/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -102,14 +100,18 @@ alias git-s='git status'
 alias git-ss='git stash save'
 alias git-cp='git cherry-pick'
 alias git-c='git checkout'
+alias git-cm='git checkout master'
 alias git-cb='git checkout -b'
-alias git-r='git rebase'
+alias git-rb='git rebase'
+alias git-rbm='git rebase master'
 alias git-rs='git reset --soft'
 alias git-rh='git reset --hard'
 alias git-b='git branch'
+alias git-ba='git branch -a'
 alias git-m='git merge'
 alias git-fa='git fetch -a'
 alias git-ca='git commit --amend'
+alias git-l='git log'
 
 # capistrano
 alias cap-bd='cap backup deploy'
@@ -136,12 +138,12 @@ alias find-file='find . -type f -iname '
   # source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # fi
 
-export PATH="$HOME/.bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-
 # load ssh aliases
 emulate sh
 if [[ -a "$HOME/.zsh_ssh_aliases" ]]; then
   source "$HOME/.zsh_ssh_aliases"
+fi
+if [[ -a "$HOME/.profile" ]]; then
+  source "$HOME/.profile"
 fi
 emulate zsh

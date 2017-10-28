@@ -11,7 +11,7 @@ Plugin 'https://github.com/rking/ag.vim.git'
 " Plugin 'https://github.com/mattn/gist-vim.git'
 " Plugin 'https://github.com/mattn/webapi-vim.git'
 Plugin 'https://github.com/yegappan/mru.git'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
@@ -33,7 +33,6 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rainerborene/vim-reek'
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-bundler'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ngmy/vim-rubocop'
@@ -159,6 +158,7 @@ nmap ,f :NERDTreeFind<CR>
 """""""""""""""""""""""""""
 " run RuboCop
 nmap ,c :RuboCop<CR>
+nmap ,r :RuboCop -a<CR>
 
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
