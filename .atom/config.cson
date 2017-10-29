@@ -1,0 +1,37 @@
+"*":
+  "atom-package-deps":
+    ignored: [
+      "linter"
+    ]
+  core:
+    disabledPackages: [
+      "vim-mode-plus"
+    ]
+    excludeVcsIgnoredPaths: true
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "log/"
+    ]
+    projectHome: "/Users/andrew/Development"
+    themes: [
+      "atom-light-ui"
+      "atom-light-syntax"
+    ]
+  editor:
+    softWrap: true
+  "exception-reporting":
+    userId: "42fea22b-641e-ffe3-4da0-74661a31a1b7"
+  "linter-rubocop":
+    command: "/Users/andrew/.rvm/gems/ruby-1.9.3-p551@litool/wrappers/rubocop"
+    disableWhenNoConfigFile: true
+  "markdown-preview":
+    useGitHubStyle: true
+  "tree-view":
+    showOnRightSide: true
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
