@@ -116,7 +116,7 @@ alias git-l='git log'
 # capistrano
 alias cap-bd='cap backup deploy'
 alias cap-sd='cap staging deploy'
-alias cap-dd='cap dev deploy'
+alias cap-dd='cap develop deploy'
 alias cap-pd='cap production deploy'
 
 # rvm

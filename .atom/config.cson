@@ -5,7 +5,7 @@
     ]
   core:
     disabledPackages: [
-      "vim-mode-plus"
+      "linter-eslint"
     ]
     excludeVcsIgnoredPaths: true
     ignoredNames: [
@@ -18,6 +18,7 @@
       "log/"
     ]
     projectHome: "/Users/andrew/Development"
+    telemetryConsent: "no"
     themes: [
       "atom-light-ui"
       "atom-light-syntax"
@@ -26,12 +27,18 @@
     softWrap: true
   "exception-reporting":
     userId: "42fea22b-641e-ffe3-4da0-74661a31a1b7"
+  linter: {}
+  "linter-js-standard":
+    checkStyleDevDependencies: true
+    lintHtmlFiles: true
+    showEslintRules: true
   "linter-rubocop":
     command: "/Users/andrew/.rvm/gems/ruby-1.9.3-p551@litool/wrappers/rubocop"
-    disableWhenNoConfigFile: true
+  "linter-ui-default": {}
   "markdown-preview":
     useGitHubStyle: true
   "tree-view":
     showOnRightSide: true
-  "vim-mode-plus":
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+  "vim-mode-plus": {}
+  welcome:
+    showOnStartup: false
