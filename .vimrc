@@ -38,6 +38,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'mattn/emmet-vim'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'fatih/vim-go'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -199,3 +201,17 @@ map ,a :call RunAllSpecs()<CR>
 " clang
 """""""""""""""""""""""""""
 map <F10> :w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>
+
+"""""""""""""""""""""""""""
+" syntax checks
+"""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+

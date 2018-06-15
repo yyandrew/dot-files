@@ -24,6 +24,7 @@
       "atom-light-syntax"
     ]
   editor:
+    showIndentGuide: true
     softWrap: true
   "exception-reporting":
     userId: "42fea22b-641e-ffe3-4da0-74661a31a1b7"
@@ -34,7 +35,9 @@
     showEslintRules: true
   "linter-rubocop":
     command: "/Users/andrew/.rvm/gems/ruby-1.9.3-p551@litool/wrappers/rubocop"
-  "linter-ui-default": {}
+    disableWhenNoConfigFile: true
+  "linter-ui-default":
+    panelHeight: 244
   "markdown-preview":
     useGitHubStyle: true
   "tree-view":

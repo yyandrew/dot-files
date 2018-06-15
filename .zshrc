@@ -92,6 +92,7 @@ fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+GOPATH=$(go env GOPATH)
 
 # git
 alias git-pl='git pull origin'
@@ -147,3 +148,8 @@ if [[ -a "$HOME/.profile" ]]; then
   source "$HOME/.profile"
 fi
 emulate zsh
+
+
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+alias vim=/usr/local/bin/nvim
