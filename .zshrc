@@ -134,6 +134,7 @@ export TERM="xterm-256color"
 alias grep-a='grep -A 10'
 alias grep-b='grep -B 10'
 alias find-file='find . -type f -iname '
+alias jd='java -jar ~/Downloads/JDownloader/JDownloader.jar'
 # Use powerline
 # if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
   # source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -152,4 +153,6 @@ emulate zsh
 
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
-alias vim=/usr/local/bin/nvim
+# alias vim=/usr/local/bin/nvim
+source ~/.bin/tmuxinator.zsh
+eval "$(lua /usr/local/bin/z.lua --init zsh)"

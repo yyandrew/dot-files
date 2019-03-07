@@ -8,8 +8,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'https://github.com/rking/ag.vim.git'
-" Plugin 'https://github.com/mattn/gist-vim.git'
-" Plugin 'https://github.com/mattn/webapi-vim.git'
+Plugin 'https://github.com/mattn/gist-vim.git'
+Plugin 'https://github.com/mattn/webapi-vim.git'
 Plugin 'https://github.com/yegappan/mru.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
@@ -20,7 +20,7 @@ Plugin 'https://github.com/tomtom/tlib_vim.git'
 Plugin 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
 " Plugin 'https://github.com/craigemery/vim-autotag.git'
 Plugin 'https://github.com/jeetsukumaran/vim-buffergator.git'
-Plugin 'https://github.com/kchmck/vim-coffee-script.git'
+" Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 Plugin 'https://github.com/Lokaltog/vim-easymotion.git'
 Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
 Plugin 'honza/vim-snippets'
@@ -31,15 +31,24 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'https://github.com/tpope/vim-rails.git'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'shumphrey/fugitive-gitlab.vim'
 Plugin 'rainerborene/vim-reek'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-bundler'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'mattn/emmet-vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'fatih/vim-go'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'slim-template/vim-slim'
+Plugin 'majutsushi/tagbar'
+Plugin 'morhetz/gruvbox'
+" Plugin 'dracula/vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -159,8 +168,8 @@ nmap ,f :NERDTreeFind<CR>
 " RuboCop configure
 """""""""""""""""""""""""""
 " run RuboCop
-nmap ,c :RuboCop<CR>
-nmap ,r :RuboCop -a<CR>
+nmap ,c :RuboCop %<CR>
+nmap ,r :RuboCop -a %<CR>
 
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
@@ -210,8 +219,36 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_w = 0
+" let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
+"""""""""""""""""""""""""""
+" fugitive config
+"""""""""""""""""""""""""""
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+"""""""""""""""""""""""""""
+" gitgutter config
+"""""""""""""""""""""""""""
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
+"""""""""""""""""""""""""""
+" Set path for find command
+"""""""""""""""""""""""""""
+set path=$PWD/**
+
+"""""""""""""""""""""""""""
+" tagbar configure
+"""""""""""""""""""""""""""
+nnoremap <silent> <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""
+" gruvbox configure
+"""""""""""""""""""""""""""
+" colorscheme dracula
+colorscheme gruvbox
+set background=dark
