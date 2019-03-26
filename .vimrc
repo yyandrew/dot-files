@@ -163,6 +163,7 @@ let MRU_Auto_Close = 0
 map <F2> :NERDTreeToggle<CR>
 " Reveal file in tree
 nmap ,f :NERDTreeFind<CR>
+let NERDTreeQuitOnOpen = 1
 
 """""""""""""""""""""""""""
 " RuboCop configure
@@ -252,3 +253,9 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 " colorscheme dracula
 colorscheme gruvbox
 set background=dark
+
+
+"""""""""""""""""""""""""""
+" vim-better-whitespace configure
+"""""""""""""""""""""""""""
+nmap ,w :StripWhitespace<CR>
