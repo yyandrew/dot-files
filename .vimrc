@@ -49,6 +49,8 @@ Plugin 'slim-template/vim-slim'
 Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
 " Plugin 'dracula/vim'
+Plugin 'rhysd/git-messenger.vim'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
