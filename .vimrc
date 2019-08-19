@@ -51,6 +51,10 @@ Plugin 'morhetz/gruvbox'
 " Plugin 'dracula/vim'
 Plugin 'rhysd/git-messenger.vim'
 Plugin 'tpope/vim-repeat'
+" Plugin 'mxw/vim-jsx'
+Plugin 'w0rp/ale'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -103,7 +107,7 @@ let g:reek_on_loading = 0
 """""""""""""""""""""""""""
 map  <C-l> :bn<CR>
 map  <C-h> :bp<CR>
-map  <C-x> :bd<CR>
+" map  <C-x> :bd<CR>
 map  <C-x>! :bd!<CR>
 
 """""""""""""""""""""""""""
@@ -116,6 +120,9 @@ let g:ctrlp_custom_ignore = {
   \ }
 " When opening a file with <cr>, |CtrlP| avoids opening nerdtree
 let g:ctrlp_dont_split = 'nerdtree'
+" Set starting directory.
+" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file
+let g:ctrlp_working_path_mode = 'a'
 
 """""""""""""""""""""""""""
 " airline configure
@@ -147,11 +154,6 @@ map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
-
-"""""""""""""""""""""""""""
-" ack configure
-"""""""""""""""""""""""""""
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 """""""""""""""""""""""""""
 " MRU configure
@@ -194,11 +196,6 @@ let g:AutoPairsMapSpace = 0
 " nerdcommenter configure
 """""""""""""""""""""""""""
 let g:NERDSpaceDelims = 1
-
-"""""""""""""""""""""""""""
-" emmet configure
-"""""""""""""""""""""""""""
-let g:user_emmet_leader_key='<C-Z>'
 
 """""""""""""""""""""""""""
 " vim-rspec configure
@@ -261,3 +258,27 @@ set background=dark
 " vim-better-whitespace configure
 """""""""""""""""""""""""""
 nmap ,w :StripWhitespace<CR>
+
+"""""""""""""""""""""""""""
+" w0rp/ale configure
+"""""""""""""""""""""""""""
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace', 'rubocop'],
+\   'javascript': ['eslint'],
+\}
+let g:ale_lint_on_text_changed='never'
+let g:ale_completion_enabled=1
+let g:ale_fix_on_save=1
+
+" Remove search highlight
+nnoremap <Leader><space> :noh<cr>
+
+set omnifunc=syntaxcomplete#Complete
+
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+"""""""""""""""""""""""""""
+" vimwiki configure
+"""""""""""""""""""""""""""
+let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh', 'bash': 'bash'}}]
