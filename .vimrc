@@ -57,6 +57,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'dart-lang/dart-vim-plugin'
 " Plugin 'zxqfl/tabnine-vim'
 Plugin 'tpope/vim-endwise'
+Plugin 'danchoi/ri.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -148,16 +149,17 @@ let g:indentLine_indentLevel = 20
 """""""""""""""""""""""""""
 " remove tab key mappings used to select the first completion string(conflict with vim-snippets)
 let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_min_num_of_chars_for_completion = 1000
 
-function! s:ycm_trigger_identifier()
-  let g:ycm_auto_trigger = 1
-  augroup ycm_trigger_identifier
-    au!
-    autocmd InsertLeave * ++once let g:ycm_auto_trigger = 0
-  augroup end
-  doautocmd TextChangedI
-  return ''
-endfunction
+" function! s:ycm_trigger_identifier()
+  " let g:ycm_auto_trigger = 1
+  " augroup ycm_trigger_identifier
+    " au!
+    " autocmd InsertLeave * ++once let g:ycm_auto_trigger = 0
+  " augroup end
+  " doautocmd TextChangedI
+  " return ''
+" endfunction
 
 """""""""""""""""""""""""""
 " easymotion configure
