@@ -90,9 +90,9 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh # autojump
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 GOPATH=$(go env GOPATH)
+export PATH="$PATH:$GOPATH/bin" # Add $GOPATH/bin to PATH for scripting
 
 # git
 alias git-pl='git pull origin'
@@ -102,7 +102,7 @@ alias git-ss='git stash save'
 alias git-cp='git cherry-pick'
 alias git-c='git checkout'
 alias git-cm='git checkout master'
-alias git-cb='git checkout -b'
+alias git-nb='git checkout -b'
 alias git-rb='git rebase'
 alias git-rbm='git rebase master'
 alias git-rs='git reset --soft'
@@ -113,6 +113,8 @@ alias git-m='git merge'
 alias git-fa='git fetch -a'
 alias git-ca='git commit --amend'
 alias git-l='git log'
+alias git-ud='git checkout develop && git pull origin develop;'
+alias git-so='git remote show origin'
 
 # capistrano
 alias cap-bd='cap backup deploy'
@@ -154,5 +156,39 @@ emulate zsh
 alias mysql=/usr/local/mysql/bin/mysql
 alias mysqladmin=/usr/local/mysql/bin/mysqladmin
 # alias vim=/usr/local/bin/nvim
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
 source ~/.bin/tmuxinator.zsh
 eval "$(lua /usr/local/bin/z.lua --init zsh)"
+
+LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
+LFCD="~/.config/lf/lfcd.sh"                            # pre-built binary
+if [ -f "$LFCD" ]; then
+    source "$LFCD"
+fi
+
+# Flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PATH="$PATH:`pwd`/flutter/bin"
+
+# Android
+export ANDROID_HOME="/Users/andrew/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# depot_tools
+export PATH=$PATH:~/build/depot_tools
+
+# Cached builds for electron app
+export GIT_CACHE_PATH="${HOME}/.git_cache"
+
+export SCCACHE_BUCKET="electronjs-sccache"
+export SCCACHE_TWO_TIER=true
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+alias rm='trash'
+
+eval "$(direnv hook zsh)"
