@@ -12,7 +12,10 @@ Plugin 'https://github.com/mattn/webapi-vim.git'
 Plugin 'https://github.com/yegappan/mru.git'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'https://github.com/scrooloose/nerdcommenter.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'https://github.com/tomtom/tlib_vim.git'
@@ -46,7 +49,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
 Plugin 'majutsushi/tagbar'
-Plugin 'morhetz/gruvbox'
+" Plugin 'morhetz/gruvbox'
 " Plugin 'dracula/vim'
 Plugin 'rhysd/git-messenger.vim'
 Plugin 'tpope/vim-repeat'
@@ -148,8 +151,8 @@ let g:indentLine_indentLevel = 20
 " custom YouCompleteMe
 """""""""""""""""""""""""""
 " remove tab key mappings used to select the first completion string(conflict with vim-snippets)
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_min_num_of_chars_for_completion = 1000
+" let g:ycm_key_list_select_completion = ['<Down>']
+" let g:ycm_min_num_of_chars_for_completion = 1000
 
 " function! s:ycm_trigger_identifier()
   " let g:ycm_auto_trigger = 1
@@ -263,9 +266,9 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""
 " gruvbox configure
 """""""""""""""""""""""""""
-" colorscheme dracula
-colorscheme gruvbox
-set background=dark
+" colorscheme dracula  gruvbox
+colorscheme koehler
+" set background=dark
 
 
 """""""""""""""""""""""""""
@@ -278,12 +281,12 @@ nmap ,w :StripWhitespace<CR>
 """""""""""""""""""""""""""
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+\   'javascript': ['prettier', 'eslint'],
+\   'ruby': ['prettier'],
 \}
 let g:ale_lint_on_text_changed='never'
 let g:ale_completion_enabled=1
 let g:ale_fix_on_save=1
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 
 " Remove search highlight
 nnoremap <Leader><space> :noh<cr>
@@ -322,3 +325,5 @@ augroup END
 " multiple cursor configure
 let g:multi_cursor_select_all_word_key = '<Leader>m'
 " nnoremap <Leader>m :multi_cursor_select_all_word_key
+let regexpengine=1
+let g:deoplete#enable_at_startup = 1
