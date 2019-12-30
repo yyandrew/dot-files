@@ -325,5 +325,5 @@ augroup END
 " multiple cursor configure
 let g:multi_cursor_select_all_word_key = '<Leader>m'
 " nnoremap <Leader>m :multi_cursor_select_all_word_key
-let regexpengine=1
+set re=1
 let g:deoplete#enable_at_startup = 1
