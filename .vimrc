@@ -63,6 +63,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'danchoi/ri.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ianks/vim-tsx'
+Plugin 'kana/vim-textobj-user'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -330,3 +331,17 @@ let g:multi_cursor_select_all_word_key = '<Leader>m'
 " nnoremap <Leader>m :multi_cursor_select_all_word_key
 set re=1
 " let g:deoplete#enable_at_startup = 1
+
+" textobj configuration
+call textobj#user#plugin('ruby', {
+\   'doend': {
+\     'pattern': ['do', 'end'],
+\     'select-a': 'ad',
+\     'select-i': 'id',
+\   },
+\   'itend': {
+\     'pattern': ['it', 'end'],
+\     'select-a': 'ai',
+\     'select-i': 'ii',
+\   },
+\ })
