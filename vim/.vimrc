@@ -7,35 +7,27 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'https://github.com/mattn/gist-vim.git'
-Plugin 'https://github.com/mattn/webapi-vim.git'
-Plugin 'https://github.com/yegappan/mru.git'
+Plugin 'yegappan/mru'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Shougo/deoplete.nvim'
-" Plugin 'roxma/nvim-yarp'
-" Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'https://github.com/scrooloose/nerdcommenter.git'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'https://github.com/tomtom/tlib_vim.git'
-Plugin 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-" Plugin 'https://github.com/craigemery/vim-autotag.git'
-Plugin 'https://github.com/jeetsukumaran/vim-buffergator.git'
-" Plugin 'https://github.com/kchmck/vim-coffee-script.git'
-Plugin 'https://github.com/Lokaltog/vim-easymotion.git'
-Plugin 'https://github.com/terryma/vim-multiple-cursors.git'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'honza/vim-snippets'
 Plugin 'garbas/vim-snipmate'
 " Surround your code :)
-Plugin 'https://github.com/tpope/vim-surround.git'
+Plugin 'tpope/vim-surround'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'https://github.com/tpope/vim-rails.git'
+Plugin 'tpope/vim-rails'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'shumphrey/fugitive-gitlab.vim'
-Plugin 'rainerborene/vim-reek'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-bundler'
 Plugin 'jiangmiao/auto-pairs'
@@ -142,6 +134,12 @@ let g:airline#extensions#tabline#show_buffers = 0  " disable displaying buffers 
 let g:airline#extensions#tagbar#enabled = 1
 
 """""""""""""""""""""""""""
+" easytags configuration
+"""""""""""""""""""""""""""
+let g:easytags_file = './tags'
+let g:easytags_dynamic_files = 2
+
+"""""""""""""""""""""""""""
 " indentLine configure
 """""""""""""""""""""""""""
 " enable indentLine
@@ -243,7 +241,6 @@ let g:syntastic_always_populate_loc_list = 0
 " let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_w = 0
-" let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 """""""""""""""""""""""""""
 " fugitive config
