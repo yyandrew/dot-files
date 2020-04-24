@@ -7,10 +7,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'yegappan/mru'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
@@ -56,6 +54,8 @@ Plugin 'danchoi/ri.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ianks/vim-tsx'
 Plugin 'kana/vim-textobj-user'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -112,20 +112,6 @@ map  <C-h> :bp<CR>
 map  <C-x>! :bd!<CR>
 
 """""""""""""""""""""""""""
-" ctrlp configure
-"""""""""""""""""""""""""""
-" Exclude files and directories
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v(\.log|tags)$'
-  \ }
-" When opening a file with <cr>, |CtrlP| avoids opening nerdtree
-let g:ctrlp_dont_split = 'nerdtree'
-" Set starting directory.
-" 'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file
-let g:ctrlp_working_path_mode = 'a'
-
-"""""""""""""""""""""""""""
 " airline configure
 """""""""""""""""""""""""""
 let g:airline#extensions#tabline#left_sep = ' '
@@ -136,7 +122,7 @@ let g:airline#extensions#tagbar#enabled = 1
 """""""""""""""""""""""""""
 " easytags configuration
 """""""""""""""""""""""""""
-let g:easytags_file = './tags'
+let g:easytags_file = '~/.vim/tags'
 let g:easytags_dynamic_files = 2
 
 """""""""""""""""""""""""""
@@ -147,23 +133,6 @@ let g:indentLine_char = '┊'
 let g:indentLine_enabled = 1
 " Specify how much indent level do you want to use for(default is 10)
 let g:indentLine_indentLevel = 20
-
-"""""""""""""""""""""""""""
-" custom YouCompleteMe
-"""""""""""""""""""""""""""
-" remove tab key mappings used to select the first completion string(conflict with vim-snippets)
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_min_num_of_chars_for_completion = 1000
-
-function! s:ycm_trigger_identifier()
-  let g:ycm_auto_trigger = 1
-  augroup ycm_trigger_identifier
-    au!
-    autocmd InsertLeave * ++once let g:ycm_auto_trigger = 0
-  augroup end
-  doautocmd TextChangedI
-  return ''
-endfunction
 
 """""""""""""""""""""""""""
 " easymotion configure
@@ -252,6 +221,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 """""""""""""""""""""""""""
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
+let g:gitgutter_preview_win_floating = 1
 
 """""""""""""""""""""""""""
 " Set path for find command
@@ -317,19 +287,25 @@ let g:ackhighlight = 1
 let &t_SI = "\e[3 q"
 let &t_EI = "\e[2 q"
 
+"""""""""""""""""""""""""""
 " optional reset cursor on start:
+"""""""""""""""""""""""""""
 augroup myCmds
 au!
 autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
+"""""""""""""""""""""""""""
 " multiple cursor configure
+"""""""""""""""""""""""""""
 let g:multi_cursor_select_all_word_key = '<Leader>m'
 " nnoremap <Leader>m :multi_cursor_select_all_word_key
 set re=1
 " let g:deoplete#enable_at_startup = 1
 
+"""""""""""""""""""""""""""
 " textobj configuration
+"""""""""""""""""""""""""""
 call textobj#user#plugin('ruby', {
 \   'doend': {
 \     'pattern': ['do', 'end'],
@@ -342,3 +318,16 @@ call textobj#user#plugin('ruby', {
 \     'select-i': 'ii',
 \   },
 \ })
+
+"""""""""""""""""""""""""""
+" fzf-vim
+"""""""""""""""""""""""""""
+" Ctrl + p open Git files
+nmap <C-p> :GFiles<CR>
+" Ctrl + e open buffers
+nmap <C-e> :Buffers<CR>
+" Press Ctrl + e twice to open previous Buffer
+let g:fzf_action = { 'ctrl-e': 'edit' }
+if has('nvim')
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+endif
