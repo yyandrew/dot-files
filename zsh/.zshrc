@@ -92,6 +92,7 @@ fi
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+export PATH="$PATH:/usr/local/go/bin"
 GOPATH=$(go env GOPATH)
 export PATH="$PATH:$GOPATH/bin" # Add $GOPATH/bin to PATH for scripting
 
