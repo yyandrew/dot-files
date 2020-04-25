@@ -160,7 +160,6 @@ emulate zsh
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
 source ~/.bin/tmuxinator.zsh
-eval "$(lua /usr/local/bin/z.lua --init zsh)"
 
 LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"  # source
 LFCD="~/.config/lf/lfcd.sh"                            # pre-built binary
