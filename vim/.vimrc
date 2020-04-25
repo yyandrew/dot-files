@@ -56,6 +56,7 @@ Plugin 'ianks/vim-tsx'
 Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'wlemuel/vim-tldr'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -331,3 +332,9 @@ let g:fzf_action = { 'ctrl-e': 'edit' }
 if has('nvim')
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 endif
+
+"""""""""""""""""""""""""""
+" tldr
+"""""""""""""""""""""""""""
+let g:tldr_directory_path = '~/.cache/tldr'
+let g:tldr_language = 'zh'
