@@ -124,12 +124,6 @@ alias cap-sd='cap staging deploy'
 alias cap-dd='cap develop deploy'
 alias cap-pd='cap production deploy'
 
-# rvm
-alias rvm-gl='rvm gemset list'
-alias rvm-gr='rvm gemset remove'
-alias rvm-ud='rvm use default'
-alias rvm-u='rvm use'
-
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
@@ -171,7 +165,7 @@ fi
 # Flutter
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export PATH="$PATH:`pwd`/flutter/bin"
+export PATH="$PATH:${HOME}/Development/flutter/bin"
 
 # Android
 export ANDROID_HOME="${HOME}/Library/Android/sdk"
