@@ -57,6 +57,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'wlemuel/vim-tldr'
+Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
