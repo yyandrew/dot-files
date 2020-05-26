@@ -38,7 +38,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 " Plugin 'morhetz/gruvbox'
 " Plugin 'dracula/vim'
 Plugin 'rhysd/git-messenger.vim'
@@ -240,7 +240,7 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""
 " colorscheme dracula  gruvbox
 colorscheme koehler
-" set background=dark
+set background=light
 
 
 """""""""""""""""""""""""""
@@ -259,7 +259,7 @@ let g:ale_fixers = {
 \}
 let g:ale_lint_on_text_changed='never'
 let g:ale_completion_enabled=1
-let g:ale_fix_on_save=1
+let g:ale_fix_on_save=0
 
 " Remove search highlight
 nnoremap <Leader><space> :noh<cr>
@@ -333,6 +333,10 @@ let g:fzf_action = { 'ctrl-e': 'edit' }
 if has('nvim')
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 endif
+
+" let g:fzf_action = {
+  " \ 'ctrl-t': 'tab split',
+  " \ 'ctrl-v': 'vsplit' }
 
 """""""""""""""""""""""""""
 " tldr
