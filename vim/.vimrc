@@ -325,7 +325,7 @@ call textobj#user#plugin('ruby', {
 " fzf-vim
 """""""""""""""""""""""""""
 " Ctrl + p open Git files
-nmap <C-p> :GFiles<CR>
+nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
 " Ctrl + e open buffers
 nmap <C-e> :Buffers<CR>
 " Press Ctrl + e twice to open previous Buffer
