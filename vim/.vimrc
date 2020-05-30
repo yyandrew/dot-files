@@ -124,8 +124,8 @@ let g:airline#extensions#tagbar#enabled = 1
 """""""""""""""""""""""""""
 " easytags configuration
 """""""""""""""""""""""""""
-let g:easytags_file = '~/.vim/tags'
-let g:easytags_dynamic_files = 2
+:set tags=./tags;
+:let g:easytags_dynamic_files = 1
 
 """""""""""""""""""""""""""
 " indentLine configure
