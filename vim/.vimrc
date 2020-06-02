@@ -39,8 +39,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
 " Plugin 'majutsushi/tagbar'
-" Plugin 'morhetz/gruvbox'
-" Plugin 'dracula/vim'
 Plugin 'rhysd/git-messenger.vim'
 Plugin 'tpope/vim-repeat'
 " Plugin 'mxw/vim-jsx'
@@ -58,6 +56,10 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'wlemuel/vim-tldr'
 Plugin 'Shougo/vimproc.vim'
+" colorscheme
+Plugin 'joshdick/onedark.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'dracula/vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -116,10 +118,7 @@ map  <C-x>! :bd!<CR>
 """""""""""""""""""""""""""
 " airline configure
 """""""""""""""""""""""""""
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#show_buffers = 0  " disable displaying buffers with a single tab
-let g:airline#extensions#tagbar#enabled = 1
+let g:airline_powerline_fonts = 1
 
 """""""""""""""""""""""""""
 " easytags configuration
@@ -238,10 +237,9 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""
 " gruvbox configure
 """""""""""""""""""""""""""
-" colorscheme dracula  gruvbox
-colorscheme koehler
-set background=light
-
+colorscheme gruvbox
+" set linenumber color to be dark grey
+highlight LineNr ctermfg=DarkGrey
 
 """""""""""""""""""""""""""
 " vim-better-whitespace configure
