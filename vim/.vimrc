@@ -238,6 +238,7 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 " gruvbox configure
 """""""""""""""""""""""""""
 colorscheme gruvbox
+set background=dark
 " set linenumber color to be dark grey
 highlight LineNr ctermfg=DarkGrey
 
