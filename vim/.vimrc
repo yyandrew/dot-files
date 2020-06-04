@@ -255,18 +255,24 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'tsx': ['prettier', 'eslint'],
 \   'ruby': ['prettier'],
+\   'go': ['gopls'],
 \}
 let g:ale_lint_on_text_changed='never'
 let g:ale_completion_enabled=1
 let g:ale_fix_on_save=0
 
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 " Remove search highlight
 nnoremap <Leader><space> :noh<cr>
 
+"""""""""""""""""""""""""""
+" Omni completion
+"""""""""""""""""""""""""""
+" Provides smart autocompletion for programs
 set omnifunc=syntaxcomplete#Complete
-
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+set completeopt=longest,menuone
 
 """""""""""""""""""""""""""
 " vimwiki configure
@@ -342,3 +348,9 @@ let g:fzf_action = {
 """""""""""""""""""""""""""
 let g:tldr_directory_path = '~/.cache/tldr'
 let g:tldr_language = 'zh'
+
+"""""""""""""""""""""""""""
+" vim-go
+"""""""""""""""""""""""""""
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
