@@ -13,7 +13,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'Lokaltog/vim-easymotion'
@@ -121,12 +120,6 @@ map  <C-x>! :bd!<CR>
 let g:airline_powerline_fonts = 1
 
 """""""""""""""""""""""""""
-" easytags configuration
-"""""""""""""""""""""""""""
-:set tags=./tags;
-:let g:easytags_dynamic_files = 1
-
-"""""""""""""""""""""""""""
 " indentLine configure
 """""""""""""""""""""""""""
 " enable indentLine
@@ -161,8 +154,7 @@ let NERDTreeQuitOnOpen = 1
 " RuboCop configure
 """""""""""""""""""""""""""
 " run RuboCop
-nmap ,c :RuboCop %<CR>
-nmap ,r :RuboCop -a %<CR>
+nmap ,r :RuboCop -a<CR>
 
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
@@ -358,3 +350,13 @@ let g:go_doc_popup_window = 1
 au FileType go nmap <leader>i <Plug>(go-info)
 au FileType go nmap <leader>d <Plug>(go-describe)
 au FileType go nmap <leader>r <Plug>(go-run)
+
+"""""""""""""""""""""""""""
+" typescript-vim
+"""""""""""""""""""""""""""
+let g:typescript_indent_disable = 1
+
+"""""""""""""""""""""""""""
+" ctags
+"""""""""""""""""""""""""""
+nmap ,c :!ctags %<CR>
