@@ -360,3 +360,5 @@ let g:typescript_indent_disable = 1
 " ctags
 """""""""""""""""""""""""""
 nmap ,c :!ctags %<CR>
+" Press Ctrl + i to open tags selector
+nmap <C-i> :tselect 
