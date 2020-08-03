@@ -41,8 +41,8 @@ Plugin 'slim-template/vim-slim'
 Plugin 'rhysd/git-messenger.vim'
 Plugin 'tpope/vim-repeat'
 " Plugin 'mxw/vim-jsx'
-Plugin 'w0rp/ale'
-Plugin 'Quramy/tsuquyomi'
+" Plugin 'w0rp/ale'
+" Plugin 'Quramy/tsuquyomi'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dart-lang/dart-vim-plugin'
 " Plugin 'zxqfl/tabnine-vim'
@@ -242,22 +242,23 @@ nmap ,w :StripWhitespace<CR>
 """""""""""""""""""""""""""
 " w0rp/ale configure
 """""""""""""""""""""""""""
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
-\   'tsx': ['prettier', 'eslint'],
-\   'ruby': ['prettier'],
-\   'go': ['gopls'],
-\}
-let g:ale_lint_on_text_changed='never'
-let g:ale_completion_enabled=1
-let g:ale_fix_on_save=0
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['prettier', 'eslint'],
+" \   'tsx': ['prettier', 'eslint'],
+" \   'ruby': ['prettier'],
+" \   'go': ['gopls'],
+" \}
+" let g:ale_lint_on_text_changed='never'
+" let g:ale_completion_enabled=1
+" let g:ale_fix_on_save=0
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <Leader> f :ALEFix<CR>
 
 " Remove search highlight
-nnoremap <Leader><space> :noh<cr>
+nnoremap <Leader><space> :noh<CR>
 
 """""""""""""""""""""""""""
 " Omni completion
