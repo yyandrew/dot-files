@@ -41,7 +41,6 @@ Plugin 'slim-template/vim-slim'
 Plugin 'rhysd/git-messenger.vim'
 Plugin 'tpope/vim-repeat'
 " Plugin 'mxw/vim-jsx'
-" Plugin 'w0rp/ale'
 " Plugin 'Quramy/tsuquyomi'
 Plugin 'vimwiki/vimwiki'
 Plugin 'dart-lang/dart-vim-plugin'
@@ -59,6 +58,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'dracula/vim'
+Plugin 'neoclide/coc.nvim'
+Plugin 'Shougo/echodoc.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -239,23 +240,10 @@ highlight LineNr ctermfg=DarkGrey
 """""""""""""""""""""""""""
 nmap ,w :StripWhitespace<CR>
 
-"""""""""""""""""""""""""""
-" w0rp/ale configure
-"""""""""""""""""""""""""""
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'javascript': ['prettier', 'eslint'],
-" \   'tsx': ['prettier', 'eslint'],
-" \   'ruby': ['prettier'],
-" \   'go': ['gopls'],
-" \}
-" let g:ale_lint_on_text_changed='never'
-" let g:ale_completion_enabled=1
-" let g:ale_fix_on_save=0
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <Leader> f :ALEFix<CR>
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" nmap <Leader> f :ALEFix<CR>
 
 " Remove search highlight
 nnoremap <Leader><space> :noh<CR>
@@ -265,7 +253,7 @@ nnoremap <Leader><space> :noh<CR>
 """""""""""""""""""""""""""
 " Provides smart autocompletion for programs
 set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
+set completeopt=longest,menuone,noinsert
 
 """""""""""""""""""""""""""
 " vimwiki configure
@@ -362,4 +350,22 @@ let g:typescript_indent_disable = 1
 """""""""""""""""""""""""""
 nmap ,c :!ctags %<CR>
 " Press Ctrl + i to open tags selector
-nmap ,i :tselect 
+nmap ,i :tselect
+
+" Add LanguageClient-neovim plugin to vim/neovim runtimepath
+" set runtimepath+=~/.vim-plugins/LanguageClient-neovim
+" nnoremap <silent> ,K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" let g:LanguageClient_serverCommands = {
+  " \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+  " \ }
+" echodoc configuration
+let g:echodoc_enable_at_startup = 1
+" coc-prettier configuration
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" coc-eslint configuration
+command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
+
+" go to difinition
+nmap <silent> gd <Plug>(coc-definition)
