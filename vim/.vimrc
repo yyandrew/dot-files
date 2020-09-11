@@ -60,6 +60,8 @@ Plugin 'morhetz/gruvbox'
 Plugin 'dracula/vim'
 Plugin 'neoclide/coc.nvim'
 Plugin 'Shougo/echodoc.vim'
+" Plugin 'vim-scripts/YankRing.vim'
+Plugin 'junegunn/vim-peekaboo'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -361,6 +363,8 @@ nmap ,i :tselect
   " \ }
 " echodoc configuration
 let g:echodoc_enable_at_startup = 1
+let g:echodoc#type = 'floating'
+highlight link EchoDocFloat Pmenu
 " coc-prettier configuration
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
@@ -369,3 +373,8 @@ command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
 
 " go to difinition
 nmap <silent> gd <Plug>(coc-definition)
+" coc error
+nmap <silent> <C-k> <Plug>(coc-diagnostic-next-error)
+nmap <silent> <C-K> <Plug>(coc-diagnostic-next)
+" Hide float window after the <C-c>
+inoremap <C-c> <ESC>
