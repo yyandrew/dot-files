@@ -37,14 +37,11 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'slim-template/vim-slim'
-" Plugin 'majutsushi/tagbar'
 Plugin 'rhysd/git-messenger.vim'
 Plugin 'tpope/vim-repeat'
 " Plugin 'mxw/vim-jsx'
 " Plugin 'Quramy/tsuquyomi'
-Plugin 'vimwiki/vimwiki'
 Plugin 'dart-lang/dart-vim-plugin'
-" Plugin 'zxqfl/tabnine-vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'danchoi/ri.vim'
 Plugin 'leafgarland/typescript-vim'
@@ -353,7 +350,6 @@ let g:typescript_indent_disable = 1
 """""""""""""""""""""""""""
 nmap ,c :!ctags %<CR>
 " Press Ctrl + i to open tags selector
-nmap ,i :tselect
 
 " Add LanguageClient-neovim plugin to vim/neovim runtimepath
 " set runtimepath+=~/.vim-plugins/LanguageClient-neovim
