@@ -60,6 +60,7 @@ Plugin 'Shougo/echodoc.vim'
 " Plugin 'vim-scripts/YankRing.vim'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'tpope/vim-abolish'
+Plugin 'kkoomen/vim-doge'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
