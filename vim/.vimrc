@@ -54,7 +54,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'Shougo/echodoc.vim'
 " Plug 'vim-scripts/YankRing.vim'
 Plug 'junegunn/vim-peekaboo'
