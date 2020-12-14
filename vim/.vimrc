@@ -1,69 +1,66 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'Yggdroot/indentLine'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'xolox/vim-misc'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'honza/vim-snippets'
-Plugin 'garbas/vim-snipmate'
+Plug 'mileszs/ack.vim'
+Plug 'Yggdroot/indentLine'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'xolox/vim-misc'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'honza/vim-snippets'
+Plug 'garbas/vim-snipmate'
 " Surround your code :)
-Plugin 'tpope/vim-surround'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'tpope/vim-rails'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-bundler'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'mattn/emmet-vim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'fatih/vim-go'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'slim-template/vim-slim'
-Plugin 'rhysd/git-messenger.vim'
-Plugin 'tpope/vim-repeat'
-" Plugin 'mxw/vim-jsx'
-" Plugin 'Quramy/tsuquyomi'
-" Plugin 'vimwiki/vimwiki'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'tpope/vim-endwise'
-Plugin 'danchoi/ri.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'ianks/vim-tsx'
-Plugin 'kana/vim-textobj-user'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'wlemuel/vim-tldr'
-Plugin 'Shougo/vimproc.vim'
+Plug 'tpope/vim-surround'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-rails'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-bundler'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ngmy/vim-rubocop'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'mattn/emmet-vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'fatih/vim-go'
+Plug 'vim-syntastic/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'slim-template/vim-slim'
+" Plug 'majutsushi/tagbar'
+Plug 'rhysd/git-messenger.vim'
+Plug 'tpope/vim-repeat'
+" Plug 'mxw/vim-jsx'
+" Plug 'Quramy/tsuquyomi'
+" Plug 'vimwiki/vimwiki'
+Plug 'dart-lang/dart-vim-plugin'
+" Plug 'zxqfl/tabnine-vim'
+Plug 'tpope/vim-endwise'
+Plug 'danchoi/ri.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'kana/vim-textobj-user'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'wlemuel/vim-tldr'
+Plug 'Shougo/vimproc.vim'
 " colorscheme
-Plugin 'joshdick/onedark.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'dracula/vim'
-Plugin 'neoclide/coc.nvim'
-Plugin 'Shougo/echodoc.vim'
-" Plugin 'vim-scripts/YankRing.vim'
-Plugin 'junegunn/vim-peekaboo'
-Plugin 'tpope/vim-abolish'
-Plugin 'kkoomen/vim-doge'
+Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'Shougo/echodoc.vim'
+" Plug 'vim-scripts/YankRing.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'tpope/vim-abolish'
+Plug 'kkoomen/vim-doge'
 
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
 
 " Change the default leader
@@ -366,6 +363,8 @@ let g:echodoc#type = 'floating'
 highlight link EchoDocFloat Pmenu
 " coc-prettier configuration
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " coc-eslint configuration
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
@@ -377,3 +376,6 @@ nmap <silent> <C-k> <Plug>(coc-diagnostic-next-error)
 nmap <silent> <C-K> <Plug>(coc-diagnostic-next)
 " Hide float window after the <C-c>
 inoremap <C-c> <ESC>
+
+" netrw configuration
+let g:netrw_winsize = 25
