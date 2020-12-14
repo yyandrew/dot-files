@@ -1,12 +1,11 @@
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 " let Vundle manage Vundle, required
-Plug 'gmarik/Vundle.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Yggdroot/indentLine'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'xolox/vim-misc'
@@ -62,6 +61,7 @@ Plug 'tpope/vim-abolish'
 Plug 'kkoomen/vim-doge'
 
 call plug#end()
+filetype plugin indent on    " required
 
 " Change the default leader
 let mapleader = "\\"
@@ -363,6 +363,8 @@ let g:echodoc#type = 'floating'
 highlight link EchoDocFloat Pmenu
 " coc-prettier configuration
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " coc-eslint configuration
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
@@ -374,3 +376,6 @@ nmap <silent> <C-k> <Plug>(coc-diagnostic-next-error)
 nmap <silent> <C-K> <Plug>(coc-diagnostic-next)
 " Hide float window after the <C-c>
 inoremap <C-c> <ESC>
+
+" netrw configuration
+let g:netrw_winsize = 25
