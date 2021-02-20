@@ -52,6 +52,8 @@ Plug 'Shougo/vimproc.vim'
 " colorscheme
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'Shougo/echodoc.vim'
@@ -142,13 +144,14 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let MRU_Auto_Close = 0
 
 """""""""""""""""""""""""""
-" nerdtree configure
+" netrw configure
 """""""""""""""""""""""""""
-" F2 open/close nerdtree
-map <F2> :NERDTreeToggle<CR>
+let g:netrw_banner = 0
+let g:netrw_winsize = 30
+" F2 open/close netrw
+map <F2> :Lexplore<CR>
 " Reveal file in tree
-nmap ,f :NERDTreeFind<CR>
-let NERDTreeQuitOnOpen = 1
+nmap ,f :Lexplore %:p:h<CR>
 
 """""""""""""""""""""""""""
 " RuboCop configure
@@ -180,6 +183,7 @@ let g:NERDSpaceDelims = 1
 """""""""""""""""""""""""""
 " vim-rspec configure
 """""""""""""""""""""""""""
+let g:rspec_command = '!bundle exec rspec {spec}'
 map ,t :call RunCurrentSpecFile()<CR>
 map ,s :call RunNearestSpec()<CR>
 map ,l :call RunLastSpec()<CR>
@@ -229,10 +233,12 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""
 " gruvbox configure
 """""""""""""""""""""""""""
-colorscheme gruvbox
+set termguicolors
 set background=dark
+let ayucolor="mirage"
+colorscheme ayu
 " set linenumber color to be dark grey
-highlight LineNr ctermfg=DarkGrey
+" highlight LineNr ctermfg=DarkGrey
 
 """""""""""""""""""""""""""
 " vim-better-whitespace configure
@@ -303,6 +309,11 @@ call textobj#user#plugin('ruby', {
 \     'pattern': ['it', 'end'],
 \     'select-a': 'ai',
 \     'select-i': 'ii',
+\   },
+\   'defend': {
+\     'pattern': ['def', 'end'],
+\     'select-a': 'af',
+\     'select-i': 'if',
 \   },
 \ })
 
@@ -378,4 +389,9 @@ nmap <silent> <C-K> <Plug>(coc-diagnostic-next)
 inoremap <C-c> <ESC>
 
 " netrw configuration
-let g:netrw_winsize = 25
+" let g:netrw_winsize = 25
+" let g:netrw_altv=1
+"
+" snipmate configuration
+let g:snipMate = { 'snippet_version' : 1 }
+nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
