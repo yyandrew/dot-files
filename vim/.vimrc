@@ -1,6 +1,5 @@
-" set the runtime path to include Vundle and initialize
+" set the runtime path to include vim-plug and initialize
 call plug#begin('~/.vim/plugged')
-" let Vundle manage Vundle, required
 Plug 'mileszs/ack.vim'
 Plug 'Yggdroot/indentLine'
 " Plug 'Valloric/YouCompleteMe'
