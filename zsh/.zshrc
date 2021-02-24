@@ -194,8 +194,9 @@ if [ -f '/Users/andrew/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/andrew/g
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/andrew/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/andrew/google-cloud-sdk/completion.zsh.inc'; fi
 
-eval "$(jenv init -)"
 export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 . $HOME/.asdf/asdf.sh
 alias vim='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
