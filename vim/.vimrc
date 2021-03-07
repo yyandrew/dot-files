@@ -398,4 +398,7 @@ nnoremap <Leader>e :vsplit ~/.vimrc<CR>
 " 输入@@q，之后按<space>自动转换成andrew@ekohe.com
 iabbrev @@q qqerqqer@126.com
 
-autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell
+autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
+
+" add delete method
+onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
