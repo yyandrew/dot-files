@@ -395,3 +395,5 @@ let g:snipMate = { 'snippet_version' : 1 }
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
 nnoremap <Leader>! :source ~/.vimrc<CR>
 nnoremap <Leader>e :vsplit ~/.vimrc<CR>
+" 输入@@q，之后按<space>自动转换成andrew@ekohe.com
+iabbrev @@q qqerqqer@126.com
