@@ -65,7 +65,6 @@ call plug#end()
 filetype plugin indent on    " required
 
 " Change the default leader
-let mapleader = "\\"
 " map \d as dd
 nnoremap <leader>d dd
 
@@ -394,3 +393,5 @@ inoremap <C-c> <ESC>
 " snipmate configuration
 let g:snipMate = { 'snippet_version' : 1 }
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
+nnoremap <Leader>! :source ~/.vimrc<CR>
+nnoremap <Leader>e :vsplit ~/.vimrc<CR>
