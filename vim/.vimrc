@@ -393,10 +393,18 @@ inoremap <C-c> <ESC>
 " snipmate configuration
 let g:snipMate = { 'snippet_version' : 1 }
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
+" Edit vimrc
 nnoremap <Leader>! :source ~/.vimrc<CR>
+" Reload vimrc
 nnoremap <Leader>e :vsplit ~/.vimrc<CR>
-" 输入@@q，之后按<space>自动转换成andrew@ekohe.com
-iabbrev @@q qqerqqer@126.com
+
+" Enable spell check
+nnoremap <Leader>c :setlocal spell spelllang=en_us<CR>
+" Disable spell check
+nnoremap <Leader>C :setlocal nospell<CR>
+
+" 输入q@，之后按<space>自动转换成andrew@ekohe.com
+iabbrev q@ qqerqqer@126.com
 
 autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 
