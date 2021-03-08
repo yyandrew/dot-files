@@ -268,6 +268,7 @@ let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 
 """""""""""""""""""""""""""
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>ac :Ack!<Space><cword>
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
