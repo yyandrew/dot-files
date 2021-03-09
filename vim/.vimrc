@@ -168,6 +168,19 @@ endfunction
 
 command! ClearRegisters call ClearRegisters()
 
+" Toggle quickfix
+nnoremap <Leader>q :call QuickfixToggle()<CR>
+let g:quickfix_is_open = 0
+function! QuickfixToggle()
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+  else
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
+
 """""""""""""""""""""""""""
 " auto-pairs configure
 """""""""""""""""""""""""""
@@ -267,7 +280,7 @@ let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 
 " ack configure
 """""""""""""""""""""""""""
 cnoreabbrev Ack Ack!
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <Leader>a<space> :Ack!<Space>
 nnoremap <Leader>ac :Ack!<Space><cword>
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 if executable('ag')
