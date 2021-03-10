@@ -387,10 +387,9 @@ let g:echodoc_enable_at_startup = 1
 let g:echodoc#type = 'floating'
 highlight link EchoDocFloat Pmenu
 " coc-prettier configuration
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
+noremap <leader>f :CocCommand prettier.formatFile<CR>
+vnoremap <leader>f <Plug>(coc-format-selected)
 " coc-eslint configuration
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
 
