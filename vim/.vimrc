@@ -64,17 +64,10 @@ Plug 'kkoomen/vim-doge'
 call plug#end()
 filetype plugin indent on    " required
 
-" Change the default leader
-" map \d as dd
-nnoremap <leader>d dd
-
 """""""""""""""""""""""""""
 " put your custom stuff here
 """""""""""""""""""""""""""
-nnoremap <F3> :set invpaste paste?<CR>
-imap <F3> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F3>
-set cul "设置光标所在行显示横线
+set cursorline "设置光标所在行显示横线
 set number " 显示行号
 set hlsearch " 高亮查询结果
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
@@ -83,7 +76,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 " switch between case sensitive and insensitive search
-nmap <F9> :set ignorecase! ignorecase?
+nmap <F9> :set ignorecase! ignorecase?<CR>
 " fix backspace/delete key problem
 set backspace=indent,eol,start
 " syntax highlighting and theme
@@ -102,16 +95,11 @@ set clipboard=unnamed
 let g:solarized_termcolors = 256
 
 """""""""""""""""""""""""""
-" vim-reek configure
-"""""""""""""""""""""""""""
-let g:reek_on_loading = 0
-
-"""""""""""""""""""""""""""
 " buffer configure
 """""""""""""""""""""""""""
 map  <C-l> :bn<CR>
 map  <C-h> :bp<CR>
-" map  <C-x> :bd<CR>
+map  <C-x> :bd<CR>
 map  <C-x>! :bd!<CR>
 
 """""""""""""""""""""""""""
@@ -229,19 +217,14 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 """""""""""""""""""""""""""
 " gitgutter config
 """""""""""""""""""""""""""
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 let g:gitgutter_preview_win_floating = 1
 
 """""""""""""""""""""""""""
 " Set path for find command
 """""""""""""""""""""""""""
 set path=$PWD/**
-
-"""""""""""""""""""""""""""
-" tagbar configure
-"""""""""""""""""""""""""""
-nnoremap <silent> <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""
 " gruvbox configure
@@ -390,6 +373,7 @@ highlight link EchoDocFloat Pmenu
 
 noremap <leader>f :CocCommand prettier.formatFile<CR>
 vnoremap <leader>f <Plug>(coc-format-selected)
+
 " coc-eslint configuration
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
 
