@@ -170,6 +170,10 @@ function! QuickfixToggle()
     let g:quickfix_is_open = 1
   endif
 endfunction
+" next quickfix window
+nnoremap cn :cnext<CR>
+" previous quickfix window
+nnoremap cp :cpre<CR>
 
 """""""""""""""""""""""""""
 " auto-pairs configure
@@ -213,6 +217,7 @@ let g:syntastic_check_on_w = 0
 " fugitive config
 """""""""""""""""""""""""""
 autocmd BufReadPost fugitive://* set bufhidden=delete
+nnoremap <Leader>gs :Gstatus<CR>
 
 """""""""""""""""""""""""""
 " gitgutter config
@@ -371,8 +376,8 @@ let g:echodoc#type = 'floating'
 highlight link EchoDocFloat Pmenu
 " coc-prettier configuration
 
-noremap <leader>f :CocCommand prettier.formatFile<CR>
-vnoremap <leader>f <Plug>(coc-format-selected)
+nmap <leader>F :CocCommand prettier.formatFile<CR>
+vmap <leader>f <Plug>(coc-format-selected)
 
 " coc-eslint configuration
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
