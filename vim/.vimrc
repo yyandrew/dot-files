@@ -94,6 +94,7 @@ set nofoldenable
 set clipboard=unnamed
 let g:solarized_termcolors = 256
 
+
 """""""""""""""""""""""""""
 " buffer configure
 """""""""""""""""""""""""""
@@ -291,14 +292,6 @@ autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
 """""""""""""""""""""""""""
-" multiple cursor configure
-"""""""""""""""""""""""""""
-let g:multi_cursor_select_all_word_key = '<Leader>m'
-" nnoremap <Leader>m :multi_cursor_select_all_word_key
-set re=1
-" let g:deoplete#enable_at_startup = 1
-
-"""""""""""""""""""""""""""
 " textobj configuration
 """""""""""""""""""""""""""
 call textobj#user#plugin('ruby', {
@@ -389,6 +382,16 @@ nmap <silent> <C-k> <Plug>(coc-diagnostic-next-error)
 nmap <silent> <C-K> <Plug>(coc-diagnostic-next)
 " Hide float window after the <C-c>
 inoremap <C-c> <ESC>
+
+" coc float window scrollable
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
 
 " netrw configuration
 " let g:netrw_winsize = 25
