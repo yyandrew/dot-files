@@ -75,6 +75,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+let mapleader = " "
 " switch between case sensitive and insensitive search
 nmap <F9> :set ignorecase! ignorecase?<CR>
 " fix backspace/delete key problem
