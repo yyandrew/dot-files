@@ -219,7 +219,7 @@ let g:syntastic_check_on_w = 0
 " fugitive config
 """""""""""""""""""""""""""
 autocmd BufReadPost fugitive://* set bufhidden=delete
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 
 """""""""""""""""""""""""""
 " gitgutter config
