@@ -254,7 +254,7 @@ nmap ,w :StripWhitespace<CR>
 " nmap <Leader> f :ALEFix<CR>
 
 " Remove search highlight
-nnoremap <Leader><space> :noh<CR>
+nnoremap <Leader>n :noh<CR>
 
 """""""""""""""""""""""""""
 " Omni completion
@@ -405,6 +405,8 @@ nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
 nnoremap <Leader>! :source ~/.vimrc<CR>
 " Reload vimrc
 nnoremap <Leader>e :vsplit ~/.vimrc<CR>
+" Save current file
+nnoremap <Leader>s :w<CR>
 
 " Enable spell check
 nnoremap <Leader>c :setlocal spell spelllang=en_us<CR>
