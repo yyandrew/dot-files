@@ -394,6 +394,9 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
   vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
+" Coc outline
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+
 " netrw configuration
 " let g:netrw_winsize = 25
 " let g:netrw_altv=1
