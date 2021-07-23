@@ -12,7 +12,6 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
-Plug 'garbas/vim-snipmate'
 " Surround your code :)
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
@@ -34,7 +33,8 @@ Plug 'slim-template/vim-slim'
 " Plug 'majutsushi/tagbar'
 Plug 'rhysd/git-messenger.vim'
 Plug 'tpope/vim-repeat'
-" Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
+Plug 'SirVer/ultisnips'
 " Plug 'Quramy/tsuquyomi'
 " Plug 'vimwiki/vimwiki'
 Plug 'dart-lang/dart-vim-plugin'
@@ -423,3 +423,5 @@ autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 
 " add delete method
 onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
+
+let g:python3_host_prog='/usr/local/bin/python3'
