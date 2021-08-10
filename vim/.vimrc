@@ -423,5 +423,3 @@ autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 
 " add delete method
 onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
-
-let g:python3_host_prog='/usr/local/bin/python3'
