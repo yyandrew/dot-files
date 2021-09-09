@@ -99,10 +99,10 @@ let g:solarized_termcolors = 256
 """""""""""""""""""""""""""
 " buffer configure
 """""""""""""""""""""""""""
-map  <C-l> :bn<CR>
-map  <C-h> :bp<CR>
 map  <C-x> :bd<CR>
 map  <C-x>! :bd!<CR>
+map  <Leader>l :bn<CR>
+map  <Leader>h :bp<CR>
 
 """""""""""""""""""""""""""
 " airline configure
