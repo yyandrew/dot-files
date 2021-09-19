@@ -60,6 +60,10 @@ Plug 'Shougo/echodoc.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-abolish'
 Plug 'kkoomen/vim-doge'
+if has('nvim')
+  Plug 'kyazdani42/nvim-web-devicons' " for file icons
+  Plug 'kyazdani42/nvim-tree.lua'
+endif
 
 call plug#end()
 filetype plugin indent on    " required
@@ -99,10 +103,10 @@ let g:solarized_termcolors = 256
 """""""""""""""""""""""""""
 " buffer configure
 """""""""""""""""""""""""""
-map  <C-x> :bd<CR>
-map  <C-x>! :bd!<CR>
 map  <Leader>l :bn<CR>
 map  <Leader>h :bp<CR>
+map  <Leader>x :bd<CR>
+map  <Leader>x! :bd!<CR>
 
 """""""""""""""""""""""""""
 " airline configure
@@ -132,14 +136,12 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let MRU_Auto_Close = 0
 
 """""""""""""""""""""""""""
-" netrw configure
+" nvim-tree configure
 """""""""""""""""""""""""""
-let g:netrw_banner = 0
-let g:netrw_winsize = 30
-" F2 open/close netrw
-map <F2> :Lexplore<CR>
+" F2 open/close nvim-tree
+map <F2> :NvimTreeToggle<CR>
 " Reveal file in tree
-nmap ,f :Lexplore %:p:h<CR>
+nmap ,f :NvimTreeFindFile<CR>
 
 """""""""""""""""""""""""""
 " RuboCop configure
@@ -397,11 +399,6 @@ endif
 " Coc outline
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 
-" netrw configuration
-" let g:netrw_winsize = 25
-" let g:netrw_altv=1
-"
-" snipmate configuration
 let g:snipMate = { 'snippet_version' : 1 }
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
 " Edit vimrc
