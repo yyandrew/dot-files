@@ -357,6 +357,10 @@ let g:typescript_indent_disable = 1
 " ctags
 """""""""""""""""""""""""""
 nmap ,c :!ctags %<CR>
+"""""""""""""""""""""""""""
+" yank current file path to system clipboard
+"""""""""""""""""""""""""""
+nmap ,y :let @+=@%<CR>
 " Press Ctrl + i to open tags selector
 
 " Add LanguageClient-neovim plugin to vim/neovim runtimepath
