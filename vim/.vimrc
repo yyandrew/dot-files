@@ -138,6 +138,9 @@ let MRU_Auto_Close = 0
 """""""""""""""""""""""""""
 " nvim-tree configure
 """""""""""""""""""""""""""
+lua << EOF
+require'nvim-tree'.setup {}
+EOF
 " F2 open/close nvim-tree
 map <F2> :NvimTreeToggle<CR>
 " Reveal file in tree
@@ -322,6 +325,7 @@ call textobj#user#plugin('ruby', {
 nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
 " Ctrl + e open buffers
 nmap <C-e> :Buffers<CR>
+nmap <C-i> :Snippets<CR>
 " Press Ctrl + e twice to open previous Buffer
 let g:fzf_action = { 'ctrl-e': 'edit' }
 if has('nvim')
