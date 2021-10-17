@@ -325,7 +325,7 @@ call textobj#user#plugin('ruby', {
 nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
 " Ctrl + e open buffers
 nmap <C-e> :Buffers<CR>
-nmap <C-i> :Snippets<CR>
+nmap ,i :Snippets<CR>
 " Press Ctrl + e twice to open previous Buffer
 let g:fzf_action = { 'ctrl-e': 'edit' }
 if has('nvim')
