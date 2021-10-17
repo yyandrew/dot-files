@@ -1,0 +1,17 @@
+[user]
+  email = qqerqqer@126.com
+  name = lq201
+# [http]
+        # proxy = socks5://127.0.0.1:7022
+# [https]
+        #proxy = socks5://127.0.0.1:7022
+[push]
+  default = current
+[core]
+  editor = nvim
+[difftool]
+  prompt = true
+[diff]
+  tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
