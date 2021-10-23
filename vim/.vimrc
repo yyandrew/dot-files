@@ -14,10 +14,15 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'honza/vim-snippets'
 " Surround your code :)
 Plug 'tpope/vim-surround'
-Plug 'ntpeters/vim-better-whitespace'
+" Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-rails'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
+if has('nvim') || has('patch-8.0.902')
+  Plug 'mhinz/vim-signify'
+else
+  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
+endif
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-bundler'
 Plug 'jiangmiao/auto-pairs'
@@ -93,12 +98,21 @@ let g:Powerline_symbols = 'fancy'
 let g:vim_markdown_folding_disabled=1
 " groups of lines with the same indent form a fold
 set foldmethod=indent
+" let javaScript_fold=1
 " disable folding but sometimes I need it
-set nofoldenable
+set foldenable
+set foldlevelstart=10
 " make all yanking/deleting operations automatically copy to the system clipboard
 set clipboard=unnamed
 let g:solarized_termcolors = 256
 
+" 设置 swap 文件的目录
+set directory=$HOME/.vim/swp//
+
+" highlight trailing whitespace
+match ErrorMsg '\s\+$'
+" remove trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
 
 """""""""""""""""""""""""""
 " buffer configure
@@ -239,14 +253,16 @@ let g:gitgutter_preview_win_floating = 1
 set path=$PWD/**
 
 """""""""""""""""""""""""""
-" gruvbox configure
+" colorscheme configure
 """""""""""""""""""""""""""
+colorscheme desert
+
 set termguicolors
 set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+" let ayucolor="mirage"
+" colorscheme ayu
 " set linenumber color to be dark grey
-" highlight LineNr ctermfg=DarkGrey
+highlight LineNr ctermfg=DarkGrey
 
 """""""""""""""""""""""""""
 " vim-better-whitespace configure
