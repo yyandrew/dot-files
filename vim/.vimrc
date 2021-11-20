@@ -65,6 +65,7 @@ if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons' " for file icons
   Plug 'kyazdani42/nvim-tree.lua'
 endif
+Plug 'shime/vim-livedown'
 
 call plug#end()
 filetype plugin indent on    " required
@@ -441,3 +442,6 @@ autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 
 " add delete method
 onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
+" shime/vim-livedown
+nmap gm :LivedownToggle<CR>
+let g:livedown_browser = 'firefox'
