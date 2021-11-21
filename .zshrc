@@ -57,7 +57,7 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions history-substring-search vi-mode)
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -71,7 +71,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -115,18 +115,13 @@ alias git-ca='git commit --amend'
 alias git-l='git log'
 alias git-ud='git checkout develop && git pull origin develop;'
 alias git-so='git remote show origin'
+alias git-co='git checkout --orphan'
 
 # capistrano
 alias cap-bd='cap backup deploy'
 alias cap-sd='cap staging deploy'
 alias cap-dd='cap develop deploy'
 alias cap-pd='cap production deploy'
-
-# rvm
-alias rvm-gl='rvm gemset list'
-alias rvm-gr='rvm gemset remove'
-alias rvm-ud='rvm use default'
-alias rvm-u='rvm use'
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
