@@ -53,7 +53,6 @@ Plug 'Shougo/vimproc.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'Shougo/echodoc.vim'
@@ -252,12 +251,11 @@ set path=$PWD/**
 """""""""""""""""""""""""""
 " colorscheme configure
 """""""""""""""""""""""""""
-colorscheme desert
+colorscheme onedark
 
-set termguicolors
-set background=dark
+" set termguicolors
+" set background=dark
 " let ayucolor="mirage"
-" colorscheme ayu
 " set linenumber color to be dark grey
 highlight LineNr ctermfg=DarkGrey
 
