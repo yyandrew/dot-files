@@ -443,3 +443,4 @@ onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
 
 " shime/vim-livedown
 nmap gm :LivedownToggle<CR>
+let g:livedown_browser = 'firefox'
