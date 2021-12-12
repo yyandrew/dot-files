@@ -74,6 +74,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""
 set cursorline "设置光标所在行显示横线
 set number " 显示行号
+set title " 设置窗口的标题为当前打开文件路径
 set hlsearch " 高亮查询结果
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
 " convert tabs to spaces
