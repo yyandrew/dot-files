@@ -90,8 +90,6 @@ let mapleader = " "
 nmap <F9> :set ignorecase! ignorecase?<CR>
 " fix backspace/delete key problem
 set backspace=indent,eol,start
-" syntax highlighting and theme
-syntax on
 " to display the status line always
 set laststatus=2
 " make sure the fancy symbols always display
@@ -99,13 +97,12 @@ let g:Powerline_symbols = 'fancy'
 let g:vim_markdown_folding_disabled=1
 " groups of lines with the same indent form a fold
 set foldmethod=indent
-" let javaScript_fold=1
 " disable folding but sometimes I need it
 set foldenable
 set foldlevelstart=10
 " make all yanking/deleting operations automatically copy to the system clipboard
 set clipboard=unnamed
-let g:solarized_termcolors = 256
+" let g:solarized_termcolors = 256
 
 " 设置 swap 文件的目录
 set directory=$HOME/.vim/swp//
@@ -114,12 +111,13 @@ set directory=$HOME/.vim/swp//
 match ErrorMsg '\s\+$'
 " remove trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
+" Make search result at middle of screen
+nnoremap n nzz
+nnoremap N Nzz
 
 """""""""""""""""""""""""""
 " buffer configure
 """""""""""""""""""""""""""
-map  <Leader>l :bn<CR>
-map  <Leader>h :bp<CR>
 map  <Leader>x :bd<CR>
 map  <Leader>x! :bd!<CR>
 
@@ -244,14 +242,8 @@ nnoremap <Leader>gs :Git<CR>
 """""""""""""""""""""""""""
 " gitgutter config
 """""""""""""""""""""""""""
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
 let g:gitgutter_preview_win_floating = 1
 
-"""""""""""""""""""""""""""
-" Set path for find command
-"""""""""""""""""""""""""""
-set path=$PWD/**
 
 """""""""""""""""""""""""""
 " colorscheme configure
@@ -264,16 +256,6 @@ colorscheme onedark
 " set linenumber color to be dark grey
 highlight LineNr ctermfg=DarkGrey
 
-"""""""""""""""""""""""""""
-" vim-better-whitespace configure
-"""""""""""""""""""""""""""
-nmap ,w :StripWhitespace<CR>
-
-
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-" nmap <Leader> f :ALEFix<CR>
-
 " Remove search highlight
 nnoremap <Leader>n :noh<CR>
 
@@ -281,8 +263,8 @@ nnoremap <Leader>n :noh<CR>
 " Omni completion
 """""""""""""""""""""""""""
 " Provides smart autocompletion for programs
-set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone,noinsert
+" set omnifunc=syntaxcomplete#Complete
+" set completeopt=longest,menuone,noinsert
 
 """""""""""""""""""""""""""
 " vimwiki configure
@@ -302,37 +284,37 @@ endif
 let g:ackhighlight = 1
 
 
-let &t_SI = "\e[3 q"
-let &t_EI = "\e[2 q"
+" let &t_SI = "\e[3 q"
+" let &t_EI = "\e[2 q"
 
 """""""""""""""""""""""""""
 " optional reset cursor on start:
 """""""""""""""""""""""""""
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
+" augroup myCmds
+" au!
+" autocmd VimEnter * silent !echo -ne "\e[2 q"
+" augroup END
 
 """""""""""""""""""""""""""
 " textobj configuration
 """""""""""""""""""""""""""
-call textobj#user#plugin('ruby', {
-\   'doend': {
-\     'pattern': ['do', 'end'],
-\     'select-a': 'ad',
-\     'select-i': 'id',
-\   },
-\   'itend': {
-\     'pattern': ['it', 'end'],
-\     'select-a': 'ai',
-\     'select-i': 'ii',
-\   },
-\   'defend': {
-\     'pattern': ['def', 'end'],
-\     'select-a': 'af',
-\     'select-i': 'if',
-\   },
-\ })
+" call textobj#user#plugin('ruby', {
+" \   'doend': {
+" \     'pattern': ['do', 'end'],
+" \     'select-a': 'ad',
+" \     'select-i': 'id',
+" \   },
+" \   'itend': {
+" \     'pattern': ['it', 'end'],
+" \     'select-a': 'ai',
+" \     'select-i': 'ii',
+" \   },
+" \   'defend': {
+" \     'pattern': ['def', 'end'],
+" \     'select-a': 'af',
+" \     'select-i': 'if',
+" \   },
+" \ })
 
 """""""""""""""""""""""""""
 " fzf-vim
@@ -352,12 +334,6 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-v': 'vsplit' }
 let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
-
-"""""""""""""""""""""""""""
-" tldr
-"""""""""""""""""""""""""""
-let g:tldr_directory_path = '~/.cache/tldr'
-let g:tldr_language = 'zh'
 
 """""""""""""""""""""""""""
 " vim-go
@@ -382,15 +358,6 @@ nmap ,c :!ctags %<CR>
 " yank current file path to system clipboard
 """""""""""""""""""""""""""
 nmap ,y :let @+=@%<CR>
-" Press Ctrl + i to open tags selector
-
-" Add LanguageClient-neovim plugin to vim/neovim runtimepath
-" set runtimepath+=~/.vim-plugins/LanguageClient-neovim
-" nnoremap <silent> ,K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" let g:LanguageClient_serverCommands = {
-  " \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-  " \ }
 " echodoc configuration
 let g:echodoc_enable_at_startup = 1
 let g:echodoc#type = 'floating'
@@ -422,7 +389,7 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 endif
 
 " Coc outline
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>o :<C-u>CocList outline<cr>
 
 let g:snipMate = { 'snippet_version' : 1 }
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
@@ -437,7 +404,9 @@ nnoremap <Leader>s :w<CR>
 nnoremap <Leader>c :setlocal spell spelllang=en_us<CR>
 " Disable spell check
 nnoremap <Leader>C :setlocal nospell<CR>
-
+" Move selected sections
+vnoremap ,j :m '>+1<CR>gv=gv
+vnoremap ,k :m '<-2<CR>gv=gv
 " 输入q@，之后按<space>自动转换成andrew@ekohe.com
 iabbrev q@ qqerqqer@126.com
 
