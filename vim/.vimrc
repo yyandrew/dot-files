@@ -1,70 +1,56 @@
+let mapleader = " "
 " set the runtime path to include vim-plug and initialize
 call plug#begin('~/.vim/plugged')
-Plug 'mileszs/ack.vim'
-Plug 'Yggdroot/indentLine'
-" Plug 'Valloric/YouCompleteMe'
-Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/nerdtree'
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'xolox/vim-misc'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'honza/vim-snippets'
-" Surround your code :)
-Plug 'tpope/vim-surround'
-" Plug 'ntpeters/vim-better-whitespace'
-Plug 'tpope/vim-rails'
-Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
-if has('nvim') || has('patch-8.0.902')
-  Plug 'mhinz/vim-signify'
-else
-  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-endif
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-bundler'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ngmy/vim-rubocop'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'mattn/emmet-vim'
-Plug 'thoughtbot/vim-rspec'
-Plug 'fatih/vim-go'
-Plug 'vim-syntastic/syntastic'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'rhysd/git-messenger.vim'
-Plug 'tpope/vim-repeat'
-Plug 'mxw/vim-jsx'
-Plug 'SirVer/ultisnips'
+source ~/.config/nvim/indentLine.vim
+source ~/.config/nvim/ack.vim
+source ~/.config/nvim/nerdcommenter.vim
+source ~/.config/nvim/tlib_vim.vim
+source ~/.config/nvim/vim-addon-mw-utils.vim
+source ~/.config/nvim/vim-misc.vim
+source ~/.config/nvim/vim-buffergator.vim
+source ~/.config/nvim/vim-easymotion.vim
+source ~/.config/nvim/vim-multiple-cursors.vim
+source ~/.config/nvim/vim-snippets.vim
+source ~/.config/nvim/vim-surround.vim
+source ~/.config/nvim/vim-rails.vim
+source ~/.config/nvim/vim-airline.vim
+source ~/.config/nvim/vim-fugitive.vim
+source ~/.config/nvim/vim-signify.vim
+source ~/.config/nvim/vim-tabular.vim
+source ~/.config/nvim/vim-bundln.vim
+source ~/.config/nvim/auto-pairs.vim
+source ~/.config/nvim/vim-rubocop.vim
+source ~/.config/nvim/vim-numbertoggle.vim
+source ~/.config/nvim/emmet-vim.vim
+source ~/.config/nvim/vim-rspec.vim
+source ~/.config/nvim/vim-go.vim
+source ~/.config/nvim/syntastic.vim
+source ~/.config/nvim/editorconfig-vim.vim
+source ~/.config/nvim/vim-gitgutter.vim
+source ~/.config/nvim/git-messenger.vim
+source ~/.config/nvim/vim-repeat.vim
+source ~/.config/nvim/vim-jsx.vim
+source ~/.config/nvim/ultisnips.vim
 " Plug 'vimwiki/vimwiki'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'tpope/vim-endwise'
-Plug 'danchoi/ri.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
-Plug 'kana/vim-textobj-user'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'wlemuel/vim-tldr'
-Plug 'Shougo/vimproc.vim'
+source ~/.config/nvim/dart-vim-plugin.vim
+source ~/.config/nvim/vim-endwise.vim
+source ~/.config/nvim/ri.vim
+source ~/.config/nvim/typescript-vim.vim
+source ~/.config/nvim/vim-tsx.vim
+source ~/.config/nvim/vim-textobj-user.vim
+source ~/.config/nvim/fzf.vim
+source ~/.config/nvim/vim-tldr.vim
+source ~/.config/nvim/vimproc.vim
 " colorscheme
-Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'dracula/vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'Shougo/echodoc.vim'
+source ~/.config/nvim/colorscheme.vim
+source ~/.config/nvim/coc.vim
+source ~/.config/nvim/echodoc.vim
 " Plug 'vim-scripts/YankRing.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'tpope/vim-abolish'
-Plug 'kkoomen/vim-doge'
-if has('nvim')
-  Plug 'kyazdani42/nvim-web-devicons' " for file icons
-  Plug 'kyazdani42/nvim-tree.lua'
-endif
-Plug 'shime/vim-livedown'
+source ~/.config/nvim/vim-peekaboo.vim
+source ~/.config/nvim/vim-abolish.vim
+source ~/.config/nvim/vim-dogo.vim
+source ~/.config/nvim/nvim-tree.vim
+source ~/.config/nvim/vim-livedown.vim
 
 call plug#end()
 filetype plugin indent on    " required
@@ -85,7 +71,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-let mapleader = " "
 " switch between case sensitive and insensitive search
 nmap <F9> :set ignorecase! ignorecase?<CR>
 " fix backspace/delete key problem
@@ -122,48 +107,9 @@ map  <Leader>x :bd<CR>
 map  <Leader>x! :bd!<CR>
 
 """""""""""""""""""""""""""
-" airline configure
-"""""""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
-
-"""""""""""""""""""""""""""
-" indentLine configure
-"""""""""""""""""""""""""""
-" enable indentLine
-let g:indentLine_char = '┊'
-let g:indentLine_enabled = 1
-" Specify how much indent level do you want to use for(default is 10)
-let g:indentLine_indentLevel = 20
-
-"""""""""""""""""""""""""""
-" easymotion configure
-"""""""""""""""""""""""""""
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-
-"""""""""""""""""""""""""""
 " MRU configure
 """""""""""""""""""""""""""
 let MRU_Auto_Close = 0
-
-"""""""""""""""""""""""""""
-" nvim-tree configure
-"""""""""""""""""""""""""""
-lua << EOF
-require'nvim-tree'.setup {}
-EOF
-" F2 open/close nvim-tree
-map <F2> :NvimTreeToggle<CR>
-" Reveal file in tree
-nmap ,f :NvimTreeFindFile<CR>
-
-"""""""""""""""""""""""""""
-" RuboCop configure
-"""""""""""""""""""""""""""
-" run RuboCop
-nmap ,r :RuboCop -a<CR>
 
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
@@ -196,65 +142,10 @@ nnoremap cn :cnext<CR>
 nnoremap cp :cpre<CR>
 
 """""""""""""""""""""""""""
-" auto-pairs configure
-"""""""""""""""""""""""""""
-let g:AutoPairsMapSpace = 0
-
-"""""""""""""""""""""""""""
-" nerdcommenter configure
-"""""""""""""""""""""""""""
-let g:NERDSpaceDelims = 1
-
-"""""""""""""""""""""""""""
-" vim-rspec configure
-"""""""""""""""""""""""""""
-let g:rspec_command = '!bundle exec rspec {spec}'
-map ,t :call RunCurrentSpecFile()<CR>
-map ,s :call RunNearestSpec()<CR>
-map ,l :call RunLastSpec()<CR>
-map ,a :call RunAllSpecs()<CR>
-
-
-"""""""""""""""""""""""""""
 " clang
 """""""""""""""""""""""""""
 map <F10> :w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>
 
-"""""""""""""""""""""""""""
-" syntax checks
-"""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_w = 0
-
-"""""""""""""""""""""""""""
-" fugitive config
-"""""""""""""""""""""""""""
-autocmd BufReadPost fugitive://* set bufhidden=delete
-nnoremap <Leader>gs :Git<CR>
-
-"""""""""""""""""""""""""""
-" gitgutter config
-"""""""""""""""""""""""""""
-let g:gitgutter_preview_win_floating = 1
-
-
-"""""""""""""""""""""""""""
-" colorscheme configure
-"""""""""""""""""""""""""""
-colorscheme onedark
-
-" set termguicolors
-" set background=dark
-" let ayucolor="mirage"
-" set linenumber color to be dark grey
-highlight LineNr ctermfg=DarkGrey
 
 " Remove search highlight
 nnoremap <Leader>n :noh<CR>
@@ -270,19 +161,6 @@ nnoremap <Leader>n :noh<CR>
 " vimwiki configure
 """""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh', 'bash': 'bash'}}]
-
-"""""""""""""""""""""""""""
-" ack configure
-"""""""""""""""""""""""""""
-cnoreabbrev Ack Ack!
-nnoremap <Leader>a<space> :Ack!<Space>
-nnoremap <Leader>ac :Ack!<Space><cword>
-" let g:ackprg = 'ag --nogroup --nocolor --column'
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-let g:ackhighlight = 1
-
 
 " let &t_SI = "\e[3 q"
 " let &t_EI = "\e[2 q"
@@ -316,39 +194,6 @@ let g:ackhighlight = 1
 " \   },
 " \ })
 
-"""""""""""""""""""""""""""
-" fzf-vim
-"""""""""""""""""""""""""""
-" Ctrl + p open Git files
-nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
-" Ctrl + e open buffers
-nmap <C-e> :Buffers<CR>
-nmap ,i :Snippets<CR>
-" Press Ctrl + e twice to open previous Buffer
-let g:fzf_action = { 'ctrl-e': 'edit' }
-if has('nvim')
-  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-endif
-
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-v': 'vsplit' }
-let $FZF_DEFAULT_OPTS="--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
-
-"""""""""""""""""""""""""""
-" vim-go
-"""""""""""""""""""""""""""
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_doc_popup_window = 1
-au FileType go nmap <leader>i <Plug>(go-info)
-au FileType go nmap <leader>d <Plug>(go-describe)
-au FileType go nmap <leader>r <Plug>(go-run)
-
-"""""""""""""""""""""""""""
-" typescript-vim
-"""""""""""""""""""""""""""
-let g:typescript_indent_disable = 1
 
 """""""""""""""""""""""""""
 " ctags
@@ -358,40 +203,7 @@ nmap ,c :!ctags %<CR>
 " yank current file path to system clipboard
 """""""""""""""""""""""""""
 nmap ,y :let @+=@%<CR>
-" echodoc configuration
-let g:echodoc_enable_at_startup = 1
-let g:echodoc#type = 'floating'
-highlight link EchoDocFloat Pmenu
-" coc-prettier configuration
-
-nmap <leader>F :CocCommand prettier.formatFile<CR>
-vmap <leader>f <Plug>(coc-format-selected)
-
-" coc-eslint configuration
-command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
-
-" go to difinition
-nmap <silent> gd <Plug>(coc-definition)
-" coc error
-nmap <silent> <C-k> <Plug>(coc-diagnostic-next-error)
-nmap <silent> <C-K> <Plug>(coc-diagnostic-next)
-" Hide float window after the <C-c>
-inoremap <C-c> <ESC>
-
-" coc float window scrollable
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
-
-" Coc outline
-nnoremap <silent><nowait> <space>o :<C-u>CocList outline<cr>
-
-let g:snipMate = { 'snippet_version' : 1 }
+let g:python3_host_prog="/usr/bin/python3"
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
 " Edit vimrc
 nnoremap <Leader>! :source ~/.vimrc<CR>
@@ -415,6 +227,15 @@ autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 " add delete method
 onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
 
-" shime/vim-livedown
-nmap gm :LivedownToggle<CR>
-let g:livedown_browser = 'firefox'
+" If no file find when try to jump then create a new one
+map gf :edit <cfile><CR>
+
+" nvim-tree configuration
+lua << EOF
+require'nvim-tree'.setup {}
+EOF
+" F2 open/close nvim-tree
+map <F2> :NvimTreeToggle<CR>
+" Reveal file in tree
+nmap ,f :NvimTreeFindFile<CR>
+
