@@ -35,7 +35,6 @@ source ~/.config/nvim/ultisnips.vim
 source ~/.config/nvim/dart-vim-plugin.vim
 source ~/.config/nvim/vim-endwise.vim
 source ~/.config/nvim/ri.vim
-source ~/.config/nvim/typescript-vim.vim
 source ~/.config/nvim/vim-tsx.vim
 source ~/.config/nvim/vim-textobj-user.vim
 source ~/.config/nvim/fzf.vim
@@ -51,6 +50,8 @@ source ~/.config/nvim/vim-abolish.vim
 source ~/.config/nvim/vim-dogo.vim
 source ~/.config/nvim/nvim-tree.vim
 source ~/.config/nvim/vim-livedown.vim
+source ~/.config/nvim/nvim-lspconfig.vim
+source ~/.config/nvim/nvim-lspconfig.vim
 
 call plug#end()
 filetype plugin indent on    " required
@@ -230,12 +231,9 @@ onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
 " If no file find when try to jump then create a new one
 map gf :edit <cfile><CR>
 
-" nvim-tree configuration
-lua << EOF
-require'nvim-tree'.setup {}
-EOF
 " F2 open/close nvim-tree
 map <F2> :NvimTreeToggle<CR>
 " Reveal file in tree
 nmap ,f :NvimTreeFindFile<CR>
 
+lua require('init')
