@@ -1,2 +1,1 @@
 Plug 'neovim/nvim-lspconfig'
-

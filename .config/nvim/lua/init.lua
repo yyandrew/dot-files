@@ -1,6 +1,7 @@
 -- nvim-tree configuration
 require'nvim-tree'.setup {}
-require'lspconfig'.rls.setup{
+local nvim_lsp = require('lspconfig')
+nvim_lsp.rls.setup{
   settings = {
     rust = {
       unstable_features = true,
@@ -10,4 +11,6 @@ require'lspconfig'.rls.setup{
     },
   },
 }
-require'lspconfig'.tsserver.setup{}
+nvim_lsp.tsserver.setup{}
+nvim_lsp.solargraph.setup{}
+require('keymappings')
