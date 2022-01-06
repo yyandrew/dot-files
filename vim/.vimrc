@@ -42,7 +42,7 @@ source ~/.config/nvim/vim-tldr.vim
 source ~/.config/nvim/vimproc.vim
 " colorscheme
 source ~/.config/nvim/colorscheme.vim
-source ~/.config/nvim/coc.vim
+" source ~/.config/nvim/coc.vim
 source ~/.config/nvim/echodoc.vim
 " Plug 'vim-scripts/YankRing.vim'
 source ~/.config/nvim/vim-peekaboo.vim
@@ -51,7 +51,8 @@ source ~/.config/nvim/vim-dogo.vim
 source ~/.config/nvim/nvim-tree.vim
 source ~/.config/nvim/vim-livedown.vim
 source ~/.config/nvim/nvim-lspconfig.vim
-source ~/.config/nvim/nvim-lspconfig.vim
+source ~/.config/nvim/nvim-treesitter.vim
+source ~/.config/nvim/neoformat.vim
 
 call plug#end()
 filetype plugin indent on    " required
