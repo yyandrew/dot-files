@@ -1,15 +1,8 @@
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" coc-prettier configuration
-
-nmap <leader>F :CocCommand prettier.formatFile<CR>
-vmap <leader>f <Plug>(coc-format-selected)
-
 " coc-eslint configuration
 command! -nargs=0 Eslint :CocCommand eslint.executeAutofix
 
-" go to difinition
-nmap <silent> gd <Plug>(coc-definition)
 " coc error
 nmap <silent> <C-k> <Plug>(coc-diagnostic-next-error)
 nmap <silent> <C-K> <Plug>(coc-diagnostic-next)

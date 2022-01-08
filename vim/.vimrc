@@ -52,7 +52,7 @@ source ~/.config/nvim/nvim-tree.vim
 source ~/.config/nvim/vim-livedown.vim
 source ~/.config/nvim/nvim-lspconfig.vim
 source ~/.config/nvim/nvim-treesitter.vim
-source ~/.config/nvim/neoformat.vim
+source ~/.config/nvim/vim-prettier.vim
 
 call plug#end()
 filetype plugin indent on    " required
