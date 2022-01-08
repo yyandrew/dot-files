@@ -11,6 +11,12 @@ nvim_lsp.rls.setup{
     },
   },
 }
-nvim_lsp.tsserver.setup{}
+nvim_lsp.tsserver.setup{
+  init_options = {
+    preferences = {
+      disableSuggestions = true,
+    }
+  }
+}
 nvim_lsp.solargraph.setup{}
 require('keymappings')

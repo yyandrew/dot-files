@@ -42,7 +42,7 @@ source ~/.config/nvim/vim-tldr.vim
 source ~/.config/nvim/vimproc.vim
 " colorscheme
 source ~/.config/nvim/colorscheme.vim
-" source ~/.config/nvim/coc.vim
+source ~/.config/nvim/coc.vim
 source ~/.config/nvim/echodoc.vim
 " Plug 'vim-scripts/YankRing.vim'
 source ~/.config/nvim/vim-peekaboo.vim
