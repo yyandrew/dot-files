@@ -53,6 +53,7 @@ source ~/.config/nvim/vim-livedown.vim
 source ~/.config/nvim/nvim-lspconfig.vim
 source ~/.config/nvim/nvim-treesitter.vim
 source ~/.config/nvim/vim-prettier.vim
+source ~/.config/nvim/vim-rhubarb.vim
 
 call plug#end()
 filetype plugin indent on    " required
