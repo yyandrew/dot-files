@@ -1,5 +1,8 @@
 -- nvim-tree configuration
-require'nvim-tree'.setup {}
+require'nvim-tree'.setup {
+  disable_netrw = false,
+  hijack_netrw = true,
+}
 local nvim_lsp = require('lspconfig')
 nvim_lsp.rls.setup{
   settings = {
