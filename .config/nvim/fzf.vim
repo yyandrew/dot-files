@@ -3,11 +3,9 @@ Plug 'junegunn/fzf.vim'
 
 " Ctrl + p open Git files
 nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
-" Ctrl + e open buffers
-nmap <C-e> :Buffers<CR>
+" ,e open buffers
+nmap ,e :Buffers<CR>
 nmap ,i :Snippets<CR>
-" Press Ctrl + e twice to open previous Buffer
-let g:fzf_action = { 'ctrl-e': 'edit' }
 if has('nvim')
   let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 endif
