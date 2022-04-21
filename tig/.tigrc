@@ -1,3 +1,4 @@
 bind status + !git commit --amend
+set main-view-id-display = yes
 bind diff <C-f> :/^@@ # Jump to next (c)hunk
 bind diff <C-b> :?^@@ # Jump to previous (c)hunk

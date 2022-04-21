@@ -2,7 +2,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Ctrl + p open Git files
-nmap <C-p> :GFiles --cached --others --exclude-standard<CR>
+nmap ,p :GFiles --cached --others --exclude-standard<CR>
 " ,e open buffers
 nmap ,e :Buffers<CR>
 nmap ,i :Snippets<CR>
