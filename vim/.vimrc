@@ -239,3 +239,6 @@ map <F2> :NvimTreeToggle<CR>
 nmap ,f :NvimTreeFindFile<CR>
 
 lua require('init')
+" Make % jump between conflict
+packadd! matchit
+let b:match_words = '<<<<<<<:=======:>>>>>>>'
