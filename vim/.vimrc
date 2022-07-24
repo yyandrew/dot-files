@@ -22,7 +22,7 @@ source ~/.config/nvim/auto-pairs.vim
 source ~/.config/nvim/vim-rubocop.vim
 source ~/.config/nvim/vim-numbertoggle.vim
 source ~/.config/nvim/emmet-vim.vim
-source ~/.config/nvim/vim-rspec.vim
+" source ~/.config/nvim/vim-rspec.vim
 source ~/.config/nvim/vim-go.vim
 source ~/.config/nvim/syntastic.vim
 source ~/.config/nvim/editorconfig-vim.vim
@@ -243,3 +243,6 @@ lua require('init')
 " Make % jump between conflict
 packadd! matchit
 let b:match_words = '<<<<<<<:=======:>>>>>>>'
+
+" Save current session
+nmap ,s :mks!<CR>
