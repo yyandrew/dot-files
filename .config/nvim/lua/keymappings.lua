@@ -49,3 +49,6 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+nvim_lsp['gopls'].setup{
+  on_attach = on_attach,
+}

@@ -23,7 +23,6 @@ source ~/.config/nvim/vim-rubocop.vim
 source ~/.config/nvim/vim-numbertoggle.vim
 source ~/.config/nvim/emmet-vim.vim
 " source ~/.config/nvim/vim-rspec.vim
-source ~/.config/nvim/vim-go.vim
 source ~/.config/nvim/syntastic.vim
 source ~/.config/nvim/editorconfig-vim.vim
 source ~/.config/nvim/vim-gitgutter.vim
