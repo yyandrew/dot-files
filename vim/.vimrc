@@ -41,7 +41,7 @@ source ~/.config/nvim/vim-tldr.vim
 source ~/.config/nvim/vimproc.vim
 " colorscheme
 source ~/.config/nvim/colorscheme.vim
-source ~/.config/nvim/coc.vim
+" source ~/.config/nvim/coc.vim
 source ~/.config/nvim/echodoc.vim
 " Plug 'vim-scripts/YankRing.vim'
 source ~/.config/nvim/vim-peekaboo.vim
@@ -50,6 +50,7 @@ source ~/.config/nvim/vim-dogo.vim
 source ~/.config/nvim/nvim-tree.vim
 source ~/.config/nvim/vim-livedown.vim
 source ~/.config/nvim/nvim-lspconfig.vim
+source ~/.config/nvim/nvim-cmp.vim
 source ~/.config/nvim/nvim-treesitter.vim
 source ~/.config/nvim/vim-prettier.vim
 source ~/.config/nvim/vim-rhubarb.vim
@@ -158,7 +159,7 @@ nnoremap <Leader>n :noh<CR>
 """""""""""""""""""""""""""
 " Provides smart autocompletion for programs
 " set omnifunc=syntaxcomplete#Complete
-" set completeopt=longest,menuone,noinsert
+set completeopt=longest,menuone,noinsert
 
 """""""""""""""""""""""""""
 " vimwiki configure
