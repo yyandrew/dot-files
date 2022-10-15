@@ -207,7 +207,7 @@ nmap ,c :!ctags %<CR>
 " yank current file path to system clipboard
 """""""""""""""""""""""""""
 nmap ,y :let @+=@%<CR>
-let g:python3_host_prog="/usr/bin/python3"
+" let g:python3_host_prog="/home/andrew/.asdf/shims/python3"
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
 " Edit vimrc
 nnoremap <Leader>! :source ~/.vimrc<CR>
@@ -246,3 +246,5 @@ let b:match_words = '<<<<<<<:=======:>>>>>>>'
 
 " Save current session
 nmap ,s :mks!<CR>
+
+colorscheme onedark
