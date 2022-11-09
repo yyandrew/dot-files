@@ -62,21 +62,9 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""
 " put your custom stuff here
 """""""""""""""""""""""""""
-set cursorline "设置光标所在行显示横线
-set number " 显示行号
-set title " 设置窗口的标题为当前打开文件路径
-set hlsearch " 高亮查询结果
-set confirm " 提示没有保存文件
-set exrc " 每个项目有各自的配置文件
-set undofile " 开启session级undo记录
-set undodir=~/.vim/undodir
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
 " convert tabs to spaces
-set expandtab
-set shiftwidth=2
-set softtabstop=2
 " switch between case sensitive and insensitive search
-nmap <F9> :set ignorecase! ignorecase?<CR>
 " fix backspace/delete key problem
 set backspace=indent,eol,start
 " to display the status line always
@@ -216,10 +204,6 @@ nnoremap <Leader>e :vsplit ~/.vimrc<CR>
 " Save current file
 nnoremap <Leader>s :w<CR>
 
-" Enable spell check
-nnoremap <Leader>c :setlocal spell spelllang=en_us<CR>
-" Disable spell check
-nnoremap <Leader>C :setlocal nospell<CR>
 " Move selected sections
 vnoremap ,j :m '>+1<CR>gv=gv
 vnoremap ,k :m '<-2<CR>gv=gv
@@ -234,8 +218,6 @@ onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
 " If no file find when try to jump then create a new one
 map gf :edit <cfile><CR>
 
-" F2 open/close nvim-tree
-map <F2> :NvimTreeToggle<CR>
 " Reveal file in tree
 nmap ,f :NvimTreeFindFile<CR>
 
@@ -243,8 +225,5 @@ lua require('init')
 " Make % jump between conflict
 packadd! matchit
 let b:match_words = '<<<<<<<:=======:>>>>>>>'
-
-" Save current session
-nmap ,s :mks!<CR>
 
 colorscheme onedark

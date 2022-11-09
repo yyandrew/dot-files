@@ -117,3 +117,18 @@ nvim_lsp['gopls'].setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+local keymap = vim.keymap
+
+-- nvim-tree keymaps
+keymap.set('n', "<F2>", ":NvimTreeToggle<CR>")
+-- Enable spell check
+keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>')
+-- Disable spell check
+keymap.set('n', '<leader>C', ':setlocal nospell<CR>')
+
+-- 保存当前会话为缓存
+keymap.set('n', ',s', ':mks!<CR>')
+
+-- 忽略大小写
+keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>')
