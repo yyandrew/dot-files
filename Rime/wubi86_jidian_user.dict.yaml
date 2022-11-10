@@ -5,7 +5,7 @@ last_edit_time: "2021-08-07"
 dict_grouped: true # 词库管理应用识别：标记该码表为分组模式
 
 
-sort: original
+sort: by_weight
   # 码表的排序方式
   # by_weight 权重
   # original 原始顺序
@@ -28,6 +28,8 @@ sort: original
 老铁	ftqr
 手抓饼	rrqb
 不好意思	gbul
-不通	gice
+不通	gice	1
 技术栈	rssg
 副作用	gwet
+减重	udtg	1
+备孕	tleb 
