@@ -1,6 +1,7 @@
 -- nvim-tree configuration
 require'nvim-tree'.setup {}
 require('keymappings')
+require('options')
 local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable',
