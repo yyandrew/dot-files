@@ -248,3 +248,9 @@ let b:match_words = '<<<<<<<:=======:>>>>>>>'
 nmap ,s :mks!<CR>
 
 colorscheme onedark
+
+" esc键退出terminal模式
+tnoremap <Esc> <C-\><C-n>
+
+" 插入当前时间
+nnoremap <F5> "=strftime("%Y-%m-%d")<CR>P
