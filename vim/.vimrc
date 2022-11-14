@@ -66,19 +66,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*
 " convert tabs to spaces
 " switch between case sensitive and insensitive search
 " fix backspace/delete key problem
-set backspace=indent,eol,start
-" to display the status line always
-set laststatus=2
 " make sure the fancy symbols always display
 let g:Powerline_symbols = 'fancy'
 let g:vim_markdown_folding_disabled=1
-" groups of lines with the same indent form a fold
-set foldmethod=indent
-" disable folding but sometimes I need it
-set foldenable
-set foldlevelstart=10
-" make all yanking/deleting operations automatically copy to the system clipboard
-set clipboard=unnamed
+
 " let g:solarized_termcolors = 256
 
 " 设置 swap 文件的目录
@@ -91,12 +82,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Make search result at middle of screen
 nnoremap n nzz
 nnoremap N Nzz
-
-"""""""""""""""""""""""""""
-" buffer configure
-"""""""""""""""""""""""""""
-map  <Leader>x :bd<CR>
-map  <Leader>x! :bd!<CR>
 
 """""""""""""""""""""""""""
 " MRU configure
@@ -128,20 +113,11 @@ function! QuickfixToggle()
     let g:quickfix_is_open = 1
   endif
 endfunction
-" next quickfix window
-nnoremap cn :cnext<CR>
-" previous quickfix window
-nnoremap cp :cpre<CR>
 
-"""""""""""""""""""""""""""
-" clang
-"""""""""""""""""""""""""""
-map <F10> :w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>
-
-
-" Remove search highlight
-nnoremap <Leader>n :noh<CR>
-
+" 设置 swap 文件的目录
+set directory=$HOME/.vim/swp//
+" 设置undo文件夹
+set undodir=$HOME/.vim/undodir
 """""""""""""""""""""""""""
 " Omni completion
 """""""""""""""""""""""""""
@@ -187,14 +163,6 @@ let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 
 " \ })
 
 
-"""""""""""""""""""""""""""
-" ctags
-"""""""""""""""""""""""""""
-nmap ,c :!ctags %<CR>
-"""""""""""""""""""""""""""
-" yank current file path to system clipboard
-"""""""""""""""""""""""""""
-nmap ,y :let @+=@%<CR>
 " let g:python3_host_prog="/home/andrew/.asdf/shims/python3"
 nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
 " Edit vimrc
@@ -215,12 +183,6 @@ autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
 " add delete method
 onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
 
-" If no file find when try to jump then create a new one
-map gf :edit <cfile><CR>
-
-" Reveal file in tree
-nmap ,f :NvimTreeFindFile<CR>
-
 lua require('init')
 " Make % jump between conflict
 packadd! matchit
@@ -230,6 +192,3 @@ colorscheme onedark
 
 " esc键退出terminal模式
 tnoremap <Esc> <C-\><C-n>
-
-" 插入当前时间
-nnoremap <F5> "=strftime("%Y-%m-%d")<CR>P

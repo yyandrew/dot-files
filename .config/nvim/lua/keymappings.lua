@@ -80,18 +80,20 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', '<Leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<Leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<Leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<Leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  buf_set_keymap('n', '<Leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts)
+  buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  buf_set_keymap('n', '<Leader>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts)
+  buf_set_keymap('n', '<Leader>dd', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
+  buf_set_keymap('n', '<Leader>de', '<cmd>lua vim.diagnostic.enable()<CR>', opts)
 
 end
 
@@ -120,15 +122,24 @@ nvim_lsp['gopls'].setup{
 
 local keymap = vim.keymap
 
--- nvim-tree keymaps
-keymap.set('n', "<F2>", ":NvimTreeToggle<CR>")
--- Enable spell check
-keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>')
--- Disable spell check
-keymap.set('n', '<leader>C', ':setlocal nospell<CR>')
+keymap.set('n', "<F2>", ":NvimTreeToggle<CR>") -- nvim-tree keymaps
+keymap.set('n', ',f', ':NvimTreeFindFile<CR>') -- Reveal file in tree
+keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>') -- Enable spell check
+keymap.set('n', '<leader>C', ':setlocal nospell<CR>') -- Disable spell check
+keymap.set('n', ',s', ':mks!<CR>') -- 保存当前会话为缓存
+keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>') -- 忽略大小写
+keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P') -- 插入当前时间
+keymap.set('n', 'gf', ':edit <cfile><CR>') -- If no file find when try to jump then create a new one
+keymap.set('n', ',c', ':!ctags %<CR>') -- ctags
+keymap.set('n', ',y', ':let @+=@%<CR>') -- " yank current file path to system clipboard
 
--- 保存当前会话为缓存
-keymap.set('n', ',s', ':mks!<CR>')
+keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
 
--- 忽略大小写
-keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>')
+-- buffer configure
+keymap.set('n', '<Leader>x', ':bd<CR>')
+keymap.set('n', '<Leader>x!', ':bd!<CR>')
+
+keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
+keymap.set('n', 'cn', ':cnext<CR>') -- next quickfix window
+keymap.set('n', 'cp', ':cpre<CR>') -- previous quickfix window
+
