@@ -55,6 +55,7 @@ source ~/.config/nvim/nvim-treesitter.vim
 source ~/.config/nvim/vim-prettier.vim
 source ~/.config/nvim/vim-rhubarb.vim
 source ~/.config/nvim/nvim-dap.vim
+source ~/.config/nvim/vim-dadbod.vim
 
 call plug#end()
 filetype plugin indent on    " required
