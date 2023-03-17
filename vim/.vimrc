@@ -193,3 +193,7 @@ colorscheme onedark
 
 " esc键退出terminal模式
 tnoremap <Esc> <C-\><C-n>
+" 编译当前proto文件
+map <F6> :split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>
+" 在当前文件所在的目录打开terminal
+map <F7> :split<CR>:lcd %:h<CR>:terminal<CR>
