@@ -57,6 +57,8 @@ source ~/.config/nvim/vim-rhubarb.vim
 source ~/.config/nvim/nvim-dap.vim
 source ~/.config/nvim/vim-dadbod.vim
 source ~/.config/nvim/copilot.vim
+source ~/.config/nvim/cellular-automaton.vim
+source ~/.config/nvim/telescope.nvim
 
 call plug#end()
 filetype plugin indent on    " required

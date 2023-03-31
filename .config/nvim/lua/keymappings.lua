@@ -143,3 +143,10 @@ keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
 keymap.set('n', 'cn', ':cnext<CR>') -- next quickfix window
 keymap.set('n', 'cp', ':cpre<CR>') -- previous quickfix window
 
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
+
+-- telescope
+vim.keymap.set('n', ',g', "<cmd>Telescope live_grep<CR>")
+vim.keymap.set('n', ',h', "<cmd>Telescope help_tags<CR>")
+vim.keymap.set('n', ',d', "<cmd>Telescope diagnostics<CR>")
