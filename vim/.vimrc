@@ -7,13 +7,11 @@ source ~/.config/nvim/nerdcommenter.vim
 source ~/.config/nvim/tlib_vim.vim
 source ~/.config/nvim/vim-addon-mw-utils.vim
 source ~/.config/nvim/vim-misc.vim
-source ~/.config/nvim/vim-buffergator.vim
 source ~/.config/nvim/vim-easymotion.vim
 source ~/.config/nvim/vim-multiple-cursors.vim
 source ~/.config/nvim/vim-snippets.vim
 source ~/.config/nvim/vim-surround.vim
 source ~/.config/nvim/vim-rails.vim
-source ~/.config/nvim/vim-airline.vim
 source ~/.config/nvim/vim-fugitive.vim
 source ~/.config/nvim/vim-signify.vim
 source ~/.config/nvim/vim-tabular.vim
@@ -59,6 +57,7 @@ source ~/.config/nvim/vim-dadbod.vim
 source ~/.config/nvim/copilot.vim
 source ~/.config/nvim/cellular-automaton.vim
 source ~/.config/nvim/telescope.nvim
+source ~/.config/nvim/lualine.nvim
 
 call plug#end()
 filetype plugin indent on    " required
@@ -70,8 +69,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*
 " convert tabs to spaces
 " switch between case sensitive and insensitive search
 " fix backspace/delete key problem
-" make sure the fancy symbols always display
-let g:Powerline_symbols = 'fancy'
 let g:vim_markdown_folding_disabled=1
 
 " let g:solarized_termcolors = 256
