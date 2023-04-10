@@ -138,6 +138,8 @@ keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
 -- buffer configure
 keymap.set('n', '<Leader>x', ':bd<CR>')
 keymap.set('n', '<Leader>x!', ':bd!<CR>')
+keymap.set('n', '<Leader>bp', ':bprevious<CR>')
+keymap.set('n', '<Leader>bn', ':bnext<CR>')
 
 keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
 keymap.set('n', 'cn', ':cnext<CR>') -- next quickfix window
