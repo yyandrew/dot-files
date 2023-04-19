@@ -60,6 +60,10 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Setup lspconfig.
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "gopls", "tsserver", "solargraph", "rust_analyzer", "volar" }
+})
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -99,7 +103,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver', 'solargraph' }
+local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
