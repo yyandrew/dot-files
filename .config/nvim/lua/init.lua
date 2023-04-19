@@ -1,12 +1,12 @@
 -- nvim-tree configuration
-require'nvim-tree'.setup {}
+require 'nvim-tree'.setup {}
 require('keymappings')
 require('options')
 local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable',
   command = 'node',
-  args = {os.getenv('HOME') .. '/build/vscode-node-debug2/out/src/nodeDebug.js'},
+  args = { os.getenv('HOME') .. '/build/vscode-node-debug2/out/src/nodeDebug.js' },
 }
 dap.configurations.javascript = {
   {
@@ -24,15 +24,15 @@ dap.configurations.javascript = {
     name = 'Attach to process',
     type = 'node2',
     request = 'attach',
-    processId = require'dap.utils'.pick_process,
+    processId = require 'dap.utils'.pick_process,
   },
 }
 require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -47,28 +47,28 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = {
       {
         'buffers',
         max_length = vim.o.columns * 2 / 3,
         symbols = {
-          modified = ' ●',      -- Text to show when the buffer is modified
+          modified = ' ●',    -- Text to show when the buffer is modified
           alternate_file = '#', -- Text to show to identify the alternate file
-          directory =  '',     -- Text to show when the buffer is a directory
+          directory = '',    -- Text to show when the buffer is a directory
         },
       }
     },
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },

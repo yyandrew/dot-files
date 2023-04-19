@@ -1,4 +1,4 @@
-local cmp = require'cmp'
+local cmp = require 'cmp'
 cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -62,7 +62,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Setup lspconfig.
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "tsserver", "solargraph", "rust_analyzer", "volar" }
+  ensure_installed = { "gopls", "tsserver", "solargraph", "rust_analyzer", "volar", "lua_ls" }
 })
 local nvim_lsp = require('lspconfig')
 
@@ -76,7 +76,7 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -98,12 +98,11 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<Leader>f', '<cmd>lua vim.lsp.buf.format { async = true }<CR>', opts)
   buf_set_keymap('n', '<Leader>dd', '<cmd>lua vim.diagnostic.disable()<CR>', opts)
   buf_set_keymap('n', '<Leader>de', '<cmd>lua vim.diagnostic.enable()<CR>', opts)
-
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar' }
+local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar', 'lua_ls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -119,23 +118,23 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-nvim_lsp['gopls'].setup{
+nvim_lsp['gopls'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
 local keymap = vim.keymap
 
-keymap.set('n', "<F2>", ":NvimTreeToggle<CR>") -- nvim-tree keymaps
-keymap.set('n', ',f', ':NvimTreeFindFile<CR>') -- Reveal file in tree
-keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>') -- Enable spell check
-keymap.set('n', '<leader>C', ':setlocal nospell<CR>') -- Disable spell check
-keymap.set('n', ',s', ':mks!<CR>') -- 保存当前会话为缓存
-keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>') -- 忽略大小写
-keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P') -- 插入当前时间
-keymap.set('n', 'gf', ':edit <cfile><CR>') -- If no file find when try to jump then create a new one
-keymap.set('n', ',c', ':!ctags %<CR>') -- ctags
-keymap.set('n', ',y', ':let @+=@%<CR>') -- " yank current file path to system clipboard
+keymap.set('n', "<F2>", ":NvimTreeToggle<CR>")                          -- nvim-tree keymaps
+keymap.set('n', ',f', ':NvimTreeFindFile<CR>')                          -- Reveal file in tree
+keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>')     -- Enable spell check
+keymap.set('n', '<leader>C', ':setlocal nospell<CR>')                   -- Disable spell check
+keymap.set('n', ',s', ':mks!<CR>')                                      -- 保存当前会话为缓存
+keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>')             -- 忽略大小写
+keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P')                  -- 插入当前时间
+keymap.set('n', 'gf', ':edit <cfile><CR>')                              -- If no file find when try to jump then create a new one
+keymap.set('n', ',c', ':!ctags %<CR>')                                  -- ctags
+keymap.set('n', ',y', ':let @+=@%<CR>')                                 -- " yank current file path to system clipboard
 
 keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
 
@@ -146,8 +145,8 @@ keymap.set('n', '<Leader>bp', ':bprevious<CR>')
 keymap.set('n', '<Leader>bn', ':bnext<CR>')
 
 keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
-keymap.set('n', 'cn', ':cnext<CR>') -- next quickfix window
-keymap.set('n', 'cp', ':cpre<CR>') -- previous quickfix window
+keymap.set('n', 'cn', ':cnext<CR>')      -- next quickfix window
+keymap.set('n', 'cp', ':cpre<CR>')       -- previous quickfix window
 
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
 vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
@@ -156,3 +155,10 @@ vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
 vim.keymap.set('n', ',g', "<cmd>Telescope live_grep<CR>")
 vim.keymap.set('n', ',h', "<cmd>Telescope help_tags<CR>")
 vim.keymap.set('n', ',d', "<cmd>Telescope diagnostics<CR>")
+
+require('nvim-tree').setup {
+  update_focused_file = {
+    enable = true,
+    update_root = true,
+  },
+}
