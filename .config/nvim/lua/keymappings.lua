@@ -62,7 +62,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Setup lspconfig.
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "gopls", "tsserver", "solargraph", "rust_analyzer", "volar", "lua_ls" }
+  ensure_installed = { "gopls", "tsserver", "rust_analyzer", "volar", "lua_ls" }
 })
 local nvim_lsp = require('lspconfig')
 

@@ -4,16 +4,16 @@ call plug#begin('~/.vim/plugged')
 source ~/.config/nvim/indentLine.vim
 source ~/.config/nvim/ack.vim
 source ~/.config/nvim/nerdcommenter.vim
-source ~/.config/nvim/tlib_vim.vim
-source ~/.config/nvim/vim-addon-mw-utils.vim
-source ~/.config/nvim/vim-misc.vim
+" source ~/.config/nvim/tlib_vim.vim
+" source ~/.config/nvim/vim-addon-mw-utils.vim
+" source ~/.config/nvim/vim-misc.vim
 source ~/.config/nvim/vim-easymotion.vim
 source ~/.config/nvim/vim-multiple-cursors.vim
 source ~/.config/nvim/vim-snippets.vim
 source ~/.config/nvim/vim-surround.vim
 source ~/.config/nvim/vim-rails.vim
 source ~/.config/nvim/vim-fugitive.vim
-source ~/.config/nvim/vim-signify.vim
+" source ~/.config/nvim/vim-signify.vim
 source ~/.config/nvim/vim-tabular.vim
 source ~/.config/nvim/vim-bundln.vim
 source ~/.config/nvim/auto-pairs.vim
@@ -21,7 +21,7 @@ source ~/.config/nvim/vim-rubocop.vim
 source ~/.config/nvim/vim-numbertoggle.vim
 source ~/.config/nvim/emmet-vim.vim
 " source ~/.config/nvim/vim-rspec.vim
-source ~/.config/nvim/syntastic.vim
+" source ~/.config/nvim/syntastic.vim
 source ~/.config/nvim/editorconfig-vim.vim
 source ~/.config/nvim/vim-gitgutter.vim
 source ~/.config/nvim/git-messenger.vim
@@ -56,7 +56,7 @@ source ~/.config/nvim/nvim-dap.vim
 source ~/.config/nvim/vim-dadbod.vim
 source ~/.config/nvim/copilot.vim
 source ~/.config/nvim/cellular-automaton.vim
-source ~/.config/nvim/telescope.nvim
+source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/lualine.nvim
 
 call plug#end()
