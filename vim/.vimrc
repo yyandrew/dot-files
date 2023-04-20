@@ -1,63 +1,63 @@
 let mapleader = " "
 " set the runtime path to include vim-plug and initialize
 call plug#begin('~/.vim/plugged')
-source ~/.config/nvim/indentLine.vim
-source ~/.config/nvim/ack.vim
-source ~/.config/nvim/nerdcommenter.vim
+" source ~/.config/nvim/indentLine.vim
+" source ~/.config/nvim/ack.vim
+" source ~/.config/nvim/nerdcommenter.vim
 " source ~/.config/nvim/tlib_vim.vim
 " source ~/.config/nvim/vim-addon-mw-utils.vim
 " source ~/.config/nvim/vim-misc.vim
-source ~/.config/nvim/vim-easymotion.vim
-source ~/.config/nvim/vim-multiple-cursors.vim
-source ~/.config/nvim/vim-snippets.vim
-source ~/.config/nvim/vim-surround.vim
-source ~/.config/nvim/vim-rails.vim
-source ~/.config/nvim/vim-fugitive.vim
+" source ~/.config/nvim/vim-easymotion.vim
+" source ~/.config/nvim/vim-multiple-cursors.vim
+"source ~/.config/nvim/vim-snippets.vim
+"source ~/.config/nvim/vim-surround.vim
+"source ~/.config/nvim/vim-rails.vim
+"source ~/.config/nvim/vim-fugitive.vim
 " source ~/.config/nvim/vim-signify.vim
-source ~/.config/nvim/vim-tabular.vim
-source ~/.config/nvim/vim-bundln.vim
-source ~/.config/nvim/auto-pairs.vim
-source ~/.config/nvim/vim-rubocop.vim
-source ~/.config/nvim/vim-numbertoggle.vim
-source ~/.config/nvim/emmet-vim.vim
+"source ~/.config/nvim/vim-tabular.vim
+"source ~/.config/nvim/vim-bundln.vim
+"source ~/.config/nvim/auto-pairs.vim
+"source ~/.config/nvim/vim-rubocop.vim
+"source ~/.config/nvim/vim-numbertoggle.vim
+"source ~/.config/nvim/emmet-vim.vim
 " source ~/.config/nvim/vim-rspec.vim
 " source ~/.config/nvim/syntastic.vim
-source ~/.config/nvim/editorconfig-vim.vim
-source ~/.config/nvim/vim-gitgutter.vim
-source ~/.config/nvim/git-messenger.vim
-source ~/.config/nvim/vim-repeat.vim
-source ~/.config/nvim/vim-jsx.vim
-source ~/.config/nvim/ultisnips.vim
+"source ~/.config/nvim/editorconfig-vim.vim
+"source ~/.config/nvim/vim-gitgutter.vim
+"source ~/.config/nvim/git-messenger.vim
+"source ~/.config/nvim/vim-repeat.vim
+"source ~/.config/nvim/vim-jsx.vim
+"source ~/.config/nvim/ultisnips.vim
 " Plug 'vimwiki/vimwiki'
-source ~/.config/nvim/dart-vim-plugin.vim
-source ~/.config/nvim/vim-endwise.vim
-source ~/.config/nvim/ri.vim
-source ~/.config/nvim/vim-tsx.vim
-source ~/.config/nvim/vim-textobj-user.vim
-source ~/.config/nvim/fzf.vim
-source ~/.config/nvim/vim-tldr.vim
-source ~/.config/nvim/vimproc.vim
+"source ~/.config/nvim/dart-vim-plugin.vim
+"source ~/.config/nvim/vim-endwise.vim
+"source ~/.config/nvim/ri.vim
+"source ~/.config/nvim/vim-tsx.vim
+"source ~/.config/nvim/vim-textobj-user.vim
+" source ~/.config/nvim/fzf.vim
+"source ~/.config/nvim/vim-tldr.vim
+"source ~/.config/nvim/vimproc.vim
 " colorscheme
-source ~/.config/nvim/colorscheme.vim
+"source ~/.config/nvim/colorscheme.vim
 " source ~/.config/nvim/coc.vim
-source ~/.config/nvim/echodoc.vim
+"source ~/.config/nvim/echodoc.vim
 " Plug 'vim-scripts/YankRing.vim'
 source ~/.config/nvim/vim-peekaboo.vim
 source ~/.config/nvim/vim-abolish.vim
 source ~/.config/nvim/vim-dogo.vim
-source ~/.config/nvim/nvim-tree.vim
-source ~/.config/nvim/vim-livedown.vim
-source ~/.config/nvim/nvim-lspconfig.vim
-source ~/.config/nvim/nvim-cmp.vim
-source ~/.config/nvim/nvim-treesitter.vim
+" source ~/.config/nvim/nvim-tree.vim
+" source ~/.config/nvim/vim-livedown.vim
+" source ~/.config/nvim/nvim-lspconfig.vim
+" source ~/.config/nvim/nvim-cmp.vim
+" source ~/.config/nvim/nvim-treesitter.vim
 source ~/.config/nvim/vim-prettier.vim
 source ~/.config/nvim/vim-rhubarb.vim
-source ~/.config/nvim/nvim-dap.vim
+" source ~/.config/nvim/nvim-dap.vim
 source ~/.config/nvim/vim-dadbod.vim
 source ~/.config/nvim/copilot.vim
-source ~/.config/nvim/cellular-automaton.vim
-source ~/.config/nvim/telescope.vim
-source ~/.config/nvim/lualine.nvim
+" source ~/.config/nvim/cellular-automaton.vim
+" source ~/.config/nvim/telescope.vim
+" source ~/.config/nvim/lualine.nvim
 
 call plug#end()
 filetype plugin indent on    " required
