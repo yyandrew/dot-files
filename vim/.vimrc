@@ -166,35 +166,14 @@ let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 
 
 
 " let g:python3_host_prog="/home/andrew/.asdf/shims/python3"
-nnoremap <leader>class :-1read $HOME/.vim/.skeleton.rb<CR>A
-" Edit vimrc
-nnoremap <Leader>! :source ~/.vimrc<CR>
-" Reload vimrc
-nnoremap <Leader>e :vsplit ~/.vimrc<CR>
-" Save current file
-nnoremap <Leader>s :w<CR>
-
-" Move selected sections
-vnoremap ,j :m '>+1<CR>gv=gv
-vnoremap ,k :m '<-2<CR>gv=gv
 " 输入q@，之后按<space>自动转换成andrew@ekohe.com
 iabbrev q@ qqerqqer@126.com
 
-autocmd BufNewFile, BufRead .git/COMMIT_EDITMSG setlocal spell spelllang=en_us
-
-" add delete method
-onoremap m :normal! ?^def<cr>:nohlsearch<cr>kV/end<cr>
 
 lua require('init')
 " Make % jump between conflict
 packadd! matchit
 let b:match_words = '<<<<<<<:=======:>>>>>>>'
 
-colorscheme onedark
 
-" esc键退出terminal模式
-tnoremap <Esc> <C-\><C-n>
-" 编译当前proto文件
-map <F6> :split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>
-" 在当前文件所在的目录打开terminal
-map <F7> :split<CR>:lcd %:h<CR>:terminal<CR>
+

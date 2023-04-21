@@ -186,10 +186,33 @@ keymap.set('n', '<Leader>gp', ':Git push<CR>')
 
 -- ri
 
---keymap.set('n', ',ri' :call ri#OpenSearchPrompt(0)<cr> " horizontal split
---nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
---nnoremap  ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
+keymap.set('', ',ri', ':call ri#OpenSearchPrompt(0)<cr>') --horizontal split
+keymap.set('', ',RI', ':call ri#OpenSearchPrompt(1)<cr>')   -- vertical split
+keymap.set('', ',RK', ':call ri#LookupNameUnderCursor()<cr>') -- keyword lookup
 
 -- Prettier
 keymap.set('n', '<leader>F', ':Prettier<CR>')
 keymap.set('v', '<leader>F', ':Prettier<CR>')
+
+-- Make search result at middle of screen
+keymap.set('n', 'n', 'nzz')
+keymap.set('n', 'N', 'Nzz')
+--Toggle quickfix
+keymap.set('n', '<Leader>q', ':call QuickfixToggle()<CR>')
+-- Reload vimrc
+keymap.set('n', '<Leader>!', ':source ~/.vimrc<CR>')
+-- Edit vimrc
+keymap.set('n', '<Leader>E', ':vsplit ~/.vimrc<CR>')
+-- Save current file
+keymap.set('n', '<Leader>s', ':w<CR>')
+
+-- Move selected sections
+keymap.set('v', ',j', ":m '>+1<CR>gv=gv")
+keymap.set('v', ',k', ":m '<-2<CR>gv=gv")
+
+-- 编译当前proto文件
+keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>')
+-- 在当前文件所在的目录打开terminal
+keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>')
+-- esc键退出terminal模式
+keymap.set('t', '<Esc>', "<C-\\><C-n>")
