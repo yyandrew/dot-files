@@ -171,7 +171,7 @@ require('nvim-tree').setup {
 keymap.set('n', ',p', ':GFiles --cached --others --exclude-standard<CR>')
 -- ,e open buffers
 keymap.set('', ',e', '<cmd>:Buffers<CR>')
-keymap.set('n', ',i', ':Snippets<CR>')
+keymap.set('', ',i', '<cmd>:Snippets<CR>')
 
 -- livedown
 keymap.set('n', 'gm', '<cmd>:LivedownToggle<CR>')
@@ -198,7 +198,7 @@ keymap.set('v', '<leader>F', ':Prettier<CR>')
 keymap.set('n', 'n', 'nzz')
 keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
-keymap.set('n', '<Leader>q', ':call QuickfixToggle()<CR>')
+keymap.set('n', '<Leader>q', '<cmd>:call QuickfixToggle()<CR>')
 -- Reload vimrc
 keymap.set('n', '<Leader>!', ':source ~/.vimrc<CR>')
 -- Edit vimrc

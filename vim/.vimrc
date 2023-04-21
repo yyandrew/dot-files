@@ -81,9 +81,6 @@ set directory=$HOME/.vim/swp//
 match ErrorMsg '\s\+$'
 " remove trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
-" Make search result at middle of screen
-nnoremap n nzz
-nnoremap N Nzz
 
 """""""""""""""""""""""""""
 " MRU configure
@@ -101,8 +98,6 @@ endfunction
 
 command! ClearRegisters call ClearRegisters()
 
-" Toggle quickfix
-nnoremap <Leader>q :call QuickfixToggle()<CR>
 let g:quickfix_is_open = 0
 function! QuickfixToggle()
   if g:quickfix_is_open
