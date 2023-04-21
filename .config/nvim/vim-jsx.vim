@@ -1,2 +1,2 @@
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 
