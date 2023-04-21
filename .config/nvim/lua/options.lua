@@ -29,6 +29,8 @@ vim.cmd('cnoreabbrev Ack Ack!')
 g.ackprg = 'rg --vimgrep --type-not sql --smart-case'
 g.ackhighlight = 1
 
+vim.cmd('colorscheme onedark')
+
 -- Config fzf
 g.fzf_layout = { window = { width = 0.9, height = 0.6 } }
 local fzf_action = {}
