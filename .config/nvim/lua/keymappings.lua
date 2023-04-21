@@ -190,3 +190,6 @@ keymap.set('n', '<Leader>gp', ':Git push<CR>')
 --nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
 --nnoremap  ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 
+-- Prettier
+keymap.set('n', '<leader>F', ':Prettier<CR>')
+keymap.set('v', '<leader>F', ':Prettier<CR>')

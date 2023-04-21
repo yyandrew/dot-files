@@ -16,7 +16,7 @@ require("lazy").setup("plugins")
 require 'nvim-tree'.setup {}
 require('keymappings')
 require('options')
-require('dot-repeat')
+--require('dot-repeat')
 local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable',

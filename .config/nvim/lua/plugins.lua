@@ -2,7 +2,7 @@ return {
   'terryma/vim-multiple-cursors',
   'kyazdani42/nvim-web-devicons',
   'kyazdani42/nvim-tree.lua',
-  { 'junegunn/fzf', run = './install --bin', },
+  { 'junegunn/fzf',                                     run = './install --bin', },
   'junegunn/fzf.vim',
   'mileszs/ack.vim',
   -- colorscheme
@@ -62,8 +62,20 @@ return {
   'tpope/vim-endwise',
   'danchoi/ri.vim',
   'ianks/vim-tsx',
-'kana/vim-textobj-user',
-'wlemuel/vim-tldr',
-'Shougo/vimproc.vim',
-'Shougo/echodoc.vim',
+  'kana/vim-textobj-user',
+  'wlemuel/vim-tldr',
+  'Shougo/vimproc.vim',
+  'Shougo/echodoc.vim',
+  'github/copilot.vim',
+  'shumphrey/fugitive-gitlab.vim',
+  -- dadbod
+  'tpope/vim-dadbod',
+  'kristijanhusak/vim-dadbod-ui',
+  'kristijanhusak/vim-dadbod-completion',
+
+  'junegunn/vim-peekaboo',
+  'tpope/vim-abolish',
+  'kkoomen/vim-doge',
+  { 'prettier/vim-prettier', build = 'yarn install --frozen-lockfile --production' },
+  'tpope/vim-rhubarb',
 }

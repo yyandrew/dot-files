@@ -42,19 +42,20 @@ call plug#begin('~/.vim/plugged')
 " source ~/.config/nvim/coc.vim
 "source ~/.config/nvim/echodoc.vim
 " Plug 'vim-scripts/YankRing.vim'
-source ~/.config/nvim/vim-peekaboo.vim
-source ~/.config/nvim/vim-abolish.vim
-source ~/.config/nvim/vim-dogo.vim
+"source ~/.config/nvim/vim-peekaboo.vim
+"source ~/.config/nvim/vim-abolish.vim
+"source ~/.config/nvim/vim-dogo.vim
 " source ~/.config/nvim/nvim-tree.vim
 " source ~/.config/nvim/vim-livedown.vim
 " source ~/.config/nvim/nvim-lspconfig.vim
 " source ~/.config/nvim/nvim-cmp.vim
 " source ~/.config/nvim/nvim-treesitter.vim
-source ~/.config/nvim/vim-prettier.vim
-source ~/.config/nvim/vim-rhubarb.vim
+"source ~/.config/nvim/vim-prettier.vim
+"source ~/.config/nvim/vim-rhubarb.vim
 " source ~/.config/nvim/nvim-dap.vim
-source ~/.config/nvim/vim-dadbod.vim
-source ~/.config/nvim/copilot.vim
+"source ~/.config/nvim/fugitive-gitlab.vim
+"source ~/.config/nvim/vim-dadbod.vim
+"source ~/.config/nvim/copilot.vim
 " source ~/.config/nvim/cellular-automaton.vim
 " source ~/.config/nvim/telescope.vim
 " source ~/.config/nvim/lualine.nvim
