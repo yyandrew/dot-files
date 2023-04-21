@@ -124,6 +124,7 @@ nvim_lsp['gopls'].setup {
 }
 
 local keymap = vim.keymap
+local cmd = vim.cmd
 
 keymap.set('n', "<F2>", ":NvimTreeToggle<CR>")                          -- nvim-tree keymaps
 keymap.set('n', ',f', ':NvimTreeFindFile<CR>')                          -- Reveal file in tree
@@ -148,13 +149,15 @@ keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
 keymap.set('n', 'cn', ':cnext<CR>')      -- next quickfix window
 keymap.set('n', 'cp', ':cpre<CR>')       -- previous quickfix window
 
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-vim.keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
+keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
+keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
 
 -- telescope
-vim.keymap.set('n', ',g', "<cmd>Telescope live_grep<CR>")
-vim.keymap.set('n', ',h', "<cmd>Telescope help_tags<CR>")
-vim.keymap.set('n', ',d', "<cmd>Telescope diagnostics<CR>")
+keymap.set('n', ',g', "<cmd>Telescope live_grep<CR>")
+keymap.set('n', ',h', "<cmd>Telescope help_tags<CR>")
+keymap.set('n', ',d', "<cmd>Telescope diagnostics<CR>")
+keymap.set('n', '<Leader>a<space>', ':Ack! ')
+keymap.set('n', '<Leader>ac', ':Ack! <cword>')
 
 require('nvim-tree').setup {
   update_focused_file = {
@@ -162,4 +165,28 @@ require('nvim-tree').setup {
     update_root = true,
   },
 }
+
+-- fzf
+-- Ctrl + p open Git files
+keymap.set('n', ',p', ':GFiles --cached --others --exclude-standard<CR>')
+-- ,e open buffers
+keymap.set('', ',e', '<cmd>:Buffers<CR>')
+keymap.set('n', ',i', ':Snippets<CR>')
+
+-- livedown
+keymap.set('n', 'gm', '<cmd>:LivedownToggle<CR>')
+
+-- rubocop
+keymap.set('n', ',r', ':RuboCop -a<CR>')
+
+-- git
+keymap.set('n', '<Leader>gs', ':Git<CR>')
+keymap.set('n', '<Leader>gl', ':Git log --oneline<CR>')
+keymap.set('n', '<Leader>gp', ':Git push<CR>')
+
+-- ri
+
+--keymap.set('n', ',ri' :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+--nnoremap  ,RI :call ri#OpenSearchPrompt(1)<cr> " vertical split
+--nnoremap  ,RK :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 
