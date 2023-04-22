@@ -2,7 +2,7 @@ return {
   'terryma/vim-multiple-cursors',
   'kyazdani42/nvim-web-devicons',
   'kyazdani42/nvim-tree.lua',
-  { 'junegunn/fzf',          build = './install --bin', },
+  { 'junegunn/fzf',                  build = './install --bin', },
   'junegunn/fzf.vim',
   -- colorscheme
   'joshdick/onedark.vim',
@@ -13,12 +13,11 @@ return {
 
 
   'scrooloose/nerdcommenter',
-  'nvim-lua/plenary.nvim',
   'nvim-telescope/telescope.nvim',
   'nvim-lualine/lualine.nvim',
   'Eandrju/cellular-automaton.nvim',
   'nvim-lua/plenary.nvim',
-  'nvim-telescope/telescope.nvim',
+  { 'nvim-telescope/telescope.nvim', build = ":TSUpdate", tag = "0.1.1" },
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -77,4 +76,5 @@ return {
   'kkoomen/vim-doge',
   { 'prettier/vim-prettier', build = 'yarn install --frozen-lockfile --production' },
   'tpope/vim-rhubarb',
+  'thoughtbot/vim-rspec',
 }

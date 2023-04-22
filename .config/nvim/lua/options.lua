@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 
 -- Config autopair
-g.AutoPairsMapSpace = 0
+--g.AutoPairsMapSpace = 0
 
 -- gitgutter
 g.gitgutter_preview_win_floating = 1
@@ -65,3 +65,15 @@ g.dbs = {
   redis_rc2 = 'redis://172.16.0.24:26379/',
 }
 g.db_ui_save_location = '/tmp/db_ui'
+
+-- EchoDoc,好像不工作
+g.echodoc = {
+  enable_at_startup = 1,
+  type = 'floating'
+}
+
+-- nerdcommenter
+g.NERDSpaceDelims = 1
+
+-- rspec
+g.rspec_command = '!bundle exec rspec {spec}'
