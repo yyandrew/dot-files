@@ -2,9 +2,8 @@ return {
   'terryma/vim-multiple-cursors',
   'kyazdani42/nvim-web-devicons',
   'kyazdani42/nvim-tree.lua',
-  { 'junegunn/fzf',                                     run = './install --bin', },
+  { 'junegunn/fzf',          build = './install --bin', },
   'junegunn/fzf.vim',
-  'mileszs/ack.vim',
   -- colorscheme
   'joshdick/onedark.vim',
   'morhetz/gruvbox',
