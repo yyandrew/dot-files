@@ -1,3 +1,4 @@
+local HOME = os.getenv('HOME')
 local opt = vim.opt
 local g = vim.g
 
@@ -17,14 +18,18 @@ opt.foldmethod = 'indent'          -- groups of lines with the same indent form 
 opt.foldenable = true              -- disable folding but sometimes I need it
 opt.foldlevelstart = 10
 opt.clipboard = 'unnamed'          -- make all yanking/deleting operations automatically copy to the system clipboard
-
+opt.directory= HOME .. '/.vim/swp//' -- 设置 swap 文件的目录
+opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
 -- Config indentLine
 g.indentLine_char = '┊'
 g.indentLine_enabled = 1
 -- Specify how much indent level do you want to use for(default is 10)
 g.indentLine_indentLevel = 20
 
-vim.cmd('colorscheme onedark')
+vim.cmd([[
+  colorscheme onedark
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
+]])
 
 -- Config fzf
 g.fzf_layout = { window = { width = 0.9, height = 0.6 } }
@@ -77,3 +82,13 @@ g.NERDSpaceDelims = 1
 
 -- rspec
 g.rspec_command = '!bundle exec rspec {spec}'
+
+g.vim_markdown_folding_disabled = 1
+
+-- remove trailing whitespaces automatically
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  command = ":%s/\\s\\+$//e"
+})
+
+g.quickfix_is_open = 0

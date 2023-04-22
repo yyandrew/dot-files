@@ -1,32 +1,7 @@
-let mapleader = " "
 " set the runtime path to include vim-plug and initialize
 call plug#begin('~/.vim/plugged')
 call plug#end()
 filetype plugin indent on    " required
-
-"""""""""""""""""""""""""""
-" put your custom stuff here
-"""""""""""""""""""""""""""
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
-" convert tabs to spaces
-" switch between case sensitive and insensitive search
-" fix backspace/delete key problem
-let g:vim_markdown_folding_disabled=1
-
-" let g:solarized_termcolors = 256
-
-" 设置 swap 文件的目录
-set directory=$HOME/.vim/swp//
-
-" highlight trailing whitespace
-match ErrorMsg '\s\+$'
-" remove trailing whitespaces automatically
-autocmd BufWritePre * :%s/\s\+$//e
-
-"""""""""""""""""""""""""""
-" MRU configure
-"""""""""""""""""""""""""""
-let MRU_Auto_Close = 0
 
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
@@ -39,7 +14,6 @@ endfunction
 
 command! ClearRegisters call ClearRegisters()
 
-let g:quickfix_is_open = 0
 function! QuickfixToggle()
   if g:quickfix_is_open
     cclose
@@ -52,16 +26,6 @@ function! QuickfixToggle()
   endif
 endfunction
 
-" 设置 swap 文件的目录
-set directory=$HOME/.vim/swp//
-" 设置undo文件夹
-set undodir=$HOME/.vim/undodir
-"""""""""""""""""""""""""""
-" Omni completion
-"""""""""""""""""""""""""""
-" Provides smart autocompletion for programs
-" set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone,noinsert
 
 """""""""""""""""""""""""""
 " vimwiki configure

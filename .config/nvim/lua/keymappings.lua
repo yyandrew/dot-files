@@ -199,10 +199,8 @@ keymap.set('n', 'n', 'nzz')
 keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
 keymap.set('n', '<Leader>q', '<cmd>:call QuickfixToggle()<CR>')
--- Reload vimrc
-keymap.set('n', '<Leader>!', ':source ~/.vimrc<CR>')
--- Edit vimrc
-keymap.set('n', '<Leader>E', ':vsplit ~/.vimrc<CR>')
+-- Edit init.lua
+keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>')
 -- Save current file
 keymap.set('n', '<Leader>s', ':w<CR>')
 

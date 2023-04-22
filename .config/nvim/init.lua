@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 -- [[ Configure Lazy ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -15,8 +16,8 @@ require("lazy").setup("plugins")
 
 -- nvim-tree configuration
 require 'nvim-tree'.setup {}
-require('keymappings')
 require('options')
+require('keymappings')
 --require('dot-repeat')
 local dap = require('dap')
 dap.adapters.node2 = {
