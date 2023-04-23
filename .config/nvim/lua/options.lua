@@ -26,6 +26,7 @@ g.indentLine_indentLevel = 20
 
 -- Config ack
 vim.cmd('cnoreabbrev Ack Ack!')
+vim.cmd('colorscheme onedark')
 g.ackprg = 'rg --vimgrep --type-not sql --smart-case'
 g.ackhighlight = 1
 
@@ -43,6 +44,16 @@ g.livedown_browser = 'firefox'
 vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = 'fugitive://*',
   command = 'set bufhidden=delete'
+})
+
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = '.git/COMMIT_EDITMSG',
+  command = 'setlocal spell spelllang=en_us'
+})
+
+vim.api.nvim_create_autocmd('BufNewFile', {
+  pattern = '.git/COMMIT_EDITMSG',
+  command = 'setlocal spell spelllang=en_us'
 })
 
 -- Config autopair
