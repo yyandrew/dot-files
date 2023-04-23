@@ -1,2 +1,0 @@
-Plug 'wlemuel/vim-tldr'
-

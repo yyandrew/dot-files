@@ -1,2 +1,0 @@
-Plug 'mattn/emmet-vim'
-

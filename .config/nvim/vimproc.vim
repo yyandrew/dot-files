@@ -1,2 +1,0 @@
-Plug 'Shougo/vimproc.vim'
-

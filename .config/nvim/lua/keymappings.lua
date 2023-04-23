@@ -199,10 +199,8 @@ keymap.set('n', 'n', 'nzz')
 keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
 keymap.set('n', '<Leader>q', '<cmd>:call QuickfixToggle()<CR>')
--- Reload vimrc
-keymap.set('n', '<Leader>!', ':source ~/.vimrc<CR>')
--- Edit vimrc
-keymap.set('n', '<Leader>E', ':vsplit ~/.vimrc<CR>')
+-- Edit init.lua
+keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>')
 -- Save current file
 keymap.set('n', '<Leader>s', ':w<CR>')
 
@@ -216,3 +214,10 @@ keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc 
 keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>')
 -- esc键退出terminal模式
 keymap.set('t', '<Esc>', "<C-\\><C-n>")
+
+-- rspec_command
+keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')
+keymap.set('', ',t', '<cmd>:call RunCurrentSpecFile()<CR>')
+keymap.set('', ',s', '<cmd>:call RunNearestSpec()<CR>')
+keymap.set('', ',l', '<cmd>:call RunLastSpec()<CR>')
+keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')

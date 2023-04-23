@@ -1,3 +1,4 @@
+local HOME = os.getenv('HOME')
 local opt = vim.opt
 local g = vim.g
 
@@ -17,7 +18,8 @@ opt.foldmethod = 'indent'          -- groups of lines with the same indent form 
 opt.foldenable = true              -- disable folding but sometimes I need it
 opt.foldlevelstart = 10
 opt.clipboard = 'unnamed'          -- make all yanking/deleting operations automatically copy to the system clipboard
-
+opt.directory= HOME .. '/.vim/swp//' -- 设置 swap 文件的目录
+opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
 -- Config indentLine
 g.indentLine_char = '┊'
 g.indentLine_enabled = 1
@@ -26,9 +28,12 @@ g.indentLine_indentLevel = 20
 
 -- Config ack
 vim.cmd('cnoreabbrev Ack Ack!')
-vim.cmd('colorscheme onedark')
 g.ackprg = 'rg --vimgrep --type-not sql --smart-case'
 g.ackhighlight = 1
+vim.cmd([[
+  colorscheme onedark
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
+]])
 
 -- Config fzf
 g.fzf_layout = { window = { width = 0.9, height = 0.6 } }
@@ -57,7 +62,7 @@ vim.api.nvim_create_autocmd('BufNewFile', {
 })
 
 -- Config autopair
-g.AutoPairsMapSpace = 0
+--g.AutoPairsMapSpace = 0
 
 -- gitgutter
 g.gitgutter_preview_win_floating = 1
@@ -79,3 +84,25 @@ g.dbs = {
   redis_rc2 = 'redis://172.16.0.24:26379/',
 }
 g.db_ui_save_location = '/tmp/db_ui'
+
+-- EchoDoc,好像不工作
+g.echodoc = {
+  enable_at_startup = 1,
+  type = 'floating'
+}
+
+-- nerdcommenter
+g.NERDSpaceDelims = 1
+
+-- rspec
+g.rspec_command = '!bundle exec rspec {spec}'
+
+g.vim_markdown_folding_disabled = 1
+
+-- remove trailing whitespaces automatically
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  command = ":%s/\\s\\+$//e"
+})
+
+g.quickfix_is_open = 0
