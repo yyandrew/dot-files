@@ -216,8 +216,13 @@ keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>')
 keymap.set('t', '<Esc>', "<C-\\><C-n>")
 
 -- rspec_command
-keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')
-keymap.set('', ',t', '<cmd>:call RunCurrentSpecFile()<CR>')
-keymap.set('', ',s', '<cmd>:call RunNearestSpec()<CR>')
+-- keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')
+-- keymap.set('', ',t', '<cmd>:call RunCurrentSpecFile()<CR>')
+-- keymap.set('', ',s', '<cmd>:call RunNearestSpec()<CR>')
+-- keymap.set('', ',l', '<cmd>:call RunLastSpec()<CR>')
+-- keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')
+
+keymap.set('', ',t', '<cmd>:VroomRunTestFile<CR>')
+keymap.set('', ',T', '<cmd>:VroomRunNearestTest<CR>')
 keymap.set('', ',l', '<cmd>:call RunLastSpec()<CR>')
 keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')

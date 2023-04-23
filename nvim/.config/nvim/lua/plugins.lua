@@ -17,7 +17,7 @@ return {
   'nvim-lualine/lualine.nvim',
   'Eandrju/cellular-automaton.nvim',
   'nvim-lua/plenary.nvim',
-  { 'nvim-telescope/telescope.nvim', build = ":TSUpdate", tag = "0.1.1" },
+  { 'nvim-telescope/telescope.nvim', build = ":TSUpdate",       tag = "0.1.1" },
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -77,4 +77,8 @@ return {
   { 'prettier/vim-prettier', build = 'yarn install --frozen-lockfile --production' },
   'tpope/vim-rhubarb',
   'thoughtbot/vim-rspec',
+  'tpope/vim-sleuth',
+  'preservim/vimux',
+  'skalnik/vim-vroom',
+
 }
