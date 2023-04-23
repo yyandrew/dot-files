@@ -44,7 +44,7 @@ g.fzf_action = fzf_action
 vim.env.FZF_DEFAULT_OPTS = "--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 
 -- Config livedown
-g.livedown_browser = 'firefox'
+-- g.livedown_browser = 'firefox'
 
 vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = 'fugitive://*',
