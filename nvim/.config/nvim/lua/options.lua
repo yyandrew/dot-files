@@ -20,6 +20,7 @@ opt.foldlevelstart = 10
 opt.clipboard = 'unnamed'          -- make all yanking/deleting operations automatically copy to the system clipboard
 opt.directory= HOME .. '/.vim/swp//' -- 设置 swap 文件的目录
 opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
+opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
 -- Config indentLine
 g.indentLine_char = '┊'
 g.indentLine_enabled = 1
@@ -32,7 +33,6 @@ g.ackprg = 'rg --vimgrep --type-not sql --smart-case'
 g.ackhighlight = 1
 vim.cmd([[
   colorscheme onedark
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/* " Exclude files and directories
 ]])
 
 -- Config fzf
