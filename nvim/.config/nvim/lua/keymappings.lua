@@ -157,7 +157,7 @@ keymap.set('n', ',g', "<cmd>Telescope live_grep<CR>")
 keymap.set('n', ',G', "<cmd>Telescope grep_string<CR>")
 keymap.set('n', ',h', "<cmd>Telescope help_tags<CR>")
 keymap.set('n', ',d', "<cmd>Telescope diagnostics<CR>")
-keymap.set('n', '<Leader>!', ":luafile %<CR>")
+keymap.set('n', '<Leader>!', ":runtime init<CR>")
 
 require('nvim-tree').setup {
   update_focused_file = {
@@ -205,8 +205,8 @@ keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>')
 keymap.set('n', '<Leader>s', ':w<CR>')
 
 -- Move selected sections
-keymap.set('v', ',j', ":m '>+1<CR>gv=gv")
-keymap.set('v', ',k', ":m '<-2<CR>gv=gv")
+keymap.set('v', ',j', ":m '>+1<CR>gv=gv", { desc = "Move visual block down" })
+keymap.set('v', ',k', ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
 
 -- 编译当前proto文件
 keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>')
