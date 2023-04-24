@@ -198,7 +198,7 @@ keymap.set('v', '<leader>F', ':Prettier<CR>')
 keymap.set('n', 'n', 'nzz')
 keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
-keymap.set('n', '<Leader>q', '<cmd>:call QuickfixToggle()<CR>')
+keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
 -- Edit init.lua
 keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>')
 -- Save current file

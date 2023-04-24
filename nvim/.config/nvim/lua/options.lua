@@ -109,3 +109,30 @@ g.quickfix_is_open = 0
 
 -- vroom配置
 g.vroom_test_unit_command="rake test TESTOPTS='--name //'"
+
+local clearRegisters = vim.api.nvim_exec([[
+function! ClearRegisters()
+    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
+    let i=0
+    while (i<strlen(regs))
+        exec 'let @'.regs[i].'=""'
+        let i=i+1
+    endwhile
+endfunction
+]], true)
+
+local quickFixToggle = vim.api.nvim_exec([[
+function! QuickfixToggle()
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+    execute g:quickfix_return_to_window . "wincmd w"
+  else
+    let g:quickfix_return_to_window = winnr()
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
+call QuickfixToggle()
+]], true)
+
