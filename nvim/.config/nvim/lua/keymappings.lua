@@ -198,7 +198,7 @@ keymap.set('v', '<leader>F', ':Prettier<CR>')
 keymap.set('n', 'n', 'nzz')
 keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
-keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
+-- keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
 -- Edit init.lua
 keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>')
 -- Save current file
@@ -226,3 +226,5 @@ keymap.set('', ',t', '<cmd>:VroomRunTestFile<CR>')
 keymap.set('', ',T', '<cmd>:VroomRunNearestTest<CR>')
 keymap.set('', ',l', '<cmd>:call RunLastSpec()<CR>')
 keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')
+
+keymap.set('', ',cr', ':call ClearRegisters()<CR>', { desc = "Clean all registers" })
