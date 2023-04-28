@@ -6,7 +6,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""
 " vimwiki configure
 """""""""""""""""""""""""""
-let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh', 'bash': 'bash'}}]
+" let g:vimwiki_list = [{'path': '~/Qsync//vimwiki/', 'nested_syntaxes': {'ruby': 'ruby', 'javascript': 'javascript', 'sh': 'sh', 'bash': 'bash'}}]
 
 " let &t_SI = "\e[3 q"
 " let &t_EI = "\e[2 q"

@@ -134,7 +134,6 @@ keymap.set('n', ',s', ':mks!<CR>')                                      -- 保�
 keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>')             -- 忽略大小写
 keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P')                  -- 插入当前时间
 keymap.set('n', 'gf', ':edit <cfile><CR>')                              -- If no file find when try to jump then create a new one
-keymap.set('n', ',c', ':!ctags %<CR>')                                  -- ctags
 keymap.set('n', ',y', ':let @+=@%<CR>')                                 -- " yank current file path to system clipboard
 
 keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang

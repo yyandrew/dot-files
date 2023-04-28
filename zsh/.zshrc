@@ -10,8 +10,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="macovsky-ruby"
 # ZSH_THEME="junkfood"
 # ZSH_THEME="norm"
-# ZSH_THEME="lukerandall"
-ZSH_THEME="amuse"
+ZSH_THEME="lukerandall"
+# ZSH_THEME="amuse"
 # ZSH_THEME="arrow"
 # ZSH_THEME="random"
 
@@ -73,6 +73,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
+. $HOME/.asdf/asdf.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -92,9 +93,10 @@ fi
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
-export GOROOT=$(asdf where golang)/go
+export GOROOT=/usr/local/go
+export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
 export GOPATH=$(go env GOPATH)
-export PATH="$PATH:$GOPATH/bin" # Add $GOPATH/bin to PATH for scripting
+# export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
 
 # git
 alias git-pl='git pull origin'
@@ -184,7 +186,7 @@ export SCCACHE_BUCKET="electronjs-sccache"
 export SCCACHE_TWO_TIER=true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-alias rm='trash'
+alias rm='trash-put'
 
 eval "$(direnv hook zsh)"
 
@@ -197,6 +199,6 @@ if [ -f '/Users/andrew/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/an
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-. $HOME/.asdf/asdf.sh
 alias vim='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
