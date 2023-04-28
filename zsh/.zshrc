@@ -93,10 +93,8 @@ fi
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
-export GOROOT=/usr/local/go
 export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
 export GOPATH=$(go env GOPATH)
-# export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
 
 # git
 alias git-pl='git pull origin'

@@ -16,8 +16,6 @@ require("lazy").setup("plugins")
 
 -- nvim-tree configuration
 require 'nvim-tree'.setup {}
-require('options')
-require('keymappings')
 --require('dot-repeat')
 local dap = require('dap')
 dap.adapters.node2 = {
@@ -169,3 +167,5 @@ require('nvim-tree').setup {
   },
 }
 
+require('options')
+require('keymappings')
