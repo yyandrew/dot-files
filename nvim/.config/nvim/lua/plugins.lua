@@ -29,6 +29,7 @@ return {
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
+  "glepnir/lspsaga.nvim",
   'shime/vim-livedown',
   'nvim-treesitter/nvim-treesitter',
   'mfussenegger/nvim-dap',
