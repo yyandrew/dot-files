@@ -14,8 +14,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
--- nvim-tree configuration
-require 'nvim-tree'.setup {}
 --require('dot-repeat')
 local dap = require('dap')
 dap.adapters.node2 = {

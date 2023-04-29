@@ -94,7 +94,7 @@ fi
 autoload -U compinit && compinit -u
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
-export GOPATH=$(go env GOPATH)
+export GOPATH="$HOME/go"
 
 # git
 alias git-pl='git pull origin'
