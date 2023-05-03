@@ -81,5 +81,6 @@ return {
   'tpope/vim-sleuth',
   'preservim/vimux',
   'skalnik/vim-vroom',
-
+  'vim-test/vim-test',
+  'mhinz/vim-tmuxify',
 }
