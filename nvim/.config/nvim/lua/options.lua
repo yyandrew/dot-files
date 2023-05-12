@@ -21,6 +21,7 @@ opt.clipboard = 'unnamed'          -- make all yanking/deleting operations autom
 opt.directory= HOME .. '/.vim/swp//' -- 设置 swap 文件的目录
 opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
 opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
+
 -- Config indentLine
 g.indentLine_char = '┊'
 g.indentLine_enabled = 1
@@ -61,9 +62,6 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   command = 'setlocal spell spelllang=en_us'
 })
 
--- Config autopair
---g.AutoPairsMapSpace = 0
-
 -- gitgutter
 g.gitgutter_preview_win_floating = 1
 opt.updatetime = 1000
@@ -93,9 +91,6 @@ g.echodoc = {
 
 -- nerdcommenter
 g.NERDSpaceDelims = 1
-
--- rspec
-g.rspec_command = '!bundle exec rspec {spec}'
 
 g.vim_markdown_folding_disabled = 1
 

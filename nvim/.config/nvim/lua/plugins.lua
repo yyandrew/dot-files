@@ -13,7 +13,6 @@ return {
 
 
   'scrooloose/nerdcommenter',
-  'nvim-telescope/telescope.nvim',
   'nvim-lualine/lualine.nvim',
   'Eandrju/cellular-automaton.nvim',
   'nvim-lua/plenary.nvim',
@@ -25,6 +24,7 @@ return {
   'hrsh7th/nvim-cmp',
   'hrsh7th/vim-vsnip',
   'SirVer/ultisnips',
+  'honza/vim-snippets',
   'quangnguyen30192/cmp-nvim-ultisnips',
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
@@ -41,8 +41,6 @@ return {
     end
   },
 
-  'honza/vim-snippets',
-  'SirVer/ultisnips',
   'tpope/vim-surround',
   'tpope/vim-rails',
   'tpope/vim-fugitive',
@@ -77,7 +75,6 @@ return {
   'kkoomen/vim-doge',
   { 'prettier/vim-prettier', build = 'yarn install --frozen-lockfile --production' },
   'tpope/vim-rhubarb',
-  'thoughtbot/vim-rspec',
   'tpope/vim-sleuth',
   'preservim/vimux',
   'skalnik/vim-vroom',
