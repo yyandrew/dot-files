@@ -80,4 +80,5 @@ return {
   'skalnik/vim-vroom',
   'vim-test/vim-test',
   'mhinz/vim-tmuxify',
+  'akinsho/bufferline.nvim',
 }

@@ -1,4 +1,4 @@
 local g = vim.g
 -- Config autopair
-g.AutoPairsFlyMode = 1
+g.AutoPairsFlyMode = 0
 
