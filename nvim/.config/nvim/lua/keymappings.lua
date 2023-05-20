@@ -214,9 +214,4 @@ keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>')
 -- esc键退出terminal模式
 keymap.set('t', '<Esc>', "<C-\\><C-n>")
 
-keymap.set('', ',t', '<cmd>:VroomRunTestFile<CR>')
-keymap.set('', ',T', '<cmd>:VroomRunNearestTest<CR>')
-keymap.set('', ',l', '<cmd>:call RunLastSpec()<CR>')
-keymap.set('', ',a', '<cmd>:call RunAllSpecs()<CR>')
-
 keymap.set('', ',cr', ':call ClearRegisters()<CR>', { desc = "Clean all registers" })
