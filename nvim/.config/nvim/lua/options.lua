@@ -28,10 +28,6 @@ g.indentLine_enabled = 1
 -- Specify how much indent level do you want to use for(default is 10)
 g.indentLine_indentLevel = 20
 
--- Config ack
-vim.cmd('cnoreabbrev Ack Ack!')
-g.ackprg = 'rg --vimgrep --type-not sql --smart-case'
-g.ackhighlight = 1
 vim.cmd([[
   colorscheme onedark
 ]])

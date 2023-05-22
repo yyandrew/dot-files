@@ -133,7 +133,7 @@ keymap.set('n', '<leader>C', ':setlocal nospell<CR>')                   -- Disab
 keymap.set('n', ',s', ':mks!<CR>')                                      -- 保存当前会话为缓存
 keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>')             -- 忽略大小写
 keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P')                  -- 插入当前时间
-keymap.set('n', 'gf', ':edit <cfile><CR>')                              -- If no file find when try to jump then create a new one
+keymap.set('n', 'ef', ':edit <cfile><CR>', { desc = "Edit file under cursor" })                              -- If no file find when try to jump then create a new one
 keymap.set('n', ',y', ':let @+=@%<CR>')                                 -- " yank current file path to system clipboard
 
 keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
