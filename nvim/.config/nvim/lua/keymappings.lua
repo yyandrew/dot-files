@@ -183,11 +183,6 @@ keymap.set('n', '<Leader>gs', ':Git<CR>')
 keymap.set('n', '<Leader>gl', ':Git log --oneline<CR>')
 keymap.set('n', '<Leader>gp', ':Git push<CR>')
 
--- ri
-
-keymap.set('', ',ri', ':call ri#OpenSearchPrompt(0)<cr>') --horizontal split
-keymap.set('', ',RI', ':call ri#OpenSearchPrompt(1)<cr>')   -- vertical split
-keymap.set('', ',RK', ':call ri#LookupNameUnderCursor()<cr>') -- keyword lookup
 
 -- Prettier
 keymap.set('n', '<leader>F', ':Prettier<CR>')
