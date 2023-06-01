@@ -1,0 +1,10 @@
+root = true
+# Tab indentation (no size specified)
+[*]
+indent_style = tab
+[*.go]
+tab_width = 8
+[*.proto]
+tab_width = 2
+[*.rb]
+tab_width = 2
