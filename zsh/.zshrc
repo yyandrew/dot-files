@@ -101,7 +101,6 @@ export PATH=$PATH:/$GOPATH/bin
 alias git-pl='git pull origin'
 alias git-ps='git push origin'
 alias git-s='git status'
-alias git-ss='git stash save'
 alias git-cp='git cherry-pick'
 alias git-c='git checkout'
 alias git-cm='git checkout master'
