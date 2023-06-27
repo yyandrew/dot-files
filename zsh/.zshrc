@@ -97,27 +97,6 @@ export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
 export GOPATH="$HOME/go"
 export PATH=$PATH:/$GOPATH/bin
 
-# git
-alias git-pl='git pull origin'
-alias git-ps='git push origin'
-alias git-s='git status'
-alias git-cp='git cherry-pick'
-alias git-c='git checkout'
-alias git-cm='git checkout master'
-alias git-nb='git checkout -b'
-alias git-rb='git rebase'
-alias git-rbm='git rebase master'
-alias git-rs='git reset --soft'
-alias git-rh='git reset --hard'
-alias git-b='git branch'
-alias git-ba='git branch -a'
-alias git-m='git merge'
-alias git-fa='git fetch -a'
-alias git-ca='git commit --amend'
-alias git-l='git log'
-alias git-ud='git checkout develop && git pull origin develop;'
-alias git-so='git remote show origin'
-
 # capistrano
 alias cap-bd='cap backup deploy'
 alias cap-sd='cap staging deploy'
