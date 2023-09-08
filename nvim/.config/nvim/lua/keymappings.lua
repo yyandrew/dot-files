@@ -126,21 +126,22 @@ nvim_lsp['gopls'].setup {
 local keymap = vim.keymap
 local cmd = vim.cmd
 
-keymap.set('n', "<F2>", ":NvimTreeToggle<CR>")                          -- nvim-tree keymaps
-keymap.set('n', ',f', ':NvimTreeFindFile<CR>')                          -- Reveal file in tree
-keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>')     -- Enable spell check
-keymap.set('n', '<leader>C', ':setlocal nospell<CR>')                   -- Disable spell check
-keymap.set('n', ',s', ':mks!<CR>')                                      -- 保存当前会话为缓存
-keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>')             -- 忽略大小写
-keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P')                  -- 插入当前时间
-keymap.set('n', 'ef', ':edit <cfile><CR>', { desc = "Edit file under cursor" })                              -- If no file find when try to jump then create a new one
-keymap.set('n', ',y', ':let @+=@%<CR>')                                 -- " yank current file path to system clipboard
+keymap.set('n', "<F2>", ":NvimTreeToggle<CR>")                                                          -- nvim-tree keymaps
+keymap.set('n', ',f', ':NvimTreeFindFile<CR>')                                                          -- Reveal file in tree
+keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>', { desc = "set english spell" })     -- Enable spell check
+keymap.set('n', '<leader>C', ':setlocal nospell<CR>', { desc = "Set no spell" })                        -- Disable spell check
+keymap.set('n', ',s', ':mks!<CR>', { desc = "Save session" })                                           -- 保存当前会话为缓存
+keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>', { desc = "Ignore case" })                   -- 忽略大小写
+keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P', { desc = "Paster current date" })                -- 插入当前时间
+
+keymap.set('n', 'ef', ':edit <cfile><CR>', { desc = "Edit file under cursor" })                         -- If no file find when try to jump then create a new one
+keymap.set('n', ',y', ':let @+=@%<CR>')                                                                 -- " yank current file path to system clipboard
 
 keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
 
 -- buffer configure
-keymap.set('n', '<Leader>x', ':bd<CR>')
-keymap.set('n', '<Leader>x!', ':bd!<CR>')
+keymap.set('n', '<Leader>x', ':bd<CR>', { desc = "Close buffer" })
+keymap.set('n', '<Leader>x!', ':bd!<CR>', { desc = "Force close buffer" })
 keymap.set('n', 'gb', ':bprevious<CR>', { desc = "Previous buffer" })
 keymap.set('n', 'gp', ':bnext<CR>', { desc = "Next buffer" })
 
@@ -176,7 +177,7 @@ keymap.set('', ',i', '<cmd>:Snippets<CR>')
 keymap.set('n', 'gm', '<cmd>:LivedownToggle<CR>')
 
 -- rubocop
-keymap.set('n', ',r', ':RuboCop -a<CR>')
+keymap.set('n', ',r', ':RuboCop -a<CR>', { desc = "Auto correct code" })
 
 -- git
 keymap.set('n', '<Leader>gs', ':Git<CR>')
@@ -194,9 +195,9 @@ keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
 -- keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
 -- Edit init.lua
-keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>')
+keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>', { desc = "Edit nvim config file" })
 -- Save current file
-keymap.set('n', '<Leader>s', ':w<CR>')
+keymap.set('n', '<Leader>s', ':w<CR>', { desc = "Save changes of current file" })
 
 -- Move selected sections
 keymap.set('v', ',j', ":m '>+1<CR>gv=gv", { desc = "Move visual block down" })
@@ -205,7 +206,7 @@ keymap.set('v', ',k', ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
 -- 编译当前proto文件
 keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>')
 -- 在当前文件所在的目录打开terminal
-keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>')
+keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>', { desc = "Open terminal from current folder" })
 -- esc键退出terminal模式
 keymap.set('t', '<Esc>', "<C-\\><C-n>")
 
