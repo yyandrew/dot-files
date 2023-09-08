@@ -1,7 +1,7 @@
 local g = vim.g
 g['test#strategy'] = {
-  nearest = 'tmuxify',
-  file = 'tmuxify',
+  nearest = 'vimux',
+  file = 'vimux',
   suite = 'basic'
 }
 g['test#go#gotest#options'] = '-v'

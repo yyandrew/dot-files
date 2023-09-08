@@ -81,6 +81,5 @@ return {
   'tpope/vim-sleuth',
   'preservim/vimux',
   'vim-test/vim-test',
-  'mhinz/vim-tmuxify',
   'akinsho/bufferline.nvim',
 }
