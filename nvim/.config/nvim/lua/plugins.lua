@@ -67,7 +67,7 @@ return {
   'danchoi/ri.vim',
   'kana/vim-textobj-user',
   'wlemuel/vim-tldr',
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
   'shumphrey/fugitive-gitlab.vim',
   -- dadbod
   'tpope/vim-dadbod',
