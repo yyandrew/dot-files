@@ -143,7 +143,7 @@ keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
 keymap.set('n', '<Leader>x', ':bd<CR>', { desc = "Close buffer" })
 keymap.set('n', '<Leader>x!', ':bd!<CR>', { desc = "Force close buffer" })
 keymap.set('n', 'gb', ':bprevious<CR>', { desc = "Previous buffer" })
-keymap.set('n', 'gp', ':bnext<CR>', { desc = "Next buffer" })
+keymap.set('n', 'gn', ':bnext<CR>', { desc = "Next buffer" })
 
 keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
 keymap.set('n', 'cn', ':cnext<CR>')      -- next quickfix window
