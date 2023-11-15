@@ -15,7 +15,7 @@ return {
   'nvim-lualine/lualine.nvim',
   'Eandrju/cellular-automaton.nvim',
   'nvim-lua/plenary.nvim',
-  { 'nvim-telescope/telescope.nvim', build = ":TSUpdate",       tag = "0.1.1" },
+  { 'nvim-telescope/telescope.nvim', build = ":TSUpdate" },
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
