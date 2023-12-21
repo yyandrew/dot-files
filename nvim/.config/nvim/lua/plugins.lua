@@ -82,4 +82,5 @@ return {
   'preservim/vimux',
   'vim-test/vim-test',
   'akinsho/bufferline.nvim',
+  'Exafunction/codeium.vim', event = 'BufEnter'
 }

@@ -210,3 +210,9 @@ keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>', { desc = "Open te
 keymap.set('t', '<Esc>', "<C-\\><C-n>")
 
 keymap.set('', ',cr', ':call ClearRegisters()<CR>', { desc = "Clean all registers" })
+
+-- codeium
+keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
