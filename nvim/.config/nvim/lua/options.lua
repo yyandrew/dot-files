@@ -112,3 +112,6 @@ function! ClearRegisters()
 endfunction
 ]], true)
 
+
+-- 解决ruby文件输入 . 导致的当前行的 indent 跟 end 对齐的问题
+vim.cmd [[autocmd FileType ruby setlocal indentkeys-=.]]
