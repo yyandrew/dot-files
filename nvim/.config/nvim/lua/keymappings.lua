@@ -219,3 +219,5 @@ keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr
 
 keymap.set('', ',le', ':LspStop<CR>')
 keymap.set('', ',lb', ':LspStart<CR>')
+keymap.set('', ';l', ':set list<CR>')
+keymap.set('', ';nl', ':set nolist<CR>')

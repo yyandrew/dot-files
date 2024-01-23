@@ -21,7 +21,9 @@ opt.clipboard = 'unnamed'          -- make all yanking/deleting operations autom
 opt.directory= HOME .. '/.vim/swp//' -- 设置 swap 文件的目录
 opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
 opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
+-- 设置空格显示字符
 opt.listchars = { space = '·', tab = '>~' }
+opt.list = true
 
 -- Config indentLine
 g.indentLine_char = '┊'
