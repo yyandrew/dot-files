@@ -30,8 +30,9 @@ g.indentLine_enabled = 1
 -- Specify how much indent level do you want to use for(default is 10)
 g.indentLine_indentLevel = 20
 
+-- habamax, palenight, dracula
 vim.cmd([[
-  colorscheme onedark
+  colorscheme habamax
 ]])
 
 -- Config fzf
