@@ -23,6 +23,7 @@ opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
 opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
 -- 设置空格显示字符
 opt.listchars = { space = '·', tab = '>~' }
+opt.relativenumber = true
 
 -- Config indentLine
 g.indentLine_char = '┊'
@@ -32,7 +33,7 @@ g.indentLine_indentLevel = 20
 
 -- habamax, palenight, dracula
 vim.cmd([[
-  colorscheme habamax
+  colorscheme dracula
 ]])
 
 -- Config fzf
