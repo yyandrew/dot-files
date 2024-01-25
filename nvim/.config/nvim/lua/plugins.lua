@@ -9,8 +9,13 @@ return {
   'morhetz/gruvbox',
   'drewtempelmeyer/palenight.vim',
   'dracula/vim',
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   'Yggdroot/indentLine',
-
   'scrooloose/nerdcommenter',
   'nvim-lualine/lualine.nvim',
   'Eandrju/cellular-automaton.nvim',
