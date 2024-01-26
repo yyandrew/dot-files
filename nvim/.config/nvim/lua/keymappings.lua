@@ -183,6 +183,8 @@ keymap.set('n', ',r', ':RuboCop -a<CR>', { desc = "Auto correct code" })
 keymap.set('n', '<Leader>gs', ':Git<CR>')
 keymap.set('n', '<Leader>gl', ':Git log --oneline<CR>')
 keymap.set('n', '<Leader>gp', ':Git push<CR>')
+-- lazygit
+keymap.set('n', '<Leader>gg', ':LazyGit<CR>')
 
 -- Prettier
 keymap.set('n', '<leader>F', ':Prettier<CR>')

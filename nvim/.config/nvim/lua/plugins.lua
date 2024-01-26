@@ -15,7 +15,7 @@ return {
     priority = 1000,
     opts = {},
   },
-  'Yggdroot/indentLine',
+  -- 'Yggdroot/indentLine',
   'scrooloose/nerdcommenter',
   'nvim-lualine/lualine.nvim',
   'Eandrju/cellular-automaton.nvim',
@@ -66,20 +66,16 @@ return {
       "nvim-lua/plenary.nvim",
     },
   },
-  'tpope/vim-rhubarb',
   'tpope/vim-bundler',
   'jiangmiao/auto-pairs',
-  'ngmy/vim-rubocop',
+  -- 'ngmy/vim-rubocop',
   'mattn/emmet-vim',
   'editorconfig/editorconfig-vim',
   'airblade/vim-gitgutter',
   'rhysd/git-messenger.vim',
   'tpope/vim-repeat',
   'mxw/vim-jsx',
-  'tpope/vim-endwise',
   'danchoi/ri.vim',
-  'kana/vim-textobj-user',
-  'wlemuel/vim-tldr',
   -- 'github/copilot.vim',
   'shumphrey/fugitive-gitlab.vim',
   -- dadbod
@@ -95,6 +91,5 @@ return {
   'preservim/vimux',
   'vim-test/vim-test',
   'akinsho/bufferline.nvim',
-  'Exafunction/codeium.vim',
-  event = 'BufEnter'
+  { 'Exafunction/codeium.vim', event = 'BufEnter' }
 }
