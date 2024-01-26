@@ -57,7 +57,7 @@ ZSH_THEME="lukerandall"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions history-substring-search vi-mode)
+plugins=(git zsh-autosuggestions history-substring-search vi-mode autoupdate)
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
