@@ -119,3 +119,12 @@ endfunction
 
 -- 解决ruby文件输入 . 导致的当前行的 indent 跟 end 对齐的问题
 vim.cmd [[autocmd FileType ruby setlocal indentkeys-=.]]
+
+-- 配置lsp的错误提示
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = false,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+})

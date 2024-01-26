@@ -52,13 +52,20 @@ return {
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
-},
+  },
   'tpope/vim-rails',
   'tpope/vim-fugitive',
+  {
+    "kdheepak/lazygit.nvim",
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
   'tpope/vim-rhubarb',
   'tpope/vim-bundler',
   'jiangmiao/auto-pairs',
@@ -82,11 +89,12 @@ return {
 
   'junegunn/vim-peekaboo',
   'tpope/vim-abolish',
-  {'kkoomen/vim-doge' , build = ":call doge#install()"},
+  { 'kkoomen/vim-doge',      build = ":call doge#install()" },
   { 'prettier/vim-prettier', build = 'yarn install --frozen-lockfile --production' },
   'tpope/vim-sleuth',
   'preservim/vimux',
   'vim-test/vim-test',
   'akinsho/bufferline.nvim',
-  'Exafunction/codeium.vim', event = 'BufEnter'
+  'Exafunction/codeium.vim',
+  event = 'BufEnter'
 }
