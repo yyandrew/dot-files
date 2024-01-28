@@ -75,7 +75,6 @@ return {
   'rhysd/git-messenger.vim',
   'tpope/vim-repeat',
   'mxw/vim-jsx',
-  'danchoi/ri.vim',
   -- 'github/copilot.vim',
   'shumphrey/fugitive-gitlab.vim',
   -- dadbod
