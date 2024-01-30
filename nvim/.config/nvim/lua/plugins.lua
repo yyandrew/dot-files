@@ -15,6 +15,7 @@ return {
     priority = 1000,
     opts = {},
   },
+  'haishanh/night-owl.vim',
   -- 'Yggdroot/indentLine',
   'scrooloose/nerdcommenter',
   'nvim-lualine/lualine.nvim',

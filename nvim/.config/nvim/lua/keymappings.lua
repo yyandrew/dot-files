@@ -207,14 +207,14 @@ keymap.set('v', ',k', ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
 -- 编译当前proto文件
 keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>')
 -- 在当前文件所在的目录打开terminal
-keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>', { desc = "Open terminal from current folder" })
+keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>A', { desc = "Open terminal from current folder" })
 -- esc键退出terminal模式
-keymap.set('t', '<Esc>', "<C-\\><C-n>")
+keymap.set('t', '<C-w>j', "<C-\\><C-n><C-w>j",{silent = true})
 
 keymap.set('', ',cr', ':call ClearRegisters()<CR>', { desc = "Clean all registers" })
 
 -- codeium
-keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
 keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
 keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
 keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
