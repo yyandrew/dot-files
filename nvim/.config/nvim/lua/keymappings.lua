@@ -209,7 +209,7 @@ keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc 
 -- 在当前文件所在的目录打开terminal
 keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>A', { desc = "Open terminal from current folder" })
 -- esc键退出terminal模式
-keymap.set('t', '<C-w>j', "<C-\\><C-n><C-w>j",{silent = true})
+keymap.set('t', '<C-w>j', "<C-\\><C-n><C-w>j", { silent = true })
 
 keymap.set('', ',cr', ':call ClearRegisters()<CR>', { desc = "Clean all registers" })
 
