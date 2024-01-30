@@ -59,7 +59,6 @@ return {
     end
   },
   'tpope/vim-rails',
-  'tpope/vim-fugitive',
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
@@ -77,7 +76,6 @@ return {
   'tpope/vim-repeat',
   'mxw/vim-jsx',
   -- 'github/copilot.vim',
-  'shumphrey/fugitive-gitlab.vim',
   -- dadbod
   'tpope/vim-dadbod',
   'kristijanhusak/vim-dadbod-ui',

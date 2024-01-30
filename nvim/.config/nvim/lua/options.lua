@@ -47,11 +47,6 @@ vim.env.FZF_DEFAULT_OPTS = "--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
 -- Config livedown
 g.livedown_browser = 'chrome'
 
-vim.api.nvim_create_autocmd('BufReadPost', {
-  pattern = 'fugitive://*',
-  command = 'set bufhidden=delete'
-})
-
 vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = '.git/COMMIT_EDITMSG',
   command = 'setlocal spell spelllang=en_us'
