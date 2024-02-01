@@ -179,3 +179,5 @@ eval "$(jenv init -)"
 alias vim='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
+
+alias lg='lazygit'
