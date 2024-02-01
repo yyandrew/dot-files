@@ -69,15 +69,6 @@ local snip_mate = {}
 snip_mate['snippet_version'] = 1
 g.snipMate = snip_mate
 
--- Config dadbog
-g.dbs = {
-  food_dev = 'mysql://bhuser:363099@localhost:3306/food_dev',
-  redis_dev = 'redis://127.0.0.1:6379',
-  redis_rc1 = 'redis://172.16.0.22:26379/',
-  redis_rc2 = 'redis://172.16.0.24:26379/',
-}
-g.db_ui_save_location = '/tmp/db_ui'
-
 -- EchoDoc,好像不工作
 g.echodoc = {
   enable_at_startup = 1,
