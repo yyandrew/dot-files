@@ -107,13 +107,5 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- [[ Configure neovim-tree ]]
-require('nvim-tree').setup {
-  update_focused_file = {
-    enable = true,
-    update_root = false,
-  },
-}
-
 require('options')
 require('keymappings')
