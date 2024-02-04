@@ -32,23 +32,9 @@ keymap.set('n', ',h', "<cmd>Telescope help_tags<CR>")
 keymap.set('n', ',d', "<cmd>Telescope diagnostics<CR>")
 keymap.set('n', '<Leader>!', ":runtime init<CR>")
 
--- fzf
--- Ctrl + p open Git files
-keymap.set('n', ',p', ':GFiles --cached --others --exclude-standard<CR>')
--- ,e open buffers
-keymap.set('', ',e', '<cmd>:Buffers<CR>')
-keymap.set('', ',i', '<cmd>:Snippets<CR>')
-
 -- livedown
 keymap.set('n', 'gm', '<cmd>:LivedownToggle<CR>')
 
--- rubocop
-keymap.set('n', ',r', ':RuboCop -a<CR>', { desc = "Auto correct code" })
-
--- git
-keymap.set('n', '<Leader>gs', ':Git<CR>')
-keymap.set('n', '<Leader>gl', ':Git log --oneline<CR>')
-keymap.set('n', '<Leader>gp', ':Git push<CR>')
 -- lazygit
 keymap.set('n', '<Leader>gg', ':LazyGit<CR>')
 
@@ -78,12 +64,6 @@ keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>A', { desc = "Open t
 keymap.set('t', '<C-w>j', "<C-\\><C-n><C-w>j", { silent = true })
 
 keymap.set('', ',cr', ':call ClearRegisters()<CR>', { desc = "Clean all registers" })
-
--- codeium
-keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
 
 keymap.set('', ',le', ':LspStop<CR>')
 keymap.set('', ',lb', ':LspStart<CR>')
