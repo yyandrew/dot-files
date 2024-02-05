@@ -36,14 +36,6 @@ vim.cmd([[
   colorscheme dracula
 ]])
 
--- Config fzf
-g.fzf_layout = { window = { width = 0.9, height = 0.6 } }
-local fzf_action = {}
-fzf_action['ctrl-t'] = 'tab split'
-fzf_action['ctrl-v'] = 'vsplit'
-g.fzf_action = fzf_action
-vim.env.FZF_DEFAULT_OPTS = "--bind \"ctrl-n:preview-down,ctrl-p:preview-up\""
-
 -- Config livedown
 g.livedown_browser = 'chrome'
 
