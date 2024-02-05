@@ -85,5 +85,6 @@ return {
   'preservim/vimux',
   'vim-test/vim-test',
   'akinsho/bufferline.nvim',
-  { 'Exafunction/codeium.vim', event = 'BufEnter' }
+  { 'Exafunction/codeium.vim', event = 'BufEnter' },
+  'tpope/vim-speeddating'
 }
