@@ -93,9 +93,11 @@ fi
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
-export GOPATH="$HOME/go"
-export PATH=$PATH:/$GOPATH/bin
+export GOPATH="$(go env GOPATH)"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
 
 # capistrano
 alias cap-bd='cap backup deploy'
