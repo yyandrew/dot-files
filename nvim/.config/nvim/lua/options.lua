@@ -80,9 +80,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 g.quickfix_is_open = 0
 
--- vroom配置
-g.vroom_test_unit_command="rake test TESTOPTS='--name //'"
-
 local clearRegisters = vim.api.nvim_exec([[
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
