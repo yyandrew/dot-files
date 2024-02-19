@@ -86,5 +86,5 @@ return {
   'vim-test/vim-test',
   'akinsho/bufferline.nvim',
   { 'Exafunction/codeium.vim', event = 'BufEnter' },
-  'tpope/vim-speeddating'
+  'tpope/vim-speeddating',
 }

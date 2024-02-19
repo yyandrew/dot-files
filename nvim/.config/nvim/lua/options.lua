@@ -12,14 +12,14 @@ opt.undofile = true -- 开启session级undo记录
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
-opt.backspace = 'indent,eol,start' -- fix backspace/delete key problem
-opt.laststatus = 2                 -- to display the status line always
-opt.foldmethod = 'indent'          -- groups of lines with the same indent form a fold
-opt.foldenable = true              -- disable folding but sometimes I need it
+opt.backspace = 'indent,eol,start'                                                                         -- fix backspace/delete key problem
+opt.laststatus = 2                                                                                         -- to display the status line always
+opt.foldmethod = 'indent'                                                                                  -- groups of lines with the same indent form a fold
+opt.foldenable = true                                                                                      -- disable folding but sometimes I need it
 opt.foldlevelstart = 10
-opt.clipboard = 'unnamed'          -- make all yanking/deleting operations automatically copy to the system clipboard
-opt.directory= HOME .. '/.vim/swp//' -- 设置 swap 文件的目录
-opt.undodir = HOME .. '/.vim/undodir' -- 设置undo文件夹
+opt.clipboard = 'unnamed'                                                                                  -- make all yanking/deleting operations automatically copy to the system clipboard
+opt.directory = HOME .. '/.vim/swp//'                                                                      -- 设置 swap 文件的目录
+opt.undodir = HOME .. '/.vim/undodir'                                                                      -- 设置undo文件夹
 opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
 -- 设置空格显示字符
 opt.listchars = { space = '·', tab = '>~' }
@@ -44,31 +44,12 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   command = 'setlocal spell spelllang=en_us'
 })
 
-vim.api.nvim_create_autocmd('BufNewFile', {
-  pattern = '.git/COMMIT_EDITMSG',
-  command = 'setlocal spell spelllang=en_us'
-})
-
 -- gitgutter
 g.gitgutter_preview_win_floating = 1
 opt.updatetime = 1000
 
--- echodoc
-g.echodoc_enable_at_startup = 1
---let g:echodoc#type = 'floating'
---highlight link EchoDocFloat Pmenu
-local snip_mate = {}
-snip_mate['snippet_version'] = 1
-g.snipMate = snip_mate
-
--- EchoDoc,好像不工作
-g.echodoc = {
-  enable_at_startup = 1,
-  type = 'floating'
-}
-
 -- nerdcommenter
-g.NERDSpaceDelims = 1
+g.NERDSpaceDelims = 1 -- Add space around after commented
 
 g.vim_markdown_folding_disabled = 1
 
@@ -80,7 +61,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 g.quickfix_is_open = 0
 
-local clearRegisters = vim.api.nvim_exec([[
+vim.api.nvim_exec([[
 function! ClearRegisters()
     let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
     let i=0
