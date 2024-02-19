@@ -53,7 +53,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar', 'lua_ls' }
+local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -74,3 +74,17 @@ nvim_lsp['gopls'].setup {
   capabilities = capabilities,
 }
 
+nvim_lsp['lua_ls'].setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {
+          'vim',
+          'require'
+        },
+      },
+    },
+  },
+}
