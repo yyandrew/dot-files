@@ -4,6 +4,14 @@ if not state then
 end
 
 devicons.setup {
-  override = {},
-  default = true
+  override = {};
+  default = true;
+}
+devicons.set_icon {
+  ['proto'] = {
+    icon = "󰈧",
+    color = "#cb4a32",
+    cterm_color = "160",
+    name = "proto",
+  }
 }
