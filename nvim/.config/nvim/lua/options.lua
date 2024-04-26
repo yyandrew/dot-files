@@ -48,6 +48,14 @@ vim.api.nvim_create_autocmd('BufNewFile', {
 g.gitgutter_preview_win_floating = 1
 opt.updatetime = 1000
 
+-- Config dadbog
+g.dbs = {
+  food_dev = 'mysql://bhuser:363099@localhost:3306/food_dev',
+  redis_dev = 'redis://127.0.0.1:6379',
+  record_rc = 'redis://172.16.0.22:6391/0',
+}
+g.db_ui_save_location = '/tmp/db_ui'
+
 -- nerdcommenter
 g.NERDSpaceDelims = 1 -- Add space around after commented
 

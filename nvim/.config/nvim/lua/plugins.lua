@@ -76,6 +76,10 @@ return {
   'tpope/vim-repeat',
   'mxw/vim-jsx',
   -- 'github/copilot.vim',
+  -- dadbod
+  'tpope/vim-dadbod',
+  'kristijanhusak/vim-dadbod-ui',
+  'kristijanhusak/vim-dadbod-completion',
 
   'junegunn/vim-peekaboo',
   'tpope/vim-abolish',
