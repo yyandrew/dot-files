@@ -92,6 +92,9 @@ fi
 # autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
+
+[[ -s "/home/andrew/.gvm/scripts/gvm" ]] && source "/home/andrew/.gvm/scripts/gvm"
+
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export PATH="$PATH:$GOROOT/bin" # Add $GOPATH/bin to PATH for scripting
@@ -165,7 +168,7 @@ export SCCACHE_BUCKET="electronjs-sccache"
 export SCCACHE_TWO_TIER=true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-alias rm='trash-put'
+# alias rm='trash-put'
 
 eval "$(direnv hook zsh)"
 
@@ -180,6 +183,8 @@ eval "$(jenv init -)"
 
 alias vim='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+
+eval "$(mcfly init zsh)"
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 alias lg='lazygit'
