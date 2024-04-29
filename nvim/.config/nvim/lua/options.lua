@@ -41,7 +41,7 @@ g.livedown_browser = 'chrome'
 
 vim.api.nvim_create_autocmd('BufNewFile', {
   pattern = '.git/COMMIT_EDITMSG',
-  command = 'setlocal spell spelllang=en_us'
+  command = 'setlocal spell spelllang=en_us,cjk'
 })
 
 -- gitgutter

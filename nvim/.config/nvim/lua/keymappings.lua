@@ -1,7 +1,7 @@
 -- Setup lspconfig.
 local keymap = vim.keymap
 
-keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>', { desc = "set english spell" }) -- Enable spell check
+keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us,cjk<CR>', { desc = "set english spell only" }) -- Enable spell check
 keymap.set('n', '<leader>C', ':setlocal nospell<CR>', { desc = "Set no spell" })                    -- Disable spell check
 keymap.set('n', ',s', ':mks!<CR>', { desc = "Save session" })                                       -- 保存当前会话为缓存
 keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>', { desc = "Ignore case" })               -- 忽略大小写
