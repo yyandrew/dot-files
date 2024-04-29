@@ -100,9 +100,7 @@ return {
         tex_support = false,
         models = {
           -- Here you specify which notetype should be associated with which deck
-          NoteType = "L_vim",
-          ["Basic"] = "Deck",
-          ["Super Basic"] = "Deck::ChildDeck",
+          ["Basic"] = "my_test",
         },
       }
     }
