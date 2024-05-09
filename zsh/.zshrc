@@ -188,3 +188,7 @@ eval "$(mcfly init zsh)"
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 alias lg='lazygit'
+eval "$(fzf --zsh)"
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
