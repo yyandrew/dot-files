@@ -1,3 +1,5 @@
+services:
+  'git-server-domain': 'gitlab:git-server-domain'
 customCommands:
   - key: b
     command: tig blame -- {{.SelectedFile.Name}}
