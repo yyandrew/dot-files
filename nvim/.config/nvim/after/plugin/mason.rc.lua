@@ -69,7 +69,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-nvim_lsp['gopls@v0.13.1'].setup {
+nvim_lsp['gopls'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
