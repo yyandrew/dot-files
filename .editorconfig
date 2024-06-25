@@ -1,0 +1,8 @@
+root = true
+# Tab indentation (no size specified)
+[*.proto]
+tab_width = 2
+[*.rb]
+tab_width = 2
+indent_style = space
+tab_width = 2
