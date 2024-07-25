@@ -62,3 +62,5 @@ keymap.set('', ',le', ':LspStop<CR>')
 keymap.set('', ',lb', ':LspStart<CR>')
 keymap.set('', ';l', ':set list<CR>')
 keymap.set('', ';nl', ':set nolist<CR>')
+
+keymap.set('', ',c', ':\'<,\'>:w !ssh "$(echo $LOGNAME)@$(echo $SSH_CONNECTION | awk \'{ print $1}\')" pbcopy<CR>', { desc = 'Copy selection to clipboard over ssh' })
