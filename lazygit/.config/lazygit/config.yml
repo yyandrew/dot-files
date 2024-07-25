@@ -16,3 +16,5 @@ customCommands:
     context: commitFiles
     description: blame file at tree
     subprocess: yes
+os:
+  copyToClipboardCmd: "echo {{text}} | ssh \"andrew@$(echo $SSH_CONNECTION | awk '{ print $1}')\" pbcopy"
