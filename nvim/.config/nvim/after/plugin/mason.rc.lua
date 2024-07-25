@@ -9,13 +9,28 @@ if not mlstate then
   return
 end
 masonLspConfig.setup({
-  ensure_installed = { "gopls", "tsserver", "rust_analyzer", "volar", "lua_ls" }
+  ensure_installed = { "gopls", "tsserver", "rust_analyzer", "volar", "lua_ls", "clangd", "solargraph" }
 })
 
 local lstate, nvim_lsp = pcall(require, "lspconfig")
 if not lstate then
   return
 end
+
+local border = {
+    { '┌', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '┐', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+    { '┘', 'FloatBorder' },
+    { '─', 'FloatBorder' },
+    { '└', 'FloatBorder' },
+    { '│', 'FloatBorder' },
+}
+local handlers = {
+    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -53,9 +68,10 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar' }
+local servers = { 'rust_analyzer', 'tsserver', 'solargraph', 'volar', 'clangd', 'gopls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
+    handlers = handlers,
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -69,12 +85,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-nvim_lsp['gopls'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-}
-
 nvim_lsp['lua_ls'].setup {
+  handlers = handlers,
   on_attach = on_attach,
   settings = {
     Lua = {
