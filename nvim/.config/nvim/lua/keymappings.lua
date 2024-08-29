@@ -63,5 +63,9 @@ keymap.set('', ',lb', ':LspStart<CR>')
 keymap.set('', ';l', ':set list<CR>')
 keymap.set('', ';nl', ':set nolist<CR>')
 
-keymap.set('', ',c', ':\'<,\'>:w !ssh "$(echo $LOGNAME)@$(echo $SSH_CONNECTION | awk \'{ print $1}\')" pbcopy<CR>', { desc = 'Copy selection to clipboard over ssh' })
+-- if copy chinese content will messed up
 keymap.set('', ',cc', ':\'<,\'>:w !ssh "bohe@$(echo $SSH_CONNECTION | awk \'{ print $1}\')" pbcopy<CR>', { desc = 'Copy selection to clipboard over ssh' })
+
+-- gitblame
+keymap.set('', ',gbcc', ':GitBlameCopyCommitURL', { desc = 'Copies the commit URL of current line\'s commit into the system clipboard.' })
+keymap.set('', ',gbcf', ':GitBlameCopyFileURL', { desc = 'Copies the file URL into the system clipboard.' })

@@ -93,7 +93,7 @@ fi
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
-[[ -s "/home/andrew/.gvm/scripts/gvm" ]] && source "/home/andrew/.gvm/scripts/gvm"
+# [[ -s "/home/andrew/.gvm/scripts/gvm" ]] && source "/home/andrew/.gvm/scripts/gvm"
 
 export PATH="$PATH:$HOME/Library/Python/2.7/bin"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
@@ -103,20 +103,17 @@ export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
 # capistrano
-alias cap-bd='cap backup deploy'
-alias cap-sd='cap staging deploy'
-alias cap-dd='cap develop deploy'
-alias cap-pd='cap production deploy'
+# alias cap-bd='cap backup deploy'
+# alias cap-sd='cap staging deploy'
+# alias cap-dd='cap develop deploy'
+# alias cap-pd='cap production deploy'
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export TERM="xterm-256color"
 
 # system commands
-alias grep-a='grep -A 10'
-alias grep-b='grep -B 10'
 alias find-file='find . -type f -iname '
-alias jd='java -jar ~/Downloads/JDownloader/JDownloader.jar'
 # Use powerline
 # if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
   # source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -146,21 +143,6 @@ if [ -f "$LFCD" ]; then
     source "$LFCD"
 fi
 
-# Flutter
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export PATH="$PATH:${HOME}/Development/flutter/bin"
-
-# Android
-export ANDROID_HOME="${HOME}/Library/Android/sdk"
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# depot_tools
-export PATH=$PATH:~/build/depot_tools
-
 # Cached builds for electron app
 export GIT_CACHE_PATH="${HOME}/.git_cache"
 
@@ -172,19 +154,13 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 eval "$(direnv hook zsh)"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andrew/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/andrew/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/andrew/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/andrew/google-cloud-sdk/completion.zsh.inc'; fi
-
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 alias vim='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-eval "$(mcfly init zsh)"
+# eval "$(mcfly init zsh)"
 eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 alias lg='lazygit'
@@ -207,3 +183,12 @@ export FZF_CTRL_T_OPTS="
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+alias alivpn="sudo openvpn --config ~/aliVPNClient.ovpn --auth-user-pass /etc/openvpn/ali-passwd.txt"

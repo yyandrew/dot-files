@@ -73,6 +73,7 @@ return {
   'editorconfig/editorconfig-vim',
   'airblade/vim-gitgutter',
   'rhysd/git-messenger.vim',
+  'f-person/git-blame.nvim',
   'tpope/vim-repeat',
   'mxw/vim-jsx',
   -- 'github/copilot.vim',
