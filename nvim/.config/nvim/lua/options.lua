@@ -92,3 +92,9 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = false,
 })
+
+-- git-message
+g.git_messenger_always_into_popup = true
+g.git_messenger_date_format = '%Y-%m-%d %X'
+g.git_messenger_floating_win_opts = { border = 'single' }
+g.git_messenger_popup_content_margins = 'v:false'
