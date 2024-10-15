@@ -90,7 +90,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # autojump
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump//etc/profile.d/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
 # [[ -s "/home/andrew/.gvm/scripts/gvm" ]] && source "/home/andrew/.gvm/scripts/gvm"
@@ -159,12 +159,19 @@ eval "$(jenv init -)"
 
 alias vim='nvim'
 export PATH="/usr/local/opt/llvm/bin:$PATH"
+eval "$(/usr/local/bin/rbenv init - zsh)"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
+export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/Users/bohe/.local/bin:$PATH"
 
-# eval "$(mcfly init zsh)"
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
-
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 alias lg='lazygit'
 eval "$(fzf --zsh)"
+export FZF_COMPLETION_OPTS='--border --info=inline'
 _fzf_comprun() {
   local command=$1
   shift
@@ -184,11 +191,6 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(atuin init zsh)"
 
 . "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
-alias alivpn="sudo openvpn --config ~/aliVPNClient.ovpn --auth-user-pass /etc/openvpn/ali-passwd.txt"

@@ -50,9 +50,10 @@ opt.updatetime = 1000
 
 -- Config dadbog
 g.dbs = {
-  food_dev = 'mysql://bhuser:363099@localhost:3306/food_dev',
+  food_dev = 'mysql://bhuser:363099@127.0.0.1:3306/food_dev',
   redis_dev = 'redis://127.0.0.1:6379',
   record_rc = 'redis://172.16.0.22:6391/0',
+  mongo_dev = 'mongodb://status_to_status_rc:OPl1ndlGoBm3TPD9O14o13yz@172.16.0.22:27017/status_rc'
 }
 g.db_ui_save_location = '/tmp/db_ui'
 

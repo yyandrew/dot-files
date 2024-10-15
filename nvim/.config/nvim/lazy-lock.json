@@ -61,4 +61,3 @@
   "vim-test": { "branch": "master", "commit": "50824567721414915db71922db8dcb8f49893e9b" },
   "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" },
   "vimux": { "branch": "master", "commit": "f7c41607d9246ec4b6cc28587cce84d75d106e3e" }
-}
