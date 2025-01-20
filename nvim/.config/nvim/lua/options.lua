@@ -31,9 +31,9 @@ g.indentLine_enabled = 1
 -- Specify how much indent level do you want to use for(default is 10)
 g.indentLine_indentLevel = 20
 
--- habamax, palenight, dracula
+-- habamax, palenight, dracula, tokyonight-night
 vim.cmd([[
-  colorscheme smyck
+  colorscheme habamax
 ]])
 
 -- Config livedown
