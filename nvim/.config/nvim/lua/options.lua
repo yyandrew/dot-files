@@ -33,7 +33,7 @@ g.indentLine_indentLevel = 20
 
 -- habamax, palenight, dracula
 vim.cmd([[
-  colorscheme dracula
+  colorscheme symck
 ]])
 
 -- Config livedown
