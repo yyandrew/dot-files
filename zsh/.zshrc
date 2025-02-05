@@ -150,7 +150,7 @@ export SCCACHE_BUCKET="electronjs-sccache"
 export SCCACHE_TWO_TIER=true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-# alias rm='trash-put'
+alias rm='trash-put'
 
 eval "$(direnv hook zsh)"
 
@@ -194,3 +194,4 @@ export FZF_ALT_C_OPTS="
 eval "$(atuin init zsh)"
 
 . "$HOME/.atuin/bin/env"
+alias alivpn="sudo openvpn --config ~/aliVPNClient.ovpn --auth-user-pass /etc/openvpn/ali-passwd.txt"
