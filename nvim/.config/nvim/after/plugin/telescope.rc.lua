@@ -7,6 +7,13 @@ end
 telescope.setup{
   previewers = {
 
+  },
+  pickers = {
+    diagnostics = {
+      sort_by = "severity",
+      no_unlisted = true,
+      line_width = 20,
+    },
   }
 }
 
