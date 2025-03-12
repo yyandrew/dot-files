@@ -31,7 +31,7 @@ vim.cmd [[autocmd User TelescopePreviewerLoaded setlocal wrap]]
 local keymap = vim.keymap
 -- telescope
 keymap.set('n', ',p', '<cmd>Telescope git_files<CR>')
-keymap.set('', ',i', '<cmd>FzfLua Snippets<CR>')
+keymap.set('', ',i', '<cmd>Telescope Snippets<CR>')
 keymap.set('n', ',g', "<cmd>Telescope live_grep<CR>")
 keymap.set('n', ',e', "<cmd>Telescope buffers<CR>")
 keymap.set('n', ',G', "<cmd>Telescope grep_string<CR>")
