@@ -16,6 +16,13 @@ telescope.setup{
     },
     live_grep = {
       line_width = 20,
+    },
+    buffers = {
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer", --- Delete buffer
+        }
+      }
     }
   }
 }
