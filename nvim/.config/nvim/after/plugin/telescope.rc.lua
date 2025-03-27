@@ -18,6 +18,7 @@ telescope.setup{
       line_width = 20,
     },
     buffers = {
+      sort_lastused = true,
       mappings = {
         i = {
           ["<c-d>"] = "delete_buffer", --- Delete buffer
