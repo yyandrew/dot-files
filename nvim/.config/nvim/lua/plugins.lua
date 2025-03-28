@@ -39,13 +39,12 @@ return {
   'nvim-treesitter/nvim-treesitter-textobjects',
   'mfussenegger/nvim-dap',
   {
-    'phaazon/hop.nvim',
+    'smoka7/hop.nvim',
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
     end
   },
-
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
