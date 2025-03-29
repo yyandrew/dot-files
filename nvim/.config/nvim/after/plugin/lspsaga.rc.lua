@@ -3,7 +3,11 @@ if not state then
   return
 end
 
-lspsaga.setup()
+lspsaga.setup({
+  ui = {
+    code_action = ""
+  },
+})
 local keymap = vim.keymap.set
 
 keymap('n', ';gh', '<cmd>Lspsaga lsp_finder<CR>', { desc = "Show the definition, reference and implementation" })
