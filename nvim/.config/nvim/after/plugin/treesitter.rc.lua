@@ -66,5 +66,3 @@ treesitter_configs.setup {
     },
   },
 }
-
-print "aaa"

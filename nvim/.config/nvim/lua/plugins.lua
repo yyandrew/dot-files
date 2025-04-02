@@ -119,5 +119,6 @@ return {
     ---@type render.md.UserConfig
     opts = {},
     ft = { "markdown", "codecompanion" },
-  }
+  },
+  { "folke/neodev.nvim", opts = {} },
 }

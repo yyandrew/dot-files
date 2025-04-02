@@ -90,6 +90,9 @@ nvim_lsp['lua_ls'].setup {
   on_attach = on_attach,
   settings = {
     Lua = {
+      completion = {
+        callSnippet = "Replace",
+      },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
         globals = {
@@ -102,7 +105,6 @@ nvim_lsp['lua_ls'].setup {
 }
 
 nvim_lsp['gopls'].setup {
-
     handlers = handlers,
     on_attach = on_attach,
     flags = {
