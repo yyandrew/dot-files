@@ -42,7 +42,7 @@ keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
 -- keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
 -- Edit init.lua
-keymap.set('n', '<Leader>E', ':vsplit ~/.config/nvim/init.lua<CR>', { desc = "Edit nvim config file" })
+keymap.set('n', '<Leader>E', ':vsplit<CR>:tcd ~/dot-files/nvim<CR>:e ./.config/nvim/init.lua<CR>', { desc = "Edit nvim config file" })
 -- Save current file
 keymap.set('n', '<Leader>s', ':w<CR>', { desc = "Save changes of current file" })
 
@@ -50,8 +50,6 @@ keymap.set('n', '<Leader>s', ':w<CR>', { desc = "Save changes of current file" }
 keymap.set('v', ',j', ":m '>+1<CR>gv=gv", { desc = "Move visual block down" })
 keymap.set('v', ',k', ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
 
--- 编译当前proto文件
-keymap.set('n', '<F6>', ':split<CR>:lcd %:h<CR>:terminal<CR>Akratos tool protoc $FILE_NAME<CR>exit<CR>')
 -- 在当前文件所在的目录打开terminal
 keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>A', { desc = "Open terminal from current folder" })
 -- esc键退出terminal模式
