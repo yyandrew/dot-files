@@ -2,6 +2,10 @@ local HOME = os.getenv('HOME')
 local opt = vim.opt
 local g = vim.g
 
+local P = function(data)
+  print(vim.inspect(data))
+end
+
 opt.cursorline = true
 opt.number = true
 opt.title = true    -- 设置窗口的标题为当前打开文件路径
