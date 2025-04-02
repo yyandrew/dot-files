@@ -22,7 +22,10 @@ opt.directory = HOME .. '/.vim/swp//'                                           
 opt.undodir = HOME .. '/.vim/undodir'                                                                      -- 设置undo文件夹
 opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
 -- 设置空格显示字符
-opt.listchars = { space = '·', tab = '>~' }
+opt.listchars = {
+  space = "·",
+  tab = ">~"
+}
 opt.relativenumber = true
 
 -- Config indentLine
@@ -39,23 +42,9 @@ vim.cmd([[
 -- Config livedown
 g.livedown_browser = 'chrome'
 
-vim.api.nvim_create_autocmd('BufNewFile', {
-  pattern = '.git/COMMIT_EDITMSG',
-  command = 'setlocal spell spelllang=en_us,cjk'
-})
-
 -- gitgutter
 g.gitgutter_preview_win_floating = 1
 opt.updatetime = 1000
-
--- Config dadbog
-g.dbs = {
-  food_dev = 'mysql://bhuser:363099@127.0.0.1:3306/food_dev',
-  redis_dev = 'redis://127.0.0.1:6379',
-  record_rc = 'redis://172.16.0.22:6391/0',
-  mongo_dev = 'mongodb://status_to_status_rc:OPl1ndlGoBm3TPD9O14o13yz@172.16.0.22:27017/status_rc'
-}
-g.db_ui_save_location = '/tmp/db_ui'
 
 -- nerdcommenter
 g.NERDSpaceDelims = 1 -- Add space around after commented
@@ -68,19 +57,28 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   command = ":%s/\\s\\+$//e"
 })
 
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.proto',
+  callback = function()
+    local old_folder = vim.fn.getcwd()
+    local working_folder = vim.fn.expand("%:h")
+    -- jump to folder of current editing file
+    local cmd = "cd " .. working_folder
+    local ok, re = pcall(vim.api.nvim_command, cmd)
+    if not ok then
+      print("Error switch to folder: " .. working_folder ". Err: " .. tostring(re))
+    end
+    cmd = "! kratos tool protoc " .. vim.fn.expand("%:t") .. " &> /dev/null"
+    ok, re = pcall(vim.api.nvim_command, cmd)
+    if not ok then
+      print("Error generate pb files: " .. tostring(re))
+    end
+    -- jump back to root folder
+    cmd = "cd " .. old_folder
+  end,
+})
+
 g.quickfix_is_open = 0
-
-vim.api.nvim_exec([[
-function! ClearRegisters()
-    let regs='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-="'
-    let i=0
-    while (i<strlen(regs))
-        exec 'let @'.regs[i].'=""'
-        let i=i+1
-    endwhile
-endfunction
-]], true)
-
 
 -- 解决ruby文件输入 . 导致的当前行的 indent 跟 end 对齐的问题
 vim.cmd [[autocmd FileType ruby setlocal indentkeys-=.]]
