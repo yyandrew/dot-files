@@ -75,6 +75,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     end
     -- jump back to root folder
     cmd = "cd " .. old_folder
+    pcall(vim.api.nvim_command, cmd)
   end,
 })
 
