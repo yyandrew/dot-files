@@ -67,17 +67,21 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.schedule(function()
       local old_folder = vim.fn.getcwd()
       local working_folder = vim.fn.expand("%:h")
+
       -- jump to folder of current editing file
       local cmd = "cd " .. working_folder
       local ok, re = pcall(vim.api.nvim_command, cmd)
       if not ok then
         print("Error switch to folder: " .. working_folder ". Err: " .. tostring(re))
       end
-      cmd = "! kratos tool protoc " .. vim.fn.expand("%:t") .. " &> /dev/null"
-      ok, re = pcall(vim.api.nvim_command, cmd)
+
+      -- Generate pb files
+      cmd = "! kratos tool protoc " .. vim.fn.expand("%:t") .. ' > /dev/null 2>&1'
+      ok, re = pcall(vim.fn.system, cmd)
       if not ok then
         print("Error generate pb files: " .. tostring(re))
       end
+
       -- jump back to root folder
       cmd = "cd " .. old_folder
       pcall(vim.api.nvim_command, cmd)

@@ -7,6 +7,7 @@ keymap.set('n', ',s', ':mks!<CR>', { desc = "Save session" })                   
 keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>', { desc = "Ignore case" })               -- 忽略大小写
 keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P', { desc = "Paster current date" })            -- 插入当前时间
 
+keymap.set('x', '<leader>p', [["_dP]], { desc = "Paste without yank" })
 
 keymap.set('n', 'ef', ':edit <cfile><CR>', { desc = "Edit file under cursor" })                     -- If no file find when try to jump then create a new one
 keymap.set('n', ',y', ':let @+=@%<CR>', { desc = "Yank current file path to system clipboard" })    -- " yank current file path to system clipboard
