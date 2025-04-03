@@ -72,14 +72,14 @@ vim.api.nvim_create_autocmd('BufWritePre', {
       local cmd = "cd " .. working_folder
       local ok, re = pcall(vim.api.nvim_command, cmd)
       if not ok then
-        print("Error switch to folder: " .. working_folder ". Err: " .. tostring(re))
+        vim.notify("Error switch to folder: " .. working_folder ". Err: " .. tostring(re), vim.log.levels.ERROR)
       end
 
       -- Generate pb files
       cmd = "! kratos tool protoc " .. vim.fn.expand("%:t") .. ' > /dev/null 2>&1'
       ok, re = pcall(vim.fn.system, cmd)
       if not ok then
-        print("Error generate pb files: " .. tostring(re))
+        vim.notify("Error generate pb files: " .. tostring(re), vim.log.levels.ERROR)
       end
 
       -- jump back to root folder
