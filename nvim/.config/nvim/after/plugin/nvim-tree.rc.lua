@@ -6,7 +6,8 @@ end
 nvimtree.setup({
   sort_by = "case_sensitive",
   diagnostics = {
-    enable = true
+    enable = true,
+    show_on_dirs = true,
   },
   filters = {
     dotfiles = true,
