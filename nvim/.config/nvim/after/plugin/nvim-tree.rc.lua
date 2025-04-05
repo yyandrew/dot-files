@@ -5,12 +5,18 @@ end
 
 nvimtree.setup({
   sort_by = "case_sensitive",
+  diagnostics = {
+    enable = true
+  },
   filters = {
     dotfiles = true,
   },
   update_focused_file = {
     enable = true,
     update_root = true,
+  },
+  view = {
+    centralize_selection = true,
   },
 })
 
