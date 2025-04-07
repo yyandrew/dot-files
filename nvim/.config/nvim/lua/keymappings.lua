@@ -67,3 +67,4 @@ keymap.set('', ',cc', ':\'<,\'>:w !ssh "bohe@$(echo $SSH_CONNECTION | awk \'{ pr
 -- gitblame
 keymap.set('', ',gbcc', ':GitBlameCopyCommitURL<CR>', { desc = 'Copies the commit URL of current line\'s commit into the system clipboard.' })
 keymap.set('', ',gbcf', ':GitBlameCopyFileURL<CR>', { desc = 'Copies the file URL into the system clipboard.' })
+keymap.set('v', ',j', ':!jq .<CR>')
