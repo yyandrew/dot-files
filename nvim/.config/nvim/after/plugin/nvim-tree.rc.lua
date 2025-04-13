@@ -18,6 +18,7 @@ nvimtree.setup({
   },
   view = {
     centralize_selection = true,
+    adaptive_size = true,
   },
 })
 
