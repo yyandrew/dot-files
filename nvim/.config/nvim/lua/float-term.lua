@@ -66,6 +66,7 @@ end
 -- Set up keybinding to toggle floating terminal
 vim.api.nvim_set_keymap('n', ',t', [[<Cmd>lua require('float-term').toggle_float_term()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', ',t', [[<C-\><C-n><Cmd>lua require('float-term').toggle_float_term()<CR>]], { noremap = true, silent = true })
+print("float-term loaded")
 
 -- Return module table
 return M

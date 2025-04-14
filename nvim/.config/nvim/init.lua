@@ -16,3 +16,4 @@ require("lazy").setup("plugins")
 
 require('options')
 require('keymappings')
+require('float-term')
