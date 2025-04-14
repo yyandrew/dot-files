@@ -18,19 +18,6 @@ function M.get_current_file_directory()
   end
 end
 
--- Function to create terminal buffer if it doesn't exist
-function M.create_term_buf()
-  -- Create a new terminal buffer with the proper settings
-  local buf = vim.api.nvim_create_buf(false, true)
-
-  -- Set buffer options before terminal creation
-  vim.api.nvim_buf_set_option(buf, 'bufhidden', 'hide')
-  vim.api.nvim_buf_set_option(buf, 'filetype', 'terminal')
-  vim.api.nvim_buf_set_option(buf, 'modifiable', true)
-
-  return buf
-end
-
 -- Function to toggle the floating terminal
 function M.toggle_float_term()
   -- If terminal window exists and is valid, close it
@@ -59,36 +46,27 @@ function M.toggle_float_term()
     border = 'rounded'
   }
 
-  -- Create or reuse terminal buffer
-  if not M.term_buf or not vim.api.nvim_buf_is_valid(M.term_buf) then
-    M.term_buf = M.create_term_buf()
+  -- Get the directory of the current file
+  local dir = M.get_current_file_directory()
 
-    -- Get the directory of the current file
-    local dir = M.get_current_file_directory()
+  -- Check if we have a valid terminal buffer
+  local has_valid_term = M.term_buf and
+                         vim.api.nvim_buf_is_valid(M.term_buf) and
+                         vim.api.nvim_buf_get_option(M.term_buf, 'buftype') == 'terminal'
 
-    -- Create terminal with the current file's directory
-    vim.cmd('terminal cd ' .. vim.fn.shellescape(dir) .. ' && ' .. vim.o.shell)
-  else
-    -- Create the floating window first
-    M.term_win = vim.api.nvim_open_win(M.term_buf, true, opts)
+  if not has_valid_term then
+    -- Create a completely fresh terminal buffer using vim's built-in command
+    local current_win = vim.api.nvim_get_current_win()
+    vim.cmd('botright new')
+    vim.cmd('terminal')
+    M.term_buf = vim.api.nvim_get_current_buf()
 
-    -- Set window-local options
-    vim.api.nvim_win_set_option(M.term_win, 'winhl', 'Normal:Normal')
-    vim.api.nvim_win_set_option(M.term_win, 'winblend', 0)
+    -- Set terminal buffer options
+    vim.api.nvim_buf_set_option(M.term_buf, 'bufhidden', 'hide')
 
-    -- If terminal exists, send a command to change directory
-    local dir = M.get_current_file_directory()
-    local term_chan = vim.bo[M.term_buf].channel
-
-    if term_chan > 0 then
-      -- Send clear command and change directory
-      vim.api.nvim_chan_send(term_chan, "\clear\n")
-      vim.api.nvim_chan_send(term_chan, "cd " .. vim.fn.shellescape(dir) .. "\n")
-      vim.api.nvim_chan_send(term_chan, "echo 'Changed directory to: " .. dir .. "'\n")
-    end
-
-    vim.cmd('startinsert')
-    return
+    -- Close the temporary window and return to original window
+    vim.cmd('hide')
+    vim.api.nvim_set_current_win(current_win)
   end
 
   -- Create the floating window
@@ -98,15 +76,22 @@ function M.toggle_float_term()
   vim.api.nvim_win_set_option(M.term_win, 'winhl', 'Normal:Normal')
   vim.api.nvim_win_set_option(M.term_win, 'winblend', 0)
 
-  -- Start insert mode
+  -- Get terminal job ID using built-in vim function
+  local term_job_id = vim.fn.getbufvar(M.term_buf, 'terminal_job_id', 0)
+
+  if term_job_id and term_job_id > 0 then
+    -- Use chansend instead of chan_send for better compatibility
+    vim.fn.chansend(term_job_id, "cd " .. vim.fn.shellescape(dir) .. "\n")
+    vim.fn.chansend(term_job_id, "echo 'Changed directory to: " .. dir .. "'\n")
+  end
+
+  -- Enter insert mode
   vim.cmd('startinsert')
 end
 
 -- Set up keybinding to toggle floating terminal
-vim.api.nvim_set_keymap('n', ',t', [[<Cmd>lua require('float-term').toggle_float_term()<CR>]],
-  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', ',t', [[<C-\><C-n><Cmd>lua require('float-term').toggle_float_term()<CR>]],
-  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F12>', [[<Cmd>lua require('float-term').toggle_float_term()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<F12>', [[<C-\><C-n><Cmd>lua require('float-term').toggle_float_term()<CR>]], { noremap = true, silent = true })
 
 -- Return module table
 return M
