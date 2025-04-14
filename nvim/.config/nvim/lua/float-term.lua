@@ -7,6 +7,7 @@ local M = {}
 M.term_buf = nil
 -- Terminal window ID
 M.term_win = nil
+M.prev_pwd = ""
 
 -- Function to get the directory of the current file
 function M.get_current_file_directory()
@@ -79,10 +80,11 @@ function M.toggle_float_term()
   -- Get terminal job ID using built-in vim function
   local term_job_id = vim.fn.getbufvar(M.term_buf, 'terminal_job_id', 0)
 
-  if term_job_id and term_job_id > 0 then
+  if term_job_id and term_job_id > 0 and M.prev_pwd ~= dir then
     -- Use chansend instead of chan_send for better compatibility
     vim.fn.chansend(term_job_id, "cd " .. vim.fn.shellescape(dir) .. "\n")
     vim.fn.chansend(term_job_id, "echo 'Changed directory to: " .. dir .. "'\n")
+    M.prev_pwd = dir
   end
 
   -- Enter insert mode
