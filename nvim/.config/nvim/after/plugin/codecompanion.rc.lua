@@ -11,6 +11,13 @@ codecompanion.setup({
         },
       })
     end,
+    deepseek = function()
+      return require("codecompanion.adapters").extend("deepseek", {
+        env = {
+          api_key = "cmd:cat ~/.deepseek-api-key",
+        },
+      })
+    end,
     opts = {
       allow_insecure = true,
       proxy = "socks5://127.0.0.1:1080",
@@ -26,7 +33,7 @@ codecompanion.setup({
       },
     },
     inline = {
-      adapter = "gemini",
+      adapter = "deepseek",
     },
   },
 })
