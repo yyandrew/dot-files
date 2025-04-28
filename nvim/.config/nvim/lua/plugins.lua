@@ -20,6 +20,15 @@ return {
   'Eandrju/cellular-automaton.nvim',
   'nvim-lua/plenary.nvim',
   { 'nvim-telescope/telescope.nvim', build = ":TSUpdate" },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        version = "^1.0.0",
+      },
+    }
+  },
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -115,5 +124,5 @@ return {
     opts = {},
     ft = { "markdown", "codecompanion" },
   },
-  { "folke/neodev.nvim", opts = {} },
+  { "folke/neodev.nvim",       opts = {} },
 }
