@@ -1,12 +1,14 @@
 local HOME = os.getenv('HOME')
 local opt = vim.opt
 local g = vim.g
+local o = vim.o
 
 local P = function(data)
   print(vim.inspect(data))
 end
 
 opt.cursorline = true
+o.mouse = "a"
 opt.number = true
 opt.title = true    -- 设置窗口的标题为当前打开文件路径
 opt.hlsearch = true -- 高亮查询结果
@@ -21,7 +23,7 @@ opt.laststatus = 2                                                              
 opt.foldmethod = 'indent'                                                                                  -- groups of lines with the same indent form a fold
 opt.foldenable = true                                                                                      -- disable folding but sometimes I need it
 opt.foldlevelstart = 10
-opt.clipboard = 'unnamed'                                                                                  -- make all yanking/deleting operations automatically copy to the system clipboard
+opt.clipboard = 'unnamedplus'                                                                                  -- make all yanking/deleting operations automatically copy to the system clipboard
 opt.directory = HOME .. '/.vim/swp//'                                                                      -- 设置 swap 文件的目录
 opt.undodir = HOME .. '/.vim/undodir'                                                                      -- 设置undo文件夹
 opt.wildignore:append('*/tmp/*,*.so,*.swp,*.zip,*/public/assets/*,*/app/assets/images/*,*/node_modules/*') -- Exclude files and directories
