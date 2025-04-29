@@ -33,7 +33,7 @@ codecompanion.setup({
       },
     },
     inline = {
-      adapter = "deepseek",
+      adapter = "gemini",
     },
   },
 })
