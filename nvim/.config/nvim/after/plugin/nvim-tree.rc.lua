@@ -20,6 +20,11 @@ nvimtree.setup({
     centralize_selection = true,
     adaptive_size = true,
   },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    },
+  }
 })
 
 local keymap = vim.keymap
