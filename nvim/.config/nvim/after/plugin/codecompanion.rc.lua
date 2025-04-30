@@ -36,4 +36,37 @@ codecompanion.setup({
       adapter = "gemini",
     },
   },
+  prompt_library = {
+    ["jsontoproto"] = {
+      strategy = "inline",
+      description = "convert a json object to gogoproto",
+      opts = {
+        mapping = "<LocalLeader>ch",
+        modes = { "v" },
+        index = 11,
+        is_slash_cmd = false,
+        auto_submit = false,
+        short_name = "j2p",
+        placement = "replace" -- or "replace"|"add"|"before"|"chat"
+      },
+      prompts = {
+        {
+          role = "user",
+          content = [[Please convert the json to proto message block.
+
+The format should be `int64 id = 1 [(gogoproto.jsontag) = 'id'];`.
+
+Make sure it starts from 1.
+
+And generate comment above every lines according to the json key.
+]],
+        },
+      },
+    },
+  },
 })
+
+vim.keymap.set({ "n", "v" }, ";a", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, ";ct", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.cmd([[cab cc CodeCompanion]])
+
