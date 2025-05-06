@@ -66,7 +66,8 @@ And generate comment above every lines according to the json key.
   },
 })
 
-vim.keymap.set({ "n", "v" }, ";a", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, ";ct", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, ";cc", "<cmd>CodeCompanion<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, ";cca", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, ";cct", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
 vim.cmd([[cab cc CodeCompanion]])
 

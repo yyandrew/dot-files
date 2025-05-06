@@ -28,5 +28,5 @@ nvimtree.setup({
 })
 
 local keymap = vim.keymap
-keymap.set('n', "<F2>", ":NvimTreeToggle<CR>", { desc = "Toggle nvim tree" })
+keymap.set('n', "<F2>", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Toggle nvim tree" })
 keymap.set('n', ',f', ':NvimTreeFindFile<CR>', { desc = "Reveal file in tree" })
