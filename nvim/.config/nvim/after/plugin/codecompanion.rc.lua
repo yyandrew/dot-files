@@ -11,6 +11,11 @@ codecompanion.setup({
         env = {
           api_key = "cmd:gpg --decrypt ~/gemini-api-key.gpg 2>/dev/null",
         },
+        schema = {
+          model = {
+            default = "gemini-2.5-pro-exp-03-25",
+          },
+        }
       })
     end,
     deepseek = function()
@@ -58,8 +63,6 @@ codecompanion.setup({
 
 The format should be `int64 id = 1 [(gogoproto.jsontag) = 'id'];`.
 
-Make sure it starts from 1.
-
 And generate comment above every lines according to the json key.
 ]],
         },
@@ -97,4 +100,3 @@ vim.keymap.set({ "n", "v" }, ";cc", "<cmd>CodeCompanion<cr>", { noremap = true, 
 vim.keymap.set({ "n", "v" }, ";cca", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
 vim.keymap.set({ "n", "v" }, ";cct", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
 vim.cmd([[cab cc CodeCompanion]])
-
