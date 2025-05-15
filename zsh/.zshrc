@@ -191,7 +191,4 @@ export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
 
-eval "$(atuin init zsh)"
-
-. "$HOME/.atuin/bin/env"
 alias alivpn="sudo openvpn --config ~/aliVPNClient.ovpn --auth-user-pass /etc/openvpn/ali-passwd.txt"
