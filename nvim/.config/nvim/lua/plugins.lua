@@ -17,7 +17,6 @@ return {
   -- 'Yggdroot/indentLine',
   'scrooloose/nerdcommenter',
   'nvim-lualine/lualine.nvim',
-  'Eandrju/cellular-automaton.nvim',
   'nvim-lua/plenary.nvim',
   { 'nvim-telescope/telescope.nvim', build = ":TSUpdate" },
   {
@@ -43,7 +42,6 @@ return {
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
   "glepnir/lspsaga.nvim",
-  'shime/vim-livedown',
   'nvim-treesitter/nvim-treesitter',
   'nvim-treesitter/nvim-treesitter-textobjects',
   'mfussenegger/nvim-dap',

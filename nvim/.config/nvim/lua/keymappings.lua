@@ -9,25 +9,15 @@ keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P', { desc = "Paster current 
 
 keymap.set('x', '<leader>p', [["_dP]], { desc = "Paste without yank" })
 
-keymap.set('n', 'ef', ':edit <cfile><CR>', { desc = "Edit file under cursor" })                     -- If no file find when try to jump then create a new one
-
 keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>')                             -- clang
 
 -- buffer configure
-keymap.set('n', '<Leader>x', ':bd<CR>', { desc = "Close buffer" })
-keymap.set('n', '<Leader>x!', ':bd!<CR>', { desc = "Force close buffer" })
 keymap.set('n', 'gp', ':bprevious<CR>', { desc = "Previous buffer" })
 keymap.set('n', 'gn', ':bnext<CR>', { desc = "Next buffer" })
 
 keymap.set('n', '<Leader>n', ':noh<CR>') -- Remove search highlight
 keymap.set('n', 'cn', ':cnext<CR>')      -- next quickfix window
 keymap.set('n', 'cp', ':cpre<CR>')       -- previous quickfix window
-
-keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-keymap.set("n", "<leader>fmg", "<cmd>CellularAutomaton game_of_life<CR>")
-
--- livedown
-keymap.set('n', 'gm', '<cmd>:LivedownToggle<CR>')
 
 -- lazygit
 keymap.set('n', '<Leader>gg', ':LazyGit<CR>')
@@ -42,7 +32,7 @@ keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
 -- keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
 -- Edit init.lua
-keymap.set('n', '<Leader>E', ':vsplit<CR>:tcd ~/dot-files/nvim<CR>:e ./.config/nvim/init.lua<CR>', { desc = "Edit nvim config file" })
+keymap.set('n', '<Leader>E', ':tabedit<CR>:tcd ~/dot-files/nvim<CR>:e ./.config/nvim/init.lua<CR>', { desc = "Edit nvim config file" })
 -- Save current file
 keymap.set('n', '<Leader>s', ':w<CR>', { desc = "Save changes of current file" })
 
@@ -59,9 +49,6 @@ keymap.set('', ',le', ':LspStop<CR>')
 keymap.set('', ',lb', ':LspStart<CR>')
 keymap.set('', ';l', ':set list<CR>')
 keymap.set('', ';nl', ':set nolist<CR>')
-
--- if copy chinese content will messed up
-keymap.set('', ',cc', ':\'<,\'>:w !ssh "bohe@$(echo $SSH_CONNECTION | awk \'{ print $1}\')" pbcopy<CR>', { desc = 'Copy selection to clipboard over ssh' })
 
 -- gitblame
 keymap.set('', ',gbcc', ':GitBlameCopyCommitURL<CR>', { desc = 'Copies the commit URL of current line\'s commit into the system clipboard.' })
