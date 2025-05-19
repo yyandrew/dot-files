@@ -12,6 +12,7 @@ M.prev_pwd = ""
 -- Function to get the directory of the current file
 function M.get_current_file_directory()
   local current_file = vim.api.nvim_buf_get_name(0)
+  vim.notify("[float-term]: current_file: " .. current_file, vim.log.levels.INFO)
   if current_file and current_file ~= "" then
     return vim.fn.fnamemodify(current_file, ":h")
   else
