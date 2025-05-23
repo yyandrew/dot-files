@@ -20,7 +20,7 @@ keymap.set('n', 'cn', ':cnext<CR>')      -- next quickfix window
 keymap.set('n', 'cp', ':cpre<CR>')       -- previous quickfix window
 
 -- lazygit
-keymap.set('n', '<Leader>gg', ':LazyGit<CR>')
+keymap.set('n', ';gg', ':LazyGit<CR>')
 
 -- Prettier
 keymap.set('n', '<leader>F', ':Prettier<CR>')
@@ -37,8 +37,8 @@ keymap.set('n', '<Leader>E', ':tabedit<CR>:tcd ~/dot-files/nvim<CR>:e ./.config/
 keymap.set('n', '<Leader>s', ':w<CR>', { desc = "Save changes of current file" })
 
 -- Move selected sections
-keymap.set('v', ',j', ":m '>+1<CR>gv=gv", { desc = "Move visual block down" })
-keymap.set('v', ',k', ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
+keymap.set('v', '<leader>j', ":m '>+1<CR>gv=gv", { desc = "Move visual block down" })
+keymap.set('v', '<leader>k', ":m '<-2<CR>gv=gv", { desc = "Move visual block up" })
 
 -- 在当前文件所在的目录打开terminal
 keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>A', { desc = "Open terminal from current folder" })
@@ -54,3 +54,4 @@ keymap.set('', ';nl', ':set nolist<CR>')
 keymap.set('', ',gbcc', ':GitBlameCopyCommitURL<CR>', { desc = 'Copies the commit URL of current line\'s commit into the system clipboard.' })
 keymap.set('', ',gbcf', ':GitBlameCopyFileURL<CR>', { desc = 'Copies the file URL into the system clipboard.' })
 keymap.set('v', ',j', ':!jq .<CR>')
+keymap.set('', ',cm', ':! git checkout master %<CR>')
