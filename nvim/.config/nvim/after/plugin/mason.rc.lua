@@ -9,7 +9,8 @@ if not mlstate then
   return
 end
 masonLspConfig.setup({
-  ensure_installed = { "gopls", "ts_ls", "rust_analyzer", "volar", "lua_ls", "solargraph" }
+  ensure_installed = { "gopls", "ts_ls", "rust_analyzer", "lua_ls", "solargraph" },
+  automatic_enable = false
 })
 
 local lstate, nvim_lsp = pcall(require, "lspconfig")
@@ -18,18 +19,18 @@ if not lstate then
 end
 
 local border = {
-    { '┌', 'FloatBorder' },
-    { '─', 'FloatBorder' },
-    { '┐', 'FloatBorder' },
-    { '│', 'FloatBorder' },
-    { '┘', 'FloatBorder' },
-    { '─', 'FloatBorder' },
-    { '└', 'FloatBorder' },
-    { '│', 'FloatBorder' },
+  { '┌', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '┐', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '┘', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '└', 'FloatBorder' },
+  { '│', 'FloatBorder' },
 }
 local handlers = {
-    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 }
 
 -- Use an on_attach function to only map the following keys
