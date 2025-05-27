@@ -5,21 +5,21 @@ customCommands:
     command: tig blame -- {{.SelectedFile.Name}}
     context: files
     description: blame file at tree
-    subprocess: yes
   - key: b
     command: tig blame {{.SelectedSubCommit.Sha}} -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: blame file at revision
-    subprocess: yes
   - key: B
     command: tig blame -- {{.SelectedCommitFile.Name}}
     context: commitFiles
     description: blame file at tree
-    subprocess: yes
 os:
   copyToClipboardCmd: >
     if [[ "$TERM" =~ ^(screen|tmux) ]]; then
+
       printf "\033Ptmux;\033\033]52;c;$(printf {{text}} | base64 -w 0)\a\033\\" > /dev/tty
     else
+
       printf "\033]52;c;$(printf {{text}} | base64 -w 0)\a" > /dev/tty
     fi
+
