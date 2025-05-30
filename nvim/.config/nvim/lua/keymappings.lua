@@ -2,14 +2,14 @@
 local keymap = vim.keymap
 
 keymap.set('n', '<leader>c', ':setlocal spell spelllang=en_us<CR>', { desc = "set english spell only" }) -- Enable spell check
-keymap.set('n', '<leader>C', ':setlocal nospell<CR>', { desc = "Set no spell" })                    -- Disable spell check
-keymap.set('n', ',s', ':mks!<CR>', { desc = "Save session" })                                       -- 保存当前会话为缓存
-keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>', { desc = "Ignore case" })               -- 忽略大小写
-keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P', { desc = "Paster current date" })            -- 插入当前时间
+keymap.set('n', '<leader>C', ':setlocal nospell<CR>', { desc = "Set no spell" })                         -- Disable spell check
+keymap.set('n', ',s', ':mks!<CR>', { desc = "Save session" })                                            -- 保存当前会话为缓存
+keymap.set('n', '<F9>', ':set ignorecase! ignorecase?<CR>', { desc = "Ignore case" })                    -- 忽略大小写
+keymap.set('n', '<F5>', '"=strftime("%Y-%m-%d")<CR>P', { desc = "Paster current date" })                 -- 插入当前时间
 
 keymap.set('x', '<leader>p', [["_dP]], { desc = "Paste without yank" })
 
-keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>')                             -- clang
+keymap.set('n', '<F10>', ':w<CR> :!clear; gcc % -o %< <CR> :!./%<<CR>') -- clang
 
 -- buffer configure
 keymap.set('n', 'gp', ':bprevious<CR>', { desc = "Previous buffer" })
@@ -32,7 +32,8 @@ keymap.set('n', 'N', 'Nzz')
 --Toggle quickfix
 -- keymap.set('n', ',q', '<cmd>:call QuickfixToggle()<CR>', { desc = "Toggle quickfix window" })
 -- Edit init.lua
-keymap.set('n', '<Leader>E', ':tabedit<CR>:tcd ~/dot-files/nvim<CR>:e ./.config/nvim/init.lua<CR>', { desc = "Edit nvim config file" })
+keymap.set('n', '<Leader>E', ':tabedit<CR>:tcd ~/dot-files/nvim<CR>:e ./.config/nvim/init.lua<CR>',
+  { desc = "Edit nvim config file" })
 -- Save current file
 keymap.set('n', '<Leader>s', ':w<CR>', { desc = "Save changes of current file" })
 
@@ -51,7 +52,8 @@ keymap.set('', ';l', ':set list<CR>')
 keymap.set('', ';nl', ':set nolist<CR>')
 
 -- gitblame
-keymap.set('', ',gbcc', ':GitBlameCopyCommitURL<CR>', { desc = 'Copies the commit URL of current line\'s commit into the system clipboard.' })
+keymap.set('', ',gbcc', ':GitBlameCopyCommitURL<CR>',
+  { desc = 'Copies the commit URL of current line\'s commit into the system clipboard.' })
 keymap.set('', ',gbcf', ':GitBlameCopyFileURL<CR>', { desc = 'Copies the file URL into the system clipboard.' })
 keymap.set('v', ',j', ':!jq .<CR>')
 keymap.set('', ',cm', ':! git checkout master %<CR>')

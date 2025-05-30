@@ -84,7 +84,6 @@ return {
   'junegunn/vim-peekaboo',
   'tpope/vim-abolish',
   { 'kkoomen/vim-doge',              build = ":call doge#install()" },
-  { 'prettier/vim-prettier',         build = 'yarn install --frozen-lockfile --production' },
   'tpope/vim-sleuth',
   'preservim/vimux',
   'vim-test/vim-test',

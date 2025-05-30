@@ -106,15 +106,15 @@ nvim_lsp['lua_ls'].setup {
 }
 
 nvim_lsp['gopls'].setup {
-    handlers = handlers,
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    init_options = {
-      preferences = {
-        disableSuggestions = true,
-      }
-    },
-    capabilities = capabilities,
+  handlers = handlers,
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  init_options = {
+    preferences = {
+      disableSuggestions = true,
+    }
+  },
+  capabilities = capabilities,
 }
