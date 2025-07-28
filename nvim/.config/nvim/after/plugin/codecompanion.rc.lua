@@ -25,6 +25,24 @@ codecompanion.setup({
         },
       })
     end,
+    ollama = function()
+      return require("codecompanion.adapters").extend("ollama", {
+        env = {
+          url = "https://test.com",
+        },
+        headers = {
+          ["Content-Type"] = "application/json",
+        },
+        schema = {
+          model = {
+            default = "qwen2.5-coder:3b",
+          },
+        },
+        parameters = {
+          sync = true,
+        },
+      })
+    end,
     opts = {
       allow_insecure = true,
       proxy = "socks5://127.0.0.1:1080",
