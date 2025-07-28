@@ -45,9 +45,6 @@ vim.cmd([[
   colorscheme habamax
 ]])
 
--- Config livedown
-g.livedown_browser = 'chrome'
-
 -- gitgutter
 g.gitgutter_preview_win_floating = 1
 opt.updatetime = 1000
