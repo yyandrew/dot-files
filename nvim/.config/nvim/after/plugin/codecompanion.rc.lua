@@ -93,6 +93,31 @@ And generate comment above every lines according to the json key.
           end
         } }
     },
+    ["fix controller tests"] = {
+      strategy = "inline",
+      description = "修复测试参数问题",
+      opts = {
+        mapping = "<Leader>fc",
+        index = 0,
+        is_default = true,
+        is_slash_cmd = true,
+        auto_submit = true,
+        short_name = "fix-controller-tests",
+        placement = "chat" -- or "replace"|"add"|"before"|"chat"
+      },
+      prompts = {
+        {
+          role = "user",
+          content = function()
+            return fmt([[
+请帮我修改post, get, put, delete等controller的测试用例.请求参数格式应该是 `params: { ... }`。但是要format参数不需要加到`params`里，保持原有的格式。只用替换get,post,put,delete等这一行代码，其它不修改。
+比如 `get :show, id: 1, format: :json`，要修改成 `get :show, params: { id: 1 }, format: :json`。
+比如 `get :show, id: 1`，要修改成 `get :show, params: { id: 1 }`。
+]],
+              vim.fn.system("git diff --no-ext-diff --staged"))
+          end
+        } }
+    },
   },
 })
 
