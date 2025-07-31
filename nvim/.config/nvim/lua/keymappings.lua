@@ -57,3 +57,9 @@ keymap.set('', ',gbcc', ':GitBlameCopyCommitURL<CR>',
 keymap.set('', ',gbcf', ':GitBlameCopyFileURL<CR>', { desc = 'Copies the file URL into the system clipboard.' })
 keymap.set('v', ',j', ':!jq .<CR>')
 keymap.set('', ',cm', ':! git checkout master %<CR>')
+keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
+keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
+
+keymap.set("n", "<leader>wl", function()
+  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end, opts "List workspace folders")
