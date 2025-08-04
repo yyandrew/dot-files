@@ -71,7 +71,13 @@ return {
     },
   },
   'tpope/vim-bundler',
-  'jiangmiao/auto-pairs',
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+  },
   -- 'ngmy/vim-rubocop',
   'mattn/emmet-vim',
   'editorconfig/editorconfig-vim',

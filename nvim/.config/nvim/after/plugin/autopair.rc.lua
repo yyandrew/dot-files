@@ -1,4 +1,9 @@
-local g = vim.g
--- Config autopair
-g.AutoPairsFlyMode = 0
+local state, autopairs = pcall(require, 'nvim-autopairs')
 
+if not state then
+  return
+end
+
+autopairs.setup({
+  disable_filetype = { "TelescopePrompt" , "vim" },
+})
