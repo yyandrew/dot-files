@@ -192,3 +192,5 @@ export FZF_ALT_C_OPTS="
   --preview 'tree -C {}'"
 
 alias alivpn="sudo openvpn --config ~/aliVPNClient.ovpn --auth-user-pass /etc/openvpn/ali-passwd.txt"
+
+eval "$(atuin init zsh)"
