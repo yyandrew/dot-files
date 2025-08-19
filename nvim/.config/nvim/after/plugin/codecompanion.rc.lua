@@ -45,7 +45,7 @@ codecompanion.setup({
     end,
     opts = {
       allow_insecure = true,
-      proxy = "socks5://127.0.0.1:1080",
+      proxy = "socks5://192.168.1.51:1080",
     },
   },
   strategies = {
