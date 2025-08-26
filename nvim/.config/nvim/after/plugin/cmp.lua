@@ -23,15 +23,11 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    { name = 'codecompanion' }, -- For codecompanion users.
-    { name = 'ultisnips' }, -- For ultisnips users.
-  }, {
-    { name = 'buffer' },
-  })
+  sources = {
+    per_filetype = {
+      codecompanion = { "codecompanion" },
+    }
+  },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
