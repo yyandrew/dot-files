@@ -56,6 +56,9 @@ codecompanion.setup({
           modes = { i = "<C-b>" },
         },
       },
+      opts = {
+        completion_provider = "cmp",
+      },
     },
     inline = {
       adapter = "gemini",
