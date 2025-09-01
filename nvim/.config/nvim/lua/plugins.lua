@@ -33,8 +33,6 @@ return {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
   'hrsh7th/nvim-cmp',
-  'hrsh7th/vim-vsnip',
-  'hrsh7th/cmp-vsnip',
   'SirVer/ultisnips',
   'honza/vim-snippets',
   'quangnguyen30192/cmp-nvim-ultisnips',
@@ -93,7 +91,7 @@ return {
   'tpope/vim-sleuth',
   'preservim/vimux',
   'vim-test/vim-test',
-  -- { 'Exafunction/codeium.vim', event = 'BufEnter' },
+  { 'Exafunction/codeium.vim', event = 'BufEnter' },
   'tpope/vim-speeddating',
   {
     "rareitems/anki.nvim",
