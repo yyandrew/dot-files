@@ -20,7 +20,7 @@
 ## either "l", "local" to use the system's current local timezone, or an offset
 ## from UTC in the format of "<+|->H[H][:M[M][:S[S]]]"
 ## for example: "+9", "-05", "+03:30", "-01:23:45", etc.
-# timezone = "local"
+timezone = "local"
 
 ## enable or disable automatic sync
 auto_sync = true
@@ -214,11 +214,11 @@ enter_accept = true
 # common_prefix = ["sudo"]
 
 ## Set commands that will be completely ignored from stats
-# ignored_commands = [
-#   "cd",
-#   "ls",
-#   "vi"
-# ]
+ignored_commands = [
+  "cd",
+  "ls",
+  "vim"
+]
 
 [keys]
 # Defaults to true. If disabled, using the up/down key won't exit the TUI when scrolled past the first/last entry.
