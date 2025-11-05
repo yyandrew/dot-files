@@ -129,6 +129,9 @@ if [[ -a "$HOME/.profile" ]]; then
 fi
 emulate zsh
 
+if [[ -a "$HOME/.zsh_argocd" ]]; then
+  source "$HOME/.zsh_argocd"
+fi
 
 # alias mysql=/usr/local/mysql/bin/mysql
 # alias mysqladmin=/usr/local/mysql/bin/mysqladmin
