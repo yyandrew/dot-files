@@ -93,7 +93,10 @@ return {
   'tpope/vim-sleuth',
   'preservim/vimux',
   'vim-test/vim-test',
-  { 'Exafunction/codeium.vim', event = 'BufEnter' },
+  {
+    'Exafunction/windsurf.vim',
+    event = 'BufEnter'
+  },
   'tpope/vim-speeddating',
   {
     "rareitems/anki.nvim",
