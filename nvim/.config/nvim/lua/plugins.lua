@@ -5,7 +5,6 @@ return {
   -- colorscheme
   'joshdick/onedark.vim',
   'morhetz/gruvbox',
-  'drewtempelmeyer/palenight.vim',
   'dracula/vim',
   {
     "folke/tokyonight.nvim",
@@ -13,7 +12,6 @@ return {
     priority = 1000,
     opts = {},
   },
-  'haishanh/night-owl.vim',
   -- 'Yggdroot/indentLine',
   'scrooloose/nerdcommenter',
   'nvim-lualine/lualine.nvim',
