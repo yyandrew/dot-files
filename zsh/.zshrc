@@ -197,3 +197,6 @@ export FZF_ALT_C_OPTS="
 alias alivpn="sudo openvpn --config ~/aliVPNClient.ovpn --auth-user-pass /etc/openvpn/ali-passwd.txt"
 
 eval "$(atuin init zsh)"
+autoload -U compinit; compinit
+
+export COLORTERM=truecolor # Fix opencode layout problem
