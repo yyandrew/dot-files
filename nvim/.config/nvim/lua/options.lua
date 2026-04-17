@@ -102,7 +102,7 @@ vim.diagnostic.config({
   severity_sort = false,
 })
 -- 配置lsp的log level
-vim.lsp.set_log_level("error")
+vim.lsp.log.set_level(vim.lsp.log.levels.ERROR)
 
 -- git-message
 g.git_messenger_always_into_popup = true

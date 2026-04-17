@@ -13,11 +13,6 @@ masonLspConfig.setup({
   automatic_enable = false
 })
 
-local lstate, nvim_lsp = pcall(require, "lspconfig")
-if not lstate then
-  return
-end
-
 local border = {
   { '┌', 'FloatBorder' },
   { '─', 'FloatBorder' },
@@ -28,9 +23,18 @@ local border = {
   { '└', 'FloatBorder' },
   { '│', 'FloatBorder' },
 }
+
+local function with_border(handler)
+  return function(err, result, ctx, config)
+    config = config or {}
+    config.border = border
+    return handler(err, result, ctx, config)
+  end
+end
+
 local handlers = {
-  ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-  ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+  ['textDocument/hover'] = with_border(vim.lsp.handlers.hover),
+  ['textDocument/signatureHelp'] = with_border(vim.lsp.handlers.signature_help),
 }
 
 -- Use an on_attach function to only map the following keys
@@ -71,7 +75,7 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = { 'rust_analyzer', 'ts_ls', 'solargraph', 'volar' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
+  vim.lsp.config(lsp, {
     handlers = handlers,
     on_attach = on_attach,
     flags = {
@@ -80,10 +84,11 @@ for _, lsp in ipairs(servers) do
     init_options = {
     },
     capabilities = capabilities,
-  }
+  })
+  vim.lsp.enable(lsp)
 end
 
-nvim_lsp['lua_ls'].setup {
+vim.lsp.config('lua_ls', {
   handlers = handlers,
   on_attach = on_attach,
   settings = {
@@ -100,13 +105,15 @@ nvim_lsp['lua_ls'].setup {
       },
     },
   },
-}
+})
+vim.lsp.enable('lua_ls')
 
-nvim_lsp['gopls'].setup {
+vim.lsp.config('gopls', {
   handlers = handlers,
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
   },
   capabilities = capabilities,
-}
+})
+vim.lsp.enable('gopls')
