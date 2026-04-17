@@ -101,6 +101,8 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = false,
 })
+-- 配置lsp的log level
+vim.lsp.set_log_level("error")
 
 -- git-message
 g.git_messenger_always_into_popup = true

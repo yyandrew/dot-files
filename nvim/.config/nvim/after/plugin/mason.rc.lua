@@ -78,9 +78,6 @@ for _, lsp in ipairs(servers) do
       debounce_text_changes = 150,
     },
     init_options = {
-      preferences = {
-        disableSuggestions = true,
-      }
     },
     capabilities = capabilities,
   }
@@ -110,11 +107,6 @@ nvim_lsp['gopls'].setup {
   on_attach = on_attach,
   flags = {
     debounce_text_changes = 150,
-  },
-  init_options = {
-    preferences = {
-      disableSuggestions = true,
-    }
   },
   capabilities = capabilities,
 }
