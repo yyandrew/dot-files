@@ -9,7 +9,7 @@ if not mlstate then
   return
 end
 masonLspConfig.setup({
-  ensure_installed = { "gopls", "ts_ls", "rust_analyzer", "lua_ls", "solargraph" },
+  ensure_installed = { "gopls", "ts_ls", "rust_analyzer", "lua_ls", "solargraph", "ty" },
   automatic_enable = false
 })
 
@@ -73,7 +73,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'ts_ls', 'solargraph', 'volar' }
+local servers = { 'rust_analyzer', 'ts_ls', 'solargraph', 'volar', 'ty' }
 for _, lsp in ipairs(servers) do
   vim.lsp.config(lsp, {
     handlers = handlers,
