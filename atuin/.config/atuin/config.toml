@@ -113,6 +113,7 @@ history_filter = [
   "^nvim ",
   "^clear;",
   "^j ",
+  "^tmux"
 ]
 
 ## prevent commands run with cwd matching any of these regexes from being written
@@ -125,6 +126,7 @@ cwd_filter = [
   "^nvim ",
   "^clear;",
   "^j ",
+  "^tmux"
 ]
 
 ## Configure the maximum height of the preview to show.
@@ -217,7 +219,9 @@ enter_accept = true
 ignored_commands = [
   "cd",
   "ls",
-  "vim"
+  "vim",
+  "ping",
+  "tmux"
 ]
 
 [keys]

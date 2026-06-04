@@ -1,11 +1,11 @@
 __build_info:
-  rime_version: 1.13.1
+  rime_version: 1.16.1
   timestamps:
-    default: 1745185284
+    default: 1767050041
     default.custom: 1720578395
-    key_bindings: 1745185284
+    key_bindings: 1767050041
     key_bindings.custom: 0
-    punctuation: 1745185284
+    punctuation: 1767050041
     punctuation.custom: 0
     wubi86_jidian_pinyin.custom: 0
     wubi86_jidian_pinyin.schema: 1720578395
@@ -148,6 +148,11 @@ schema:
   name: "拼音混输"
   schema_id: wubi86_jidian_pinyin
   version: 0.9
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 switches:
   - name: full_shape
     states: ["半角", "全角"]

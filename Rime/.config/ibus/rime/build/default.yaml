@@ -1,11 +1,11 @@
 __build_info:
-  rime_version: 1.13.1
+  rime_version: 1.16.1
   timestamps:
-    default: 1745185284
+    default: 1767050041
     default.custom: 1720578395
-    key_bindings: 1745185284
+    key_bindings: 1767050041
     key_bindings.custom: 0
-    punctuation: 1745185284
+    punctuation: 1767050041
     punctuation.custom: 0
 ascii_composer:
   good_old_caps_lock: true
@@ -15,7 +15,7 @@ ascii_composer:
     Control_R: noop
     Shift_L: commit_code
     Shift_R: commit_code
-config_version: 0.40
+config_version: 0.50
 key_binder:
   bindings:
     - {accept: semicolon, send: 2, when: has_menu}
@@ -119,6 +119,11 @@ schema_list:
   - schema: wubi86_jidian_trad
   - schema: wubi86_jidian_trad_pinyin
   - schema: pinyin_simp
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 switcher:
   abbreviate_options: true
   caption: "【 输入法设置 】"

@@ -1,13 +1,13 @@
 __build_info:
-  rime_version: 1.13.1
+  rime_version: 1.16.1
   timestamps:
-    default: 1745185284
+    default: 1767050041
     default.custom: 1720578395
-    key_bindings: 1745185284
+    key_bindings: 1767050041
     key_bindings.custom: 0
     pinyin_simp.custom: 0
     pinyin_simp.schema: 1720578395
-    punctuation: 1745185284
+    punctuation: 1767050041
     punctuation.custom: 0
 engine:
   processors:
@@ -149,6 +149,11 @@ schema:
   name: "简体拼音"
   schema_id: pinyin_simp
   version: 0.8
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 speller:
   algebra:
     - "abbrev/^([a-z]).+$/$1/"

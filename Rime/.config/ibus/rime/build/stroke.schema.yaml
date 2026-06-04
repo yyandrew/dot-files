@@ -1,14 +1,14 @@
 __build_info:
-  rime_version: 1.13.1
+  rime_version: 1.16.1
   timestamps:
-    default: 1745185284
+    default: 1767050041
     default.custom: 1720578395
-    key_bindings: 1745185284
+    key_bindings: 1767050041
     key_bindings.custom: 0
-    punctuation: 1745185284
+    punctuation: 1767050041
     punctuation.custom: 0
     stroke.custom: 0
-    stroke.schema: 1737210053
+    stroke.schema: 1762913319
 abc_segmentor:
   extra_tags:
     - reverse_lookup
@@ -165,6 +165,7 @@ schema:
     - "四季的風"
     - "雪齋"
     - "Kunki Chou"
+    - "宋天"
   dependencies:
     - luna_pinyin
   description: |
@@ -173,7 +174,12 @@ schema:
 
   name: "五筆畫"
   schema_id: stroke
-  version: 0.5
+  version: 0.6
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 speller:
   alphabet: abcdefghijklmnopqrstuvwxyz
   delimiter: " '"
