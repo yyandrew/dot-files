@@ -75,3 +75,5 @@ keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = 'Rem
 keymap.set("n", "<leader>wl", function()
   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, { desc = 'List workspace folders' } )
+
+keymap.set('t', '<C-z>', '<Nop>', { desc = "Prevent suspending terminal job" })
