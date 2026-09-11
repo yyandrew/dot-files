@@ -58,8 +58,8 @@ keymap.set('n', '<F7>', ':split<CR>:lcd %:h<CR>:terminal<CR>A', { desc = "Open t
 -- esc键退出terminal模式
 keymap.set('t', '<C-w>j', "<C-\\><C-n><C-w>j", { silent = true })
 
-keymap.set('', ',le', ':LspStop<CR>')
-keymap.set('', ',lb', ':LspStart<CR>')
+keymap.set('', ',le', ':lsp stop<CR>')
+keymap.set('', ',lb', ':lsp start<CR>')
 keymap.set('', ';l', ':set list<CR>')
 keymap.set('', ';nl', ':set nolist<CR>')
 
