@@ -165,7 +165,7 @@ return {
         { desc = "Ask opencode…" })
       vim.keymap.set({ "n", "x" }, "<leader>os", function() require("opencode").select() end,
         { desc = "Execute opencode action…" })
-      vim.keymap.set({ "n", "t" }, "<leader>ot", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
+      vim.keymap.set({ "n", "t" }, "<leader>ot", function() require('snacks.terminal').toggle('opencode', {cwd = vim.fn.getcwd(), win = {position = 'right', enter = false}}) end, { desc = "Toggle opencode" })
 
       vim.keymap.set({ "n", "x" }, "<leader>oo", function() return require("opencode").operator("@this ") end,
         { desc = "Add range to opencode", expr = true })
