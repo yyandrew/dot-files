@@ -16,7 +16,6 @@ return {
   'scrooloose/nerdcommenter',
   'nvim-lualine/lualine.nvim',
   'nvim-lua/plenary.nvim',
-  { 'nvim-telescope/telescope.nvim', build = ":TSUpdate" },
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
